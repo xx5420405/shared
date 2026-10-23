@@ -4,61 +4,64 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>出社會後如何找到真正的朋友</title>
-<meta name="description" content="薑餅資影片《出社會後如何找到真正的朋友》的分享心得筆記：特質錨定、二度人脈、具體邀約、耳目心傾聽與邊界感。">
+<meta name="description" content="人際關係與成長思維筆記：特質錨定、二度人脈、具體邀約、耳目心傾聽與邊界感，附學習地圖、測驗、情境模擬與 30 天打卡。">
 <style>
 :root{
   --bg:#faf8f4; --surface:#ffffff; --surface2:#f3efe8; --text:#25221e; --muted:#6b645b;
-  --line:#e4ded3; --accent:#c2571a; --accent-soft:#fbe9dc;
+  --line:#e4ded3; --accent:#c2571a; --accent-soft:#fbe9dc; --on:#ffffff;
   --tip:#1f7a5a; --tip-bg:#e4f3ec; --note:#2563a8; --note-bg:#e6eff9;
   --imp:#b3261e; --imp-bg:#fbe8e6; --sum:#7a4fb0; --sum-bg:#efe8f8;
+  --b1:#b4531a; --b2:#17704f; --b3:#1f5ea0; --b4:#6e44a6; --b5:#b3261e;
   --radius:14px; --shadow:0 1px 2px rgba(0,0,0,.05),0 4px 14px rgba(0,0,0,.05);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#16140f; --surface:#1f1c16; --surface2:#27231b; --text:#efe9de; --muted:#a89f90;
-    --line:#383226; --accent:#f08a4b; --accent-soft:#3a2517;
+    --line:#383226; --accent:#f08a4b; --accent-soft:#3a2517; --on:#16140f;
     --tip:#5fcf9f; --tip-bg:#143024; --note:#7db4ee; --note-bg:#162a42;
     --imp:#ff8a80; --imp-bg:#3b1a18; --sum:#c3a3f0; --sum-bg:#2a1f3d;
-    --shadow:none;
+    --b1:#f08a4b; --b2:#5fcf9f; --b3:#7db4ee; --b4:#c3a3f0; --b5:#ff8a80; --shadow:none;
   }
 }
 :root[data-theme="dark"]{
   --bg:#16140f; --surface:#1f1c16; --surface2:#27231b; --text:#efe9de; --muted:#a89f90;
-  --line:#383226; --accent:#f08a4b; --accent-soft:#3a2517;
+  --line:#383226; --accent:#f08a4b; --accent-soft:#3a2517; --on:#16140f;
   --tip:#5fcf9f; --tip-bg:#143024; --note:#7db4ee; --note-bg:#162a42;
-  --imp:#ff8a80; --imp-bg:#3b1a18; --sum:#c3a3f0; --sum-bg:#2a1f3d; --shadow:none;
+  --imp:#ff8a80; --imp-bg:#3b1a18; --sum:#c3a3f0; --sum-bg:#2a1f3d;
+  --b1:#f08a4b; --b2:#5fcf9f; --b3:#7db4ee; --b4:#c3a3f0; --b5:#ff8a80; --shadow:none;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:64px}
-body{
-  margin:0;background:var(--bg);color:var(--text);line-height:1.8;font-size:17px;
-  font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Microsoft JhengHei","Segoe UI",sans-serif;
-}
+body{margin:0;background:var(--bg);color:var(--text);line-height:1.8;font-size:17px;
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Microsoft JhengHei","Segoe UI",sans-serif}
 a{color:var(--accent)}
-.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:30}
-nav.top{
-  position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);
-  backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
-}
-nav.top .inner{max-width:880px;margin:0 auto;padding:0 16px;display:flex;gap:6px;align-items:center;overflow-x:auto;scrollbar-width:none}
+button,input,textarea,select{font:inherit;color:inherit}
+button{cursor:pointer}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:40}
+nav.top{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.top .inner{max-width:920px;margin:0 auto;padding:0 12px;display:flex;gap:2px;align-items:center;overflow-x:auto;scrollbar-width:none}
 nav.top .inner::-webkit-scrollbar{display:none}
-nav.top a{flex:none;padding:12px 10px;font-size:14px;color:var(--muted);text-decoration:none;white-space:nowrap}
+nav.top a{flex:none;padding:12px 9px;font-size:14px;color:var(--muted);text-decoration:none;white-space:nowrap}
 nav.top a:hover,nav.top a.on{color:var(--accent)}
-nav.top button{flex:none;margin-left:auto;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:999px;padding:4px 12px;font-size:13px;cursor:pointer}
-main{max-width:880px;margin:0 auto;padding:0 16px 80px}
-header.hero{padding:48px 0 24px}
+.tools{flex:none;margin-left:auto;display:flex;gap:6px;padding-left:8px;position:sticky;right:0;background:color-mix(in srgb,var(--bg) 92%,transparent)}
+.ibtn{border:1px solid var(--line);background:var(--surface);border-radius:999px;min-width:44px;height:36px;padding:0 12px;font-size:14px}
+main{max-width:920px;margin:0 auto;padding:0 16px 96px}
+header.hero{padding:44px 0 20px}
 .eyebrow{color:var(--accent);font-size:14px;letter-spacing:.08em;font-weight:600}
 h1{font-size:clamp(28px,6vw,44px);line-height:1.25;margin:8px 0 14px;letter-spacing:-.01em}
 .byline{color:var(--muted);font-size:15px}
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .tag{background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:2px 12px;font-size:13px}
 section{margin-top:56px}
-h2{font-size:clamp(22px,4.5vw,28px);margin:0 0 18px;display:flex;gap:10px;align-items:baseline;line-height:1.35}
+h2{font-size:clamp(22px,4.5vw,28px);margin:0 0 18px;display:flex;gap:10px;align-items:baseline;line-height:1.35;flex-wrap:wrap}
 h2 .num{color:var(--accent);font-variant-numeric:tabular-nums;font-size:.8em}
+h2 small{color:var(--muted);font-weight:400;font-size:.55em}
 h3{font-size:20px;margin:28px 0 10px}
+h4{margin:0 0 6px;font-size:16px}
 p{margin:0 0 14px}
+.muted{color:var(--muted)}
 .callout{border-radius:var(--radius);padding:16px 18px;margin:18px 0;border-left:4px solid var(--c);background:var(--cbg)}
-.callout .ct{font-weight:700;color:var(--c);margin-bottom:6px;display:flex;gap:8px;align-items:center}
+.callout .ct{font-weight:700;color:var(--c);margin-bottom:6px}
 .callout ul{margin:0;padding-left:20px}
 .callout p:last-child{margin-bottom:0}
 .c-summary{--c:var(--sum);--cbg:var(--sum-bg)}
@@ -70,62 +73,177 @@ table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px;line-he
 th,td{padding:10px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
 th{background:var(--surface2);font-weight:600;white-space:nowrap}
 tr:last-child td{border-bottom:0}
-.meta-table{min-width:0}
-.meta-table th{width:34%}
-.diagram{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin:16px 0;overflow-x:auto;box-shadow:var(--shadow)}
-.diagram pre.mermaid{margin:0;text-align:center;font-family:inherit;background:none;visibility:hidden}
-.diagram pre.mermaid[data-processed]{visibility:visible}
-.diagram svg{max-width:none}
-.diagram .cap{font-size:13px;color:var(--muted);margin-top:8px;text-align:center}
-.strategy{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 20px 8px;margin:22px 0;box-shadow:var(--shadow)}
+.meta-table{min-width:0}.meta-table th{width:34%}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow)}
+.btn{text-decoration:none;display:inline-flex;align-items:center;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 14px;min-height:40px;font-size:15px}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on);font-weight:600}
+.btn.done{background:var(--tip-bg);border-color:var(--tip);color:var(--tip);font-weight:600}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.diagram{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px;margin:16px 0;overflow-x:auto;box-shadow:var(--shadow)}
+.diagram svg{display:block;width:100%;min-width:640px;height:auto;margin:0 auto}
+.diagram .cap{font-size:13px;color:var(--muted);margin-top:6px;text-align:center}
+/* learning map */
+.lmap{display:flex;gap:0;align-items:stretch;margin:10px 0}
+.lnode{flex:1;position:relative;text-align:center;padding:0 4px;background:none;border:0}
+.lnode::before{content:"";position:absolute;top:22px;left:-50%;width:100%;height:3px;background:var(--line);z-index:0}
+.lnode:first-child::before{display:none}
+.lnode.done::before{background:var(--tip)}
+.lnode .dot{position:relative;z-index:1;width:44px;height:44px;border-radius:50%;margin:0 auto 6px;display:grid;place-items:center;background:var(--surface);border:3px solid var(--line);font-weight:700;color:var(--muted)}
+.lnode.done .dot{background:var(--tip);border-color:var(--tip);color:var(--on)}
+.lnode .lt{font-size:13px;line-height:1.4;color:var(--muted)}
+.meter{height:10px;border-radius:999px;background:var(--surface2);overflow:hidden;margin:8px 0}
+.meter>i{display:block;height:100%;width:0;background:var(--tip);transition:width .3s}
+/* timeline */
+.timeline{list-style:none;margin:16px 0;padding:0;display:flex;gap:10px;counter-reset:t}
+.timeline li{flex:1;min-width:0;background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c,var(--accent));border-radius:12px;padding:12px 12px 12px;position:relative;font-size:14px;line-height:1.55;box-shadow:var(--shadow)}
+.timeline li b{display:block;color:var(--c,var(--accent));margin-bottom:4px;font-size:15px}
+.timeline li:not(:last-child)::after{content:"›";position:absolute;right:-10px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:20px;z-index:2;background:var(--bg);line-height:1;border-radius:50%}
+/* chain */
+.chain{display:flex;gap:8px;align-items:stretch;margin:14px 0;flex-wrap:wrap}
+.chain>div{flex:1 1 140px;background:var(--surface2);border-radius:12px;padding:10px 12px;font-size:14px;line-height:1.5;position:relative;border:1px solid var(--line)}
+.chain>div:not(:last-child)::after{content:"→";position:absolute;right:-13px;top:50%;transform:translateY(-50%);color:var(--accent);font-weight:700;z-index:2}
+.fork{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.fork .start{grid-column:1/-1;text-align:center;background:var(--accent-soft);color:var(--accent);border-radius:12px;padding:10px;font-weight:600;font-size:15px}
+.fork .bad,.fork .good{border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.6}
+.fork .bad{background:var(--imp-bg);border:1px solid var(--imp)}
+.fork .good{background:var(--tip-bg);border:1px solid var(--tip)}
+.fork b{display:block;margin-bottom:4px}
+/* core */
+.core{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:14px 0}
+.core .n{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:12px;padding:12px;text-align:center;font-size:14px;line-height:1.5;position:relative;box-shadow:var(--shadow)}
+.core .n .big{font-size:26px;display:block}
+.core .n b{color:var(--c);display:block}
+.core .n:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:42%;color:var(--accent);font-weight:700;z-index:2}
+/* strategy */
+.strategy{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 20px 18px;margin:22px 0;box-shadow:var(--shadow)}
 .strategy>h3{margin-top:0;display:flex;gap:12px;align-items:flex-start}
-.strategy .badge{flex:none;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:15px;margin-top:2px}
+.badge{flex:none;width:34px;height:34px;border-radius:50%;background:var(--bc,var(--accent));color:var(--on);display:grid;place-items:center;font-size:15px;font-weight:700;margin-top:1px}
 .strategy .sub{display:block;font-size:14px;color:var(--muted);font-weight:400;margin-top:2px}
+.lcard{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+.lcard>div{background:var(--surface2);border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.6}
+.lcard h4{font-size:14px}
+.lcard .ok h4{color:var(--tip)}.lcard .err h4{color:var(--imp)}.lcard .skill h4{color:var(--note)}
+textarea.note{width:100%;min-height:90px;border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:10px 12px;resize:vertical;line-height:1.6}
 ul.clean,ol.clean{padding-left:22px;margin:0 0 14px}
 ul.clean li,ol.clean li{margin-bottom:8px}
 .compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
 .compare>div{border-radius:var(--radius);padding:14px 16px}
-.compare .bad{background:var(--imp-bg)}
-.compare .good{background:var(--tip-bg)}
+.compare .bad{background:var(--imp-bg)}.compare .good{background:var(--tip-bg)}
 .compare b{display:block;margin-bottom:4px}
 .insights{counter-reset:ins;display:grid;gap:12px;padding:0;list-style:none}
 .insights li{counter-increment:ins;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px 16px 60px;position:relative}
 .insights li::before{content:counter(ins);position:absolute;left:16px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
 .panel{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
-.panel .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
 .panel .role{font-weight:700;margin-bottom:6px}
 .panel .card p{font-size:15px;margin:0}
 blockquote.q{margin:14px 0;padding:14px 20px;border-left:4px solid var(--accent);background:var(--surface);border-radius:0 var(--radius) var(--radius) 0;font-size:18px}
 blockquote.q cite{display:block;margin-top:6px;font-size:14px;color:var(--muted);font-style:normal}
 .related{display:flex;flex-direction:column;gap:8px;padding:0;list-style:none}
 .related li{background:var(--surface);border:1px dashed var(--line);border-radius:10px;padding:10px 14px;color:var(--muted)}
+/* practice */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+.tabs button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 16px;min-height:40px}
+.tabs button.on{background:var(--accent);border-color:var(--accent);color:var(--on);font-weight:600}
+.qitem{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0;background:var(--surface)}
+.qitem .qt{font-weight:600;margin-bottom:8px}
+.qitem label{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-radius:8px;cursor:pointer;min-height:44px;line-height:1.5}
+.qitem label:hover{background:var(--surface2)}
+.qitem label.right{background:var(--tip-bg);outline:1px solid var(--tip)}
+.qitem label.wrong{background:var(--imp-bg);outline:1px solid var(--imp)}
+.qitem .exp{margin-top:8px;font-size:14px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px}
+.score{font-size:18px;font-weight:700;margin:10px 0}
+.sim .bubble{background:var(--surface2);border-radius:14px;padding:12px 14px;margin:8px 0;max-width:92%}
+.sim .me{margin-left:auto;background:var(--accent-soft);color:var(--text)}
+.sim .choice{display:block;width:100%;text-align:left;margin:6px 0;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);min-height:44px;line-height:1.5}
+.sim .choice:hover{border-color:var(--accent)}
+.sim .fb{border-radius:12px;padding:12px 14px;margin:10px 0;font-size:15px}
+.sim .fb.good{background:var(--tip-bg);border:1px solid var(--tip)}
+.sim .fb.ok{background:var(--note-bg);border:1px solid var(--note)}
+.sim .fb.bad{background:var(--imp-bg);border:1px solid var(--imp)}
+.fields{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:10px 0}
+.fields label{display:block;font-size:14px;color:var(--muted)}
+.fields input,.fields select,.tool textarea{width:100%;margin-top:4px;border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:10px 12px;min-height:44px}
+.tool textarea{min-height:90px;resize:vertical;line-height:1.6}
+.out{white-space:pre-wrap;background:var(--surface2);border-radius:12px;padding:12px 14px;margin:10px 0;line-height:1.7}
+.chk{margin:8px 0;padding:10px 14px;border-radius:10px;font-size:15px}
+.chk.warn{background:var(--imp-bg);border-left:4px solid var(--imp)}
+.chk.pass{background:var(--tip-bg);border-left:4px solid var(--tip)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.radar-wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:center}
+.radar-wrap svg{width:100%;max-width:360px;height:auto;margin:0 auto;display:block}
+.slider{display:block;margin:10px 0}
+.slider span{display:flex;justify-content:space-between;font-size:15px}
+.slider input{width:100%;accent-color:var(--accent);min-height:32px}
+.days h4{margin:16px 0 4px;color:var(--bc)}
+.day{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-radius:8px;min-height:44px;cursor:pointer;line-height:1.5}
+.day:hover{background:var(--surface2)}
+.day input{width:20px;height:20px;margin-top:3px;accent-color:var(--tip);flex:none}
+.day.on span{color:var(--muted);text-decoration:line-through}
+.day b{flex:none;width:2.4em;color:var(--muted);font-weight:600;font-variant-numeric:tabular-nums}
+.stat{display:flex;gap:18px;flex-wrap:wrap;margin:8px 0;font-size:15px}
+.stat b{font-size:22px;color:var(--accent)}
+/* search */
+#sov{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.45);display:none;padding:10vh 12px 12px}
+#sov.open{display:block}
+#sbox{max-width:620px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;max-height:80vh;overflow:auto}
+#sq{width:100%;border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:12px 14px;font-size:16px}
+#sres{list-style:none;margin:10px 0 0;padding:0}
+#sres li button{display:block;width:100%;text-align:left;background:none;border:0;border-radius:10px;padding:10px 12px;min-height:44px}
+#sres li button:hover{background:var(--surface2)}
+#sres .st{font-weight:700}#sres .ss{font-size:14px;color:var(--muted);line-height:1.5}
+mark{background:var(--accent-soft);color:var(--accent);border-radius:3px;padding:0 2px}
+.flash{animation:fl 1.6s ease}
+@keyframes fl{0%,60%{box-shadow:0 0 0 3px var(--accent)}100%{box-shadow:none}}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--text);color:var(--bg);padding:8px 18px;border-radius:999px;font-size:14px;opacity:0;transition:.25s;z-index:70;pointer-events:none}
+#toast.show{opacity:1;transform:translateX(-50%)}
 footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
-@media (max-width:600px){
+@media (max-width:760px){
   body{font-size:16px}
-  .compare{grid-template-columns:1fr}
-  header.hero{padding-top:32px}
+  .timeline{flex-direction:column}
+  .timeline li:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-14px;transform:translateX(-50%)}
+  .core{grid-template-columns:1fr}
+  .core .n:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-16px}
+  .lcard,.compare,.fork,.two,.radar-wrap,.fields{grid-template-columns:1fr}
+  .chain>div{flex:1 1 100%}
+  .chain>div:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-14px;transform:translateX(-50%)}
+  .strategy{padding:16px 14px}
+  header.hero{padding-top:28px}
+  .lnode .lt{font-size:11px}
 }
+@media print{nav.top,.progress,#sov,#toast{display:none}}
 </style>
 </head>
 <body>
 <div class="progress" id="progress"></div>
 <nav class="top">
   <div class="inner">
-    <a href="#summary">摘要</a><a href="#s01">資訊</a><a href="#s02">核心論點</a><a href="#s03">敘事脈絡</a>
-    <a href="#s04">論點展開</a><a href="#s05">洞察</a><a href="#panel">顧問團</a><a href="#s06">引述</a><a href="#s07">術語</a><a href="#s08">相關</a>
-    <button id="theme" type="button" aria-label="切換亮暗色">🌓</button>
+    <a href="#summary">摘要</a><a href="#map">學習地圖</a><a href="#s02">核心論點</a><a href="#s03">敘事脈絡</a>
+    <a href="#s04">論點展開</a><a href="#s05">洞察</a><a href="#panel">顧問團</a><a href="#s06">引述</a><a href="#s07">術語</a><a href="#s09">練習區</a><a href="#s10">聲明</a>
+    <div class="tools">
+      <button class="ibtn" id="sbtn" type="button" aria-label="搜尋">🔍</button>
+      <button class="ibtn" id="theme" type="button" aria-label="切換亮暗色">🌓</button>
+    </div>
   </div>
 </nav>
 
+<div id="sov" role="dialog" aria-modal="true" aria-label="全站搜尋">
+  <div id="sbox">
+    <input id="sq" type="search" placeholder="搜尋關鍵字，例如：下次再約、耳目心、邊界" autocomplete="off">
+    <ul id="sres"></ul>
+  </div>
+</div>
+<div id="toast" role="status"></div>
+
 <main>
 <header class="hero">
-  <div class="eyebrow">影片分享心得 · 人際關係與成長思維</div>
+  <div class="eyebrow">人際關係與成長思維筆記</div>
   <h1>出社會後如何找到真正的朋友</h1>
   <div class="byline">作者 薑餅資 · 發佈 2026-10-23 · 繁體中文</div>
   <div class="tags"><span class="tag">交友</span><span class="tag">深度傾聽</span><span class="tag">邊界感</span><span class="tag">成年人孤獨</span></div>
 </header>
 
-<section id="summary" style="margin-top:8px">
+<section id="summary" style="margin-top:8px" data-idx="摘要">
   <div class="callout c-summary">
     <div class="ct">📌 摘要</div>
     <ul>
@@ -136,65 +254,58 @@ footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:v
   </div>
 </section>
 
-<section id="s01">
-  <h2><span class="num">01</span>網頁資訊 <small style="color:var(--muted);font-weight:400">Metadata</small></h2>
+<section id="map" data-idx="學習地圖">
+  <h2><span class="num">🗺️</span>學習地圖 <small>點節點跳到該策略</small></h2>
+  <div class="card">
+    <div class="lmap" id="lmap"></div>
+    <div class="meter"><i id="mapbar"></i></div>
+    <div class="row" style="justify-content:space-between">
+      <span id="maptxt" class="muted"></span>
+      <a href="#s09" class="btn">去練習區 →</a>
+    </div>
+  </div>
+</section>
+
+<section id="s01" data-idx="網頁資訊 Metadata">
+  <h2><span class="num">01</span>網頁資訊 <small>Metadata</small></h2>
   <div class="table-wrap"><table class="meta-table">
     <tr><th>來源連結</th><td>YouTube 影片《出社會後如何找到真正的朋友》</td></tr>
     <tr><th>作者</th><td>薑餅資</td></tr>
     <tr><th>發佈日期</th><td>2026-10-23</td></tr>
     <tr><th>擷取日期</th><td>2026-10-23</td></tr>
-    <tr><th>內容類型</th><td>影音筆記 / 人際關係與成長思維（影片分享心得）</td></tr>
+    <tr><th>內容類型</th><td>人際關係與成長思維筆記</td></tr>
     <tr><th>語言</th><td>繁體中文</td></tr>
   </table></div>
 </section>
 
-<section id="s02">
-  <h2><span class="num">02</span>核心論點 <small style="color:var(--muted);font-weight:400">Core Thesis</small></h2>
+<section id="s02" data-idx="核心論點 心智圖">
+  <h2><span class="num">02</span>核心論點 <small>Core Thesis</small></h2>
   <h3>心智圖</h3>
-  <div class="diagram"><pre class="mermaid">
-mindmap
-  root((出社會建立真朋友))
-    1. 特質錨定
-      釐清自我欣賞特質
-      停止盲目迎合
-      精準投入精力
-    2. 場域篩選
-      共同興趣場合
-      信任朋友的二度人脈
-      創造安心交流氛圍
-    3. 主動觸發
-      拒絕客套下次再約
-      敲定具體人事物時間
-      聚焦第二次見面
-    4. 深度傾聽
-      耳目心傾聽哲學
-      觀察肢體與未言之處
-      看見背後特質與勇氣
-    5. 邊界與節奏
-      允許對方優先照顧自己
-      突發取消不歸咎不在乎
-      坦誠溝通相處節奏
-  </pre></div>
+  <div class="diagram"><div id="mindmap"></div><div class="cap">手機可左右滑動 · 點分支跳到對應策略</div></div>
   <h3>一段式總結</h3>
   <p>出社會後的交友本質，是一場從「向外盲目迎合」轉向「向內自我覺察」的精準社交進化；其底層邏輯在於以個人核心價值觀（特質）建立人脈篩選漏斗，藉由信任節點降低互動摩擦力，並透過主動且具體的時間錨定促成二次連結，最終以「看見對方真實模樣」的耳目心傾聽與「尊重個人邊界」的同理心，培育出低耗損、高滋養的長久深層連結。</p>
+  <h3>核心圖解</h3>
+  <div class="core" data-idx="核心圖解 指南針 入口 敲門磚 黏著劑 護城河">
+    <div class="n" style="--c:var(--b1)"><span class="big">🧭</span><b>特質＝指南針</b>知道要往哪種人走</div>
+    <div class="n" style="--c:var(--b2)"><span class="big">🚪</span><b>二度人脈＝入口</b>信任的朋友帶你進場</div>
+    <div class="n" style="--c:var(--b3)"><span class="big">🔑</span><b>具體邀約＝敲門磚</b>時間＋活動，敲定第二次</div>
+    <div class="n" style="--c:var(--b4)"><span class="big">🫶</span><b>耳目心＝黏著劑</b>看見未說出口的部分</div>
+    <div class="n" style="--c:var(--b5)"><span class="big">🏰</span><b>邊界感＝護城河</b>彼此自在，才走得遠</div>
+  </div>
 </section>
 
-<section id="s03">
-  <h2><span class="num">03</span>敘事脈絡 <small style="color:var(--muted);font-weight:400">Narrative Flow</small></h2>
-  <div class="diagram"><pre class="mermaid">
-graph LR
-    A[問題定義&lt;br&gt;出社會圈子受限&lt;br&gt;交友難度倍增] --> B[困境分析&lt;br&gt;缺乏自然相處環境&lt;br&gt;客套下次再約無疾而終]
-    B --> C1[步驟一：特質錨定&lt;br&gt;釐清欣賞特質]
-    B --> C2[步驟二：場域篩選&lt;br&gt;信任朋友之二度小聚]
-    B --> C3[步驟三：主動邀約&lt;br&gt;具體敲定二次見面]
-    B --> C4[步驟四：深度傾聽&lt;br&gt;耳目心看見未言之處]
-    B --> C5[步驟五：長效節奏&lt;br&gt;建立邊界與同理心]
-    C1 --> D[結論與實踐&lt;br&gt;找到彼此舒服節奏&lt;br&gt;建立長久真摯友誼]
-    C2 --> D
-    C3 --> D
-    C4 --> D
-    C5 --> D
-  </pre><div class="cap">手機可左右滑動圖表</div></div>
+<section id="s03" data-idx="敘事脈絡 結構解析">
+  <h2><span class="num">03</span>敘事脈絡 <small>Narrative Flow</small></h2>
+  <ol class="timeline">
+    <li style="--c:var(--muted)"><b>問題定義</b>出社會圈子受限，交友難度倍增</li>
+    <li style="--c:var(--muted)"><b>困境分析</b>缺乏自然相處環境，「下次再約」無疾而終</li>
+    <li style="--c:var(--b1)"><b>步驟一</b>特質錨定：釐清欣賞特質</li>
+    <li style="--c:var(--b2)"><b>步驟二</b>場域篩選：信任朋友之二度小聚</li>
+    <li style="--c:var(--b3)"><b>步驟三</b>主動邀約：具體敲定二次見面</li>
+    <li style="--c:var(--b4)"><b>步驟四</b>深度傾聽：耳目心看見未言之處</li>
+    <li style="--c:var(--b5)"><b>步驟五</b>長效節奏：建立邊界與同理心</li>
+    <li style="--c:var(--tip)"><b>結論與實踐</b>找到彼此舒服的節奏，建立長久友誼</li>
+  </ol>
   <h3>結構解析</h3>
   <ul class="clean">
     <li><b>問題定義：</b>開篇直指上班族進入單一職場後的典型孤立狀態，點破缺乏自然認識多元朋友管道的現實痛點。</li>
@@ -205,9 +316,9 @@ graph LR
 </section>
 
 <section id="s04">
-  <h2><span class="num">04</span>論點展開 <small style="color:var(--muted);font-weight:400">Detailed Arguments</small></h2>
+  <h2><span class="num">04</span>論點展開 <small>Detailed Arguments</small></h2>
 
-  <article class="strategy" id="st1">
+  <article class="strategy" id="st1" style="--bc:var(--b1)" data-idx="策略一 了解自己欣賞的特質 精力篩選">
     <h3><span class="badge">1</span><span>策略一：了解自己欣賞的特質<span class="sub">從自我出發的精力篩選</span></span></h3>
     <p>出社會後精力有限，不應把時間浪費在討好所有人上面，而要優先釐清自己與何種特質的人相處能獲取能量。</p>
     <div class="callout c-tip"><div class="ct">💡 精力配置原則</div>
@@ -218,41 +329,55 @@ graph LR
       <tr><td>精力耗費</td><td>社交電量迅速耗盡，感到內耗疲憊</td><td>精準投入，相處後感到活力充沛</td></tr>
       <tr><td>篩選依據</td><td>外在標籤或職銜</td><td>相處時的心理感受與真實行為表現</td></tr>
     </table></div>
+    <div class="lcard">
+      <div class="ok"><h4>✅ 怎麼知道學會了</h4>能說出 3 個讓你有能量的特質，並用它挑下一次要去的場合。</div>
+      <div class="err"><h4>⚠️ 常見錯誤</h4>想討好所有人；用職銜或外表當篩選標準。</div>
+      <div class="skill"><h4>🎯 該練的能力</h4>自我覺察、對消耗你的場合說「不」。</div>
+    </div>
+    <div class="slot" data-strategy="1"></div>
   </article>
 
-  <article class="strategy" id="st2">
+  <article class="strategy" id="st2" style="--bc:var(--b2)" data-idx="策略二 找到適合的交友環境 高信賴度的二度人脈">
     <h3><span class="badge">2</span><span>策略二：找到適合的交友環境<span class="sub">高信賴度的二度人脈</span></span></h3>
     <p>盲目參加陌生大型社交活動往往轉化率極低，應依據目標特質選擇場景，特別是透過「信任朋友推薦或舉辦的小聚」切入。</p>
-    <div class="diagram"><pre class="mermaid">
-graph TD
-    Friend[信任的好朋友] -->|推薦/主辦| Gathering[安全溫暖的覆盤/主題小聚]
-    Gathering --> Filter[天然過濾：具有相近價值觀與開放心態的人]
-    Filter --> SafeSpace[營造自在分享心事的高安全感氛圍]
-    SafeSpace --> LongTerm[高機率轉化為長期好朋友]
-    </pre></div>
+    <div class="chain">
+      <div><b>信任的好朋友</b><br>推薦或主辦</div>
+      <div><b>安全溫暖的小聚</b><br>主題明確、人數少</div>
+      <div><b>天然過濾</b><br>相近價值觀與開放心態</div>
+      <div><b>高安全感氛圍</b><br>自在分享心事</div>
+      <div><b>長期好朋友</b><br>高機率轉化</div>
+    </div>
     <ul class="clean">
       <li><b>垂直場景切入：</b>想認識運動夥伴就去路跑或爬山；想認識創作者就參與專門工作坊。</li>
       <li><b>二度人脈背書：</b>信任朋友所吸引的圈子，通常具備相似的溫暖與傾聽特質，能大幅降低陌生社交的防備心理。</li>
     </ul>
+    <div class="lcard">
+      <div class="ok"><h4>✅ 怎麼知道學會了</h4>能列出 2 位可推薦小聚的朋友，和 1 個符合你特質的垂直場景。</div>
+      <div class="err"><h4>⚠️ 常見錯誤</h4>硬擠大型陌生社交；只去一次沒結果就放棄。</div>
+      <div class="skill"><h4>🎯 該練的能力</h4>開口請朋友引薦、挑選適合自己的場域。</div>
+    </div>
+    <div class="slot" data-strategy="2"></div>
   </article>
 
-  <article class="strategy" id="st3">
+  <article class="strategy" id="st3" style="--bc:var(--b3)" data-idx="策略三 主動創造下一次見面 降低二次邀約的摩擦力">
     <h3><span class="badge">3</span><span>策略三：主動創造下一次見面<span class="sub">降低二次邀約的摩擦力</span></span></h3>
     <p>成年人的關係中，「下次再約」幾乎等同於「再也不約」；要讓關係破冰推進，必須在初次互動中迅速錨定具體行動。</p>
-    <div class="diagram"><pre class="mermaid">
-graph TD
-    A[初次交流中捕捉共同興趣&lt;br&gt;運動/展覽/想去的地點] --> B{邀約策略選擇}
-    B -->|慣性客套| C[「下次有空再約」]
-    C --> D[時間流逝，缺乏推進動力，無疾而終]
-    B -->|精準推進| E[直接提出具體時間與行動&lt;br&gt;「下週有沒有一天一起去跑步？」]
-    E --> F[時間敲定，完成第二次見面]
-    F --> G[在一次次具體相處中逐步深化信任]
-    </pre></div>
+    <div class="fork">
+      <div class="start">初次交流中捕捉共同興趣（運動／展覽／想去的地點）</div>
+      <div class="bad"><b>✗ 慣性客套</b>「下次有空再約」→ 時間流逝，缺乏推進動力，無疾而終。</div>
+      <div class="good"><b>✓ 精準推進</b>「下週有沒有一天一起去跑步？」→ 時間敲定，完成第二次見面，在一次次具體相處中深化信任。</div>
+    </div>
     <div class="callout c-note"><div class="ct">📝 二次見面心理學</div>
       <p>不用在一開始就預設要跟對方成為知己，目標只要單純鎖定在促成「第二次見面」即可，降低彼此的心理負擔。</p></div>
+    <div class="lcard">
+      <div class="ok"><h4>✅ 怎麼知道學會了</h4>離場前一定提出「具體時間＋活動」。</div>
+      <div class="err"><h4>⚠️ 常見錯誤</h4>說「下次再約」；一開始就期待對方成為知己。</div>
+      <div class="skill"><h4>🎯 該練的能力</h4>主動開口、把模糊意願變成明確提案。</div>
+    </div>
+    <div class="slot" data-strategy="3"></div>
   </article>
 
-  <article class="strategy" id="st4">
+  <article class="strategy" id="st4" style="--bc:var(--b4)" data-idx="策略四 保持好奇心 耳目心傾聽模型">
     <h3><span class="badge">4</span><span>策略四：保持好奇心，試著理解眼前的人<span class="sub">「耳、目、心」傾聽模型</span></span></h3>
     <p>關係要從點頭之交走向深度信任，不在於你有多會說話，而在於對方是否感受到被真實理解。</p>
     <div class="table-wrap"><table>
@@ -261,20 +386,32 @@ graph TD
       <tr><td>👁 目 Eye</td><td>觀察對方的微表情、眼神與身體緊繃狀態。</td><td>注意到對方頭低看桌面、雙手反覆搓揉的緊張反應。</td></tr>
       <tr><td>❤️ 心 Heart</td><td>同理未言之處，看見行為背後的情緒與特質。</td><td>給予深刻回饋：「你明明很害怕，卻依然願意面對，真的很勇敢。」</td></tr>
     </table></div>
+    <div class="lcard">
+      <div class="ok"><h4>✅ 怎麼知道學會了</h4>能說出對方一個沒明說的情緒，與其背後的特質。</div>
+      <div class="err"><h4>⚠️ 常見錯誤</h4>急著打斷搶話；只會說「你很棒」這類廉價稱讚。</div>
+      <div class="skill"><h4>🎯 該練的能力</h4>專注、觀察肢體語言、用同理的話回饋。</div>
+    </div>
+    <div class="slot" data-strategy="4"></div>
   </article>
 
-  <article class="strategy" id="st5">
+  <article class="strategy" id="st5" style="--bc:var(--b5)" data-idx="策略五 找到彼此舒服的節奏 健康的心理邊界與同理心">
     <h3><span class="badge">5</span><span>策略五：找到彼此舒服的節奏<span class="sub">健康的心理邊界與同理心</span></span></h3>
     <p>長期關係的基石，是允許彼此先照顧好個人的生活狀態，而非用社交義務進行情緒捆綁。</p>
     <div class="compare">
       <div class="bad"><b>✗ 不成熟的解讀</b>對方臨時改約或取消 → 認為對方不在乎自己、否定這段友誼。</div>
       <div class="good"><b>✓ 成熟健康的解讀</b>同理成人各自有生活突發狀況與優先順序，先尊重對方的狀態；若發生頻率過高，則平靜坦誠地表達自己的感受以達成新共識。</div>
     </div>
+    <div class="lcard">
+      <div class="ok"><h4>✅ 怎麼知道學會了</h4>朋友取消時，你能先同理，再平靜說出自己的感受。</div>
+      <div class="err"><h4>⚠️ 常見錯誤</h4>把取消解讀成「不在乎我」；用愧疚感綁住對方。</div>
+      <div class="skill"><h4>🎯 該練的能力</h4>情緒調節、坦誠而不指責的溝通。</div>
+    </div>
+    <div class="slot" data-strategy="5"></div>
   </article>
 </section>
 
-<section id="s05">
-  <h2><span class="num">05</span>關鍵洞察 &amp; 反思 <small style="color:var(--muted);font-weight:400">Key Insights</small></h2>
+<section id="s05" data-idx="關鍵洞察 反思 核心啟示">
+  <h2><span class="num">05</span>關鍵洞察 &amp; 反思 <small>Key Insights</small></h2>
   <h3>筆記提煉：4 大高價值啟發</h3>
   <ol class="insights">
     <li><b>社交不是獵捕，而是「特質共振」：</b>你不需要提升所有的社交技巧去討好每個人，只要辨識出讓你有能量的特質，你自身的存在就會吸引同頻的夥伴。</li>
@@ -286,9 +423,9 @@ graph TD
     <p>「以特質為指南針，以二度人脈為入口，以具體邀約為敲門磚，以耳目心為黏著劑，以邊界感為護城河。」這是一套讓出社會後的成年人擺脫孤獨與內耗、構建高質量真實人際網絡的完整實踐法。</p></div>
 </section>
 
-<section id="panel">
-  <h2><span class="num">🏛️</span>多元觀點顧問團深度審視 <small style="color:var(--muted);font-weight:400">Panel Review</small></h2>
-  <p style="color:var(--muted)">針對這套交友與關係建立策略，模擬虛擬顧問團的多視角評估：</p>
+<section id="panel" data-idx="多元觀點顧問團 Panel Review">
+  <h2><span class="num">🏛️</span>多元觀點顧問團深度審視 <small>Panel Review</small></h2>
+  <p class="muted">針對這套交友與關係建立策略，模擬虛擬顧問團的多視角評估（虛構視角，非真人意見）：</p>
   <div class="panel">
     <div class="card"><div class="role">🔧 執行者 The Operator</div><p>執行阻力極低。特別是「拋棄下次再約、直接鎖定時間」與「透過朋友的二度人脈篩選」，大幅去除了邀約猶豫與無效試錯，流程具備極高落地性。</p></div>
     <div class="card"><div class="role">⚠️ 質疑者 The Skeptic</div><p>必須注意停損與保護邊界。「耳目心」需要高額情緒勞動與心理資本，若遇到單向索取情緒價值的對象，容易導致社交過載，需在步驟二就嚴格設下停損標準。</p></div>
@@ -298,16 +435,16 @@ graph TD
   </div>
 </section>
 
-<section id="s06">
-  <h2><span class="num">06</span>重要引述 <small style="color:var(--muted);font-weight:400">Key Quotes</small></h2>
+<section id="s06" data-idx="重要引述 Key Quotes">
+  <h2><span class="num">06</span>重要引述 <small>Key Quotes</small></h2>
   <blockquote class="q">「因為很多關係不是沒有機會變熟，而是那句下次再約，但最後真的就沒有下一次了。」<cite>—— 薑餅資</cite></blockquote>
   <blockquote class="q">「那也不用一開始就想著要跟對方變成很好的朋友，你只要先創造第二次見面的機會就好。」<cite>—— 薑餅資</cite></blockquote>
   <blockquote class="q">「如果妳仔細觀察，『聽』這個字裡面其實包含了耳朵、眼睛跟心……有時候眼睛看到的跟用心感受到的，是耳朵聽不到的東西。」<cite>—— 薑餅資</cite></blockquote>
   <blockquote class="q">「他希望朋友在做選擇的時候可以先考慮自己的狀態跟感受，再來考慮他的；同樣的，當他臨時有事需要調整安排的時候，也希望朋友願意理解，不要立刻把它解讀成不在乎。」<cite>—— 薑餅資</cite></blockquote>
 </section>
 
-<section id="s07">
-  <h2><span class="num">07</span>術語表 <small style="color:var(--muted);font-weight:400">Glossary</small></h2>
+<section id="s07" data-idx="術語表 Glossary">
+  <h2><span class="num">07</span>術語表 <small>Glossary</small></h2>
   <div class="table-wrap"><table>
     <tr><th>術語</th><th>英文對照</th><th>觀念定義</th></tr>
     <tr><td>特質錨定</td><td>Trait Anchoring</td><td>透過自我覺察釐清相處舒適的特質，作為社交精力分配的篩選標準。</td></tr>
@@ -318,8 +455,8 @@ graph TD
   </table></div>
 </section>
 
-<section id="s08">
-  <h2><span class="num">08</span>相關筆記 <small style="color:var(--muted);font-weight:400">Related Notes</small></h2>
+<section id="s08" data-idx="相關筆記 Related Notes">
+  <h2><span class="num">08</span>相關筆記 <small>Related Notes</small></h2>
   <ul class="related">
     <li>成年人的精力管理：如何停止無效社交與情感內耗</li>
     <li>主動傾聽與非語言溝通：耳目心模型的實踐指南</li>
@@ -329,62 +466,396 @@ graph TD
   </ul>
 </section>
 
-<footer>
-  這是對薑餅資影片的個人分享心得筆記，非官方內容。
-  <a href="出社會如何找到真正的朋友.md">查看 Markdown 原稿</a>
-</footer>
+<section id="s09" data-idx="練習區 互動練習">
+  <h2><span class="num">09</span>練習區 <small>Practice</small></h2>
+  <p class="muted">所有進度只存在你這台裝置的瀏覽器裡，不會上傳。</p>
+
+  <h3 id="quiz" data-idx="測驗與解析 前後測 錯題練習">📝 測驗：前後測與錯題練習</h3>
+  <div class="card">
+    <p class="muted" style="margin-bottom:6px">先做「前測」看基礎，讀完筆記再做「後測」比較進步；答錯的題目會收進「錯題練習」。</p>
+    <div class="tabs" id="qtabs"></div>
+    <div id="qcmp" class="score"></div>
+    <div id="qbody"></div>
+    <div class="row" id="qact"></div>
+    <div id="qres" class="score"></div>
+  </div>
+
+  <h3 id="sim" data-idx="情境模擬 分支對話">💬 情境模擬</h3>
+  <div class="card sim">
+    <div class="tabs" id="stabs"></div>
+    <div id="sbody"></div>
+  </div>
+
+  <h3 id="tools" data-idx="邀約產生器 邀約檢查器 不當用詞">🛠️ 邀約產生器與檢查器</h3>
+  <div class="two">
+    <div class="card tool">
+      <h4>具體邀約產生器</h4>
+      <p class="muted" style="font-size:14px">填空，產出一句有時間、有活動的邀約。</p>
+      <div class="fields">
+        <label>對方稱呼<input id="g-who" placeholder="例：小美"></label>
+        <label>共同興趣／活動<input id="g-act" placeholder="例：河濱跑步"></label>
+        <label>時間<input id="g-time" placeholder="例：這週六早上 8 點"></label>
+        <label>地點（選填）<input id="g-place" placeholder="例：大佳河濱公園"></label>
+        <label style="grid-column:1/-1">語氣
+          <select id="g-tone"><option value="0">輕鬆</option><option value="1">溫暖</option><option value="2">簡短</option></select></label>
+      </div>
+      <div class="row"><button class="btn primary" id="g-go" type="button">產生邀約</button><button class="btn" id="g-copy" type="button">複製</button></div>
+      <div class="out" id="g-out">按「產生邀約」</div>
+    </div>
+    <div class="card tool">
+      <h4>邀約／回覆檢查器</h4>
+      <p class="muted" style="font-size:14px">貼上你想傳的話，檢查模糊用語與指責式用詞。</p>
+      <textarea id="c-in" placeholder="例：下次有空再約！你每次都這樣，根本不在乎我"></textarea>
+      <div class="row" style="margin-top:8px"><button class="btn primary" id="c-go" type="button">檢查</button></div>
+      <div id="c-out"></div>
+    </div>
+  </div>
+
+  <h3 id="radar" data-idx="自評雷達圖">🕸️ 自評雷達圖</h3>
+  <div class="card radar-wrap">
+    <div id="radarsvg"></div>
+    <div id="sliders"><p class="muted" style="font-size:14px;margin-top:0">1 = 還在起步，5 = 已經很自然。拖動滑桿，圖會即時更新。</p></div>
+  </div>
+
+  <h3 id="plan" data-idx="30 天計劃打卡">📅 30 天計劃打卡</h3>
+  <div class="card days">
+    <div class="stat"><span>已完成 <b id="d-n">0</b>/30</span><span>最長連續 <b id="d-s">0</b> 天</span></div>
+    <div class="meter"><i id="d-bar"></i></div>
+    <div id="dlist"></div>
+  </div>
+
+  <h3 id="mynotes" data-idx="互動筆記 匯出">🗒️ 我的筆記</h3>
+  <div class="card">
+    <p class="muted" style="margin-top:0">每個策略下方都有筆記框，內容會自動儲存。這裡可以一次複製或下載全部。</p>
+    <div class="row"><button class="btn" id="n-copy" type="button">複製全部</button><button class="btn" id="n-dl" type="button">下載 .md</button></div>
+  </div>
+</section>
+
+<section id="s10" data-idx="這筆記的立場與免責聲明">
+  <h2><span class="num">10</span>這筆記的立場與免責聲明</h2>
+  <div class="card">
+    <ul class="clean" style="margin:0">
+      <li>這是對薑餅資影片的個人整理與心得，不是影片作者的官方內容；詮釋如有出入，以原影片為準。</li>
+      <li>「顧問團」是模擬的虛構視角，用來幫助思考，不代表任何真人的意見。</li>
+      <li>測驗、情境模擬、邀約範本與 30 天任務是依筆記內容另行設計的練習工具，不是原影片內容。</li>
+      <li>內容屬於一般人際成長的參考，不是心理諮商、醫療或專業建議。若你正受到明顯的孤立、焦慮或憂鬱困擾，請尋求專業協助。</li>
+      <li>引述僅為說明用途的節錄，版權歸原作者所有。</li>
+    </ul>
+    <div class="row" style="margin-top:14px"><button class="btn" id="reset" type="button">重置我的進度</button></div>
+  </div>
+</section>
+
+<footer>© 人際關係與成長思維筆記</footer>
 </main>
 
-<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
 <script>
 (function(){
-  var root=document.documentElement, KEY='theme';
-  function stored(){try{return localStorage.getItem(KEY)}catch(e){return null}}
-  function save(v){try{localStorage.setItem(KEY,v)}catch(e){}}
-  function isDark(){
-    var t=root.getAttribute('data-theme');
-    if(t) return t==='dark';
-    return window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches;
+  /* ---------- storage ---------- */
+  var KEY='friends-notes-v1', THEME='theme', mem=null;
+  function load(){
+    try{var s=localStorage.getItem(KEY); if(s){var o=JSON.parse(s); if(o&&typeof o==='object') return o;}}catch(e){}
+    return mem||{};
   }
-  var s=stored(); if(s) root.setAttribute('data-theme',s);
-
-  var blocks=[].slice.call(document.querySelectorAll('pre.mermaid'));
-  blocks.forEach(function(b){b.setAttribute('data-src',b.textContent.trim())});
-  function render(){
-    if(!window.mermaid) return;
-    blocks.forEach(function(b){b.removeAttribute('data-processed');b.textContent=b.getAttribute('data-src')});
-    mermaid.initialize({startOnLoad:false,theme:isDark()?'dark':'neutral',securityLevel:'loose',
-      fontFamily:'"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif',
-      flowchart:{htmlLabels:true,useMaxWidth:false}});
-    mermaid.run({nodes:blocks}).catch(function(e){console.error(e)});
+  var S=load();
+  S.done=S.done||{}; S.notes=S.notes||{}; S.quiz=S.quiz||{}; S.quiz.wrong=S.quiz.wrong||[]; S.days=S.days||{}; S.radar=S.radar||[3,3,3,3,3];
+  function save(){mem=S; try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+  function $(s,r){return (r||document).querySelector(s)}
+  function $$(s,r){return [].slice.call((r||document).querySelectorAll(s))}
+  function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  var toastT;
+  function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove('show')},1800)}
+  function copy(text){
+    function fb(){var a=document.createElement('textarea');a.value=text;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy');toast('已複製')}catch(e){toast('請手動複製')}document.body.removeChild(a)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(function(){toast('已複製')},fb)}else fb();
   }
-  render();
 
-  document.getElementById('theme').addEventListener('click',function(){
-    var next=isDark()?'light':'dark'; root.setAttribute('data-theme',next); save(next); render();
-  });
-  if(window.matchMedia) matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(){
-    if(!root.getAttribute('data-theme')) render();
+  /* ---------- theme ---------- */
+  var root=document.documentElement;
+  try{var th=localStorage.getItem(THEME); if(th) root.setAttribute('data-theme',th)}catch(e){}
+  function isDark(){var t=root.getAttribute('data-theme'); if(t) return t==='dark'; return window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches}
+  $('#theme').addEventListener('click',function(){
+    var n=isDark()?'light':'dark'; root.setAttribute('data-theme',n); try{localStorage.setItem(THEME,n)}catch(e){}
   });
 
-  var bar=document.getElementById('progress');
-  function onScroll(){
-    var h=document.documentElement.scrollHeight-innerHeight;
-    bar.style.width=(h>0?Math.min(100,scrollY/h*100):0)+'%';
-  }
-  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  /* ---------- data ---------- */
+  var NAMES=['特質錨定','場域篩選','主動邀約','深度傾聽','邊界節奏'];
+  var TREE=[
+    ['特質錨定',['釐清自我欣賞特質','停止盲目迎合','精準投入精力']],
+    ['場域篩選',['共同興趣場合','信任朋友的二度人脈','創造安心交流氛圍']],
+    ['主動觸發',['拒絕客套下次再約','敲定具體人事物時間','聚焦第二次見面']],
+    ['深度傾聽',['耳目心傾聽哲學','觀察肢體與未言之處','看見背後特質與勇氣']],
+    ['邊界與節奏',['允許對方優先照顧自己','突發取消不歸咎不在乎','坦誠溝通相處節奏']]
+  ];
+  var QS=[
+    {s:1,q:'出社會後精力有限，影片建議優先做什麼？',o:['認識越多人越好','釐清自己欣賞、相處後有能量的特質','只跟同事往來','多參加大型社交活動'],a:1,e:'精力有限，不該浪費在討好所有人，先釐清什麼特質的人能帶給你能量，再把時間留給他們。'},
+    {s:1,q:'「特質導向篩選」的篩選依據是什麼？',o:['外在標籤或職銜','相處時的心理感受與真實行為表現','對方人脈多寡','年齡相近'],a:1,e:'傳統模式看外在標籤；特質導向看的是相處時的心理感受與真實行為。'},
+    {s:2,q:'為什麼建議透過信任朋友推薦的小聚認識人？',o:['比較便宜','天然過濾出價值觀相近、心態開放的人，降低防備','人數最多','可以不用溝通'],a:1,e:'信任朋友吸引的圈子通常有相似的溫暖與傾聽特質，能大幅降低陌生社交的防備。'},
+    {s:2,q:'想認識運動夥伴，比較合適的場景是？',o:['路跑或爬山','隨機的大型派對','公司尾牙','只在線上潛水'],a:0,e:'依目標特質選垂直場景：想認識運動夥伴就去路跑或爬山。'},
+    {s:3,q:'影片說成年人的「下次再約」幾乎等同於？',o:['一定會再見面','再也不約','對方很熱情','應該多說幾次'],a:1,e:'很多關係不是沒機會變熟，而是那句「下次再約」之後就沒有下一次了。'},
+    {s:3,q:'第一次認識後，影片建議的目標是？',o:['立刻變成知己','先創造第二次見面的機會','交換越多聯絡方式越好','避免主動邀約'],a:1,e:'不用一開始就想成為好朋友，先創造第二次見面就好，能降低彼此的心理負擔。'},
+    {s:4,q:'「耳目心」裡的「目」指的是？',o:['聽對方說的話','觀察微表情、眼神與身體緊繃狀態','評斷誰對誰錯','記住所有細節'],a:1,e:'目＝觀察，例如對方頭低看桌面、雙手反覆搓揉所透露的緊張。'},
+    {s:4,q:'影片所說最高級的共情是？',o:['說「你很棒」','看見未說出口的脆弱與勇氣','立刻給建議','一直附和對方'],a:1,e:'點出「你明明很害怕，卻依然願意面對，真的很勇敢」這類看見背後特質的回饋，才能打通深層信任。'},
+    {s:5,q:'朋友臨時取消約定，成熟的解讀是？',o:['他一定不在乎我','先同理對方有突發狀況；若頻率過高，再平靜坦誠說出感受','從此不再邀約','我也要取消下一次'],a:1,e:'成人各自有生活與優先順序，先尊重對方的狀態；頻率過高時再坦誠溝通、達成新共識。'},
+    {s:5,q:'健康的邊界感對友誼的好處是？',o:['讓彼此疏遠','讓友誼不必在義務與愧疚感中內耗','減少見面次數','要求隨時報備行蹤'],a:1,e:'允許朋友把自己放在你之前，反而給彼此最充份的心理安全感。'}
+  ];
+  var SCEN={
+    '聚會後想邀對方':{start:'a0',n:{
+      a0:{t:'聚會尾聲，你和剛認識的人聊得很開心。對方說：「我最近也想開始去跑步。」',c:[['「那下次有空一起去啊！」','a1'],['「這週六早上我要去河濱跑，要不要一起？」','a2'],['微笑點頭，然後各自回家','a3']]},
+      a1:{t:'對方笑著說：「好啊～」然後就沒有下文了。',end:'ok',fb:'「下次有空」沒有時間也沒有活動，對方很難接話。試著把它改成「這週六早上 8 點」這種具體提案。',c:[['↩ 回到上一步重選','a0']]},
+      a2:{t:'對方說：「好啊！幾點？」',end:'good',fb:'你提出了具體時間＋活動，讓對方只需要回答「好」或「幾點」，第二次見面就此敲定。這就是策略三。'},
+      a3:{t:'你們互相道別，之後也沒有再聯絡。',end:'bad',fb:'沒有留下下一步，關係很容易就此停住。記得：目標只是創造第二次見面。',c:[['↩ 重新選擇','a0']]}}},
+    '朋友臨時取消':{start:'b0',n:{
+      b0:{t:'約好見面前一小時，朋友傳來：「抱歉，我臨時要加班，可以改天嗎？」',c:[['「你每次都這樣，根本不在乎我。」','b1'],['「沒關係，先顧好工作。我們看看下週哪天？」','b2'],['已讀不回','b3']]},
+      b1:{t:'對方回：「我也不想啊……」之後變得很防衛。',end:'bad',fb:'把取消解讀成「不在乎」並直接指責，容易讓對方只剩愧疚與防衛。先同理，再談感受。',c:[['↩ 重新選擇','b0']]},
+      b2:{t:'對方鬆了一口氣：「謝謝你理解！下週四晚上可以嗎？」但你發現這已經是這個月第三次取消了。',c:[['默默累積不滿，什麼都不說','b4'],['平靜說出感受：「我有點失落，想跟你討論怎麼安排比較適合我們。」','b5']]},
+      b3:{t:'對方不知道你的想法，只能猜。',end:'ok',fb:'沉默會讓雙方都在猜。如果在意，就坦誠說出你的感受。',c:[['↩ 重新選擇','b0']]},
+      b4:{t:'不滿慢慢累積，你開始減少回覆。',end:'bad',fb:'不說出來的不滿會變成疏遠。頻率過高時，平靜坦誠地表達感受，才有機會達成新共識。',c:[['↩ 回到上一步','b2']]},
+      b5:{t:'對方說：「謝謝你告訴我，其實我最近也很焦慮。我們固定每兩週約一次吧。」',end:'good',fb:'先同理、再坦誠表達感受，找到彼此舒服的節奏。這就是策略五。'}}}
+  };
+  var DAYS=[
+    ['特質錨定','b1',['寫下 3 位你欣賞的人，各寫一個他們的特質','列出相處後有能量的 3 個場景','列出相處後很累的 3 個場景','把欣賞的特質濃縮成 3 個關鍵詞','回想這週有沒有一次為了討好別人而勉強自己','決定下週要把時間優先留給哪一種人']],
+    ['場域篩選','b2',['列出 3 位你信任的朋友','想一個符合你特質的垂直場景（運動、創作、閱讀…）','跟一位朋友提起你想認識新朋友','查一個相關的小聚或活動','報名或約定要參加的活動','參加活動，記下 1 位有趣的人']],
+    ['主動邀約','b3',['把「下次再約」改寫成 3 句具體邀約','挑一位已認識的人，提出具體時間＋活動','確認時間與地點','完成一次第二次見面','記下對方喜歡的一件事','在結束前提出下一次的具體邀約']],
+    ['深度傾聽','b4',['一場對話中，完整聽完不打斷','觀察一次對方的表情或肢體','說一句「你明明…卻…，真的很…」','回顧一次你聽漏的情緒','問一個關於對方感受的開放式問題','寫下對方一次勇敢的行為']],
+    ['邊界節奏','b5',['回想一次被取消的經驗，用同理的角度重新解讀','練習一句坦誠表達感受的話（「我有點…」）','對一位朋友說：「你先顧好自己沒關係」','設定自己的社交停損標準','回顧 30 天，圈出收穫最多的關係','重做一次自評雷達圖，寫下下一步']]
+  ];
 
-  var links=[].slice.call(document.querySelectorAll('nav.top a'));
-  var map={}; links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+  /* ---------- progress / map ---------- */
+  function doneCount(){return [1,2,3,4,5].filter(function(i){return S.done[i]}).length}
+  function renderMap(){
+    var el=$('#lmap'); el.innerHTML='';
+    NAMES.forEach(function(n,i){
+      var b=document.createElement('button'); b.type='button'; b.className='lnode'+(S.done[i+1]?' done':'');
+      b.innerHTML='<div class="dot">'+(S.done[i+1]?'✓':(i+1))+'</div><div class="lt">'+n+'</div>';
+      b.addEventListener('click',function(){$('#st'+(i+1)).scrollIntoView({behavior:'smooth'})});
+      el.appendChild(b);
+    });
+    var c=doneCount(); $('#mapbar').style.width=(c/5*100)+'%'; $('#maptxt').textContent='已完成 '+c+' / 5 個策略';
+    $$('.slot').forEach(function(s){var b=$('.donebtn',s); if(b) styleDone(b,+s.dataset.strategy)});
+  }
+  function styleDone(b,i){b.className='btn donebtn '+(S.done[i]?'done':'primary'); b.textContent=S.done[i]?'✓ 已完成（點擊取消）':'✓ 我學會了'}
+
+  /* ---------- strategy slots (done button + note) ---------- */
+  $$('.slot').forEach(function(slot){
+    var i=+slot.dataset.strategy;
+    slot.innerHTML='<h4>🗒️ 我的筆記</h4><textarea class="note" placeholder="寫下你的想法或這週要做的一件小事…"></textarea><div class="row" style="margin-top:8px"><button type="button" class="btn donebtn"></button><button type="button" class="btn ncopy">複製筆記</button></div>';
+    var ta=$('textarea',slot); ta.value=S.notes[i]||'';
+    var t; ta.addEventListener('input',function(){clearTimeout(t);t=setTimeout(function(){S.notes[i]=ta.value;save()},300)});
+    $('.donebtn',slot).addEventListener('click',function(){S.done[i]=!S.done[i];save();renderMap();toast(S.done[i]?'已標記完成':'已取消')});
+    $('.ncopy',slot).addEventListener('click',function(){copy(ta.value||'（尚無筆記）')});
+  });
+  function allNotes(){
+    var out='# 我的筆記｜出社會後如何找到真正的朋友\n\n';
+    NAMES.forEach(function(n,i){out+='## 策略'+(i+1)+'：'+n+'\n\n'+(S.notes[i+1]||'（尚無筆記）')+'\n\n'});
+    return out;
+  }
+  $('#n-copy').addEventListener('click',function(){$$('.slot textarea').forEach(function(t){var i=+t.closest('.slot').dataset.strategy;S.notes[i]=t.value});save();copy(allNotes())});
+  $('#n-dl').addEventListener('click',function(){
+    $$('.slot textarea').forEach(function(t){var i=+t.closest('.slot').dataset.strategy;S.notes[i]=t.value});save();
+    try{var b=new Blob([allNotes()],{type:'text/markdown;charset=utf-8'});var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='我的筆記-出社會交友.md';document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(function(){URL.revokeObjectURL(a.href)},500);toast('已下載')}catch(e){toast('下載失敗，請改用複製')}
+  });
+
+  /* ---------- mindmap (svg) ---------- */
+  (function(){
+    var W=760,H=620,rx=96,ry=310,bx=270,lx=470,ns='http://www.w3.org/2000/svg';
+    var h='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="心智圖：出社會建立真朋友">';
+    var step=116,y0=ry-step*2;
+    TREE.forEach(function(b,i){
+      var by=y0+i*step,col='var(--b'+(i+1)+')';
+      h+='<path d="M'+(rx+70)+' '+ry+' C '+(rx+140)+' '+ry+' '+(bx-130)+' '+by+' '+(bx-70)+' '+by+'" fill="none" stroke="'+col+'" stroke-width="3" stroke-linecap="round"/>';
+      b[1].forEach(function(l,j){
+        var ly=by+(j-1)*38;
+        h+='<path d="M'+(bx+70)+' '+by+' C '+(bx+110)+' '+by+' '+(lx-40)+' '+ly+' '+lx+' '+ly+'" fill="none" stroke="'+col+'" stroke-width="2" opacity=".6"/>';
+        h+='<g><rect x="'+lx+'" y="'+(ly-15)+'" width="270" height="30" rx="15" fill="var(--surface)" stroke="'+col+'" stroke-width="1.5"/><text x="'+(lx+135)+'" y="'+(ly+5)+'" text-anchor="middle" font-size="14" fill="var(--text)">'+esc(l)+'</text></g>';
+      });
+      h+='<g class="mm-b" data-t="'+(i+1)+'" style="cursor:pointer"><rect x="'+(bx-70)+'" y="'+(by-20)+'" width="140" height="40" rx="20" fill="'+col+'"/><text x="'+bx+'" y="'+(by+6)+'" text-anchor="middle" font-size="16" font-weight="700" fill="var(--on)">'+(i+1)+'. '+esc(b[0])+'</text></g>';
+    });
+    h+='<g><rect x="'+(rx-86)+'" y="'+(ry-34)+'" width="172" height="68" rx="34" fill="var(--accent)"/><text x="'+rx+'" y="'+(ry-4)+'" text-anchor="middle" font-size="16" font-weight="700" fill="var(--on)">出社會</text><text x="'+rx+'" y="'+(ry+18)+'" text-anchor="middle" font-size="16" font-weight="700" fill="var(--on)">建立真朋友</text></g></svg>';
+    var m=$('#mindmap'); m.innerHTML=h;
+    $$('.mm-b',m).forEach(function(g){g.addEventListener('click',function(){$('#st'+g.dataset.t).scrollIntoView({behavior:'smooth'})})});
+  })();
+
+  /* ---------- quiz ---------- */
+  var qmode='pre', qsubmitted=false;
+  function qlist(){
+    if(qmode==='wrong') return QS.map(function(q,i){return i}).filter(function(i){return S.quiz.wrong.indexOf(i)>-1});
+    return QS.map(function(q,i){return i});
+  }
+  function renderQuiz(){
+    var tabs=$('#qtabs'); tabs.innerHTML='';
+    [['pre','前測'],['post','後測'],['wrong','錯題練習 ('+S.quiz.wrong.length+')']].forEach(function(t){
+      var b=document.createElement('button');b.type='button';b.textContent=t[1];b.className=qmode===t[0]?'on':'';
+      b.addEventListener('click',function(){qmode=t[0];qsubmitted=false;renderQuiz()});tabs.appendChild(b);
+    });
+    var cmp=$('#qcmp'),p=S.quiz.pre,q=S.quiz.post;
+    cmp.textContent=(p?'前測 '+p.score+'/'+p.total:'前測 —')+'　→　'+(q?'後測 '+q.score+'/'+q.total:'後測 —')+((p&&q)?('　（'+(q.score-p.score>=0?'+':'')+(q.score-p.score)+'）'):'');
+    var list=qlist(),body=$('#qbody');body.innerHTML='';$('#qres').textContent='';
+    if(!list.length){body.innerHTML='<p class="muted">目前沒有錯題，先去做前測或後測吧 🎉</p>';$('#qact').innerHTML='';return}
+    list.forEach(function(qi,n){
+      var q=QS[qi],d=document.createElement('div');d.className='qitem';d.dataset.qi=qi;
+      d.innerHTML='<div class="qt">'+(n+1)+'. '+esc(q.q)+' <span class="muted" style="font-weight:400;font-size:13px">（策略'+q.s+'）</span></div>'+
+        q.o.map(function(o,k){return '<label><input type="radio" name="q'+qi+'" value="'+k+'"><span>'+esc(o)+'</span></label>'}).join('')+'<div class="exp" hidden></div>';
+      body.appendChild(d);
+    });
+    var act=$('#qact');act.innerHTML='';
+    var sb=document.createElement('button');sb.type='button';sb.className='btn primary';sb.textContent='交卷看解析';
+    sb.addEventListener('click',submitQuiz);act.appendChild(sb);
+    var rb=document.createElement('button');rb.type='button';rb.className='btn';rb.textContent='重做';rb.addEventListener('click',function(){qsubmitted=false;renderQuiz()});act.appendChild(rb);
+  }
+  function submitQuiz(){
+    var list=qlist(),score=0,wrong=[],unans=0;
+    list.forEach(function(qi){
+      var d=$('.qitem[data-qi="'+qi+'"]'),q=QS[qi],sel=$('input:checked',d);
+      if(!sel){unans++;return}
+    });
+    if(unans){toast('還有 '+unans+' 題沒作答');return}
+    list.forEach(function(qi){
+      var d=$('.qitem[data-qi="'+qi+'"]'),q=QS[qi],v=+$('input:checked',d).value;
+      $$('label',d).forEach(function(l,k){l.classList.remove('right','wrong');if(k===q.a)l.classList.add('right');else if(k===v)l.classList.add('wrong')});
+      $$('input',d).forEach(function(i){i.disabled=true});
+      var e=$('.exp',d);e.hidden=false;e.textContent=(v===q.a?'✅ 答對。':'❌ 答錯。')+q.e;
+      if(v===q.a)score++;else wrong.push(qi);
+    });
+    if(qmode==='wrong'){S.quiz.wrong=S.quiz.wrong.filter(function(i){return wrong.indexOf(i)<0&&list.indexOf(i)<0}).concat(wrong)}
+    else{S.quiz[qmode]={score:score,total:list.length};S.quiz.wrong=wrong}
+    save();
+    $('#qres').textContent='本次成績：'+score+' / '+list.length+(wrong.length?'（答錯 '+wrong.length+' 題已收進錯題練習）':'，全對！');
+    var p=S.quiz.pre,q2=S.quiz.post;
+    $('#qcmp').textContent=(p?'前測 '+p.score+'/'+p.total:'前測 —')+'　→　'+(q2?'後測 '+q2.score+'/'+q2.total:'後測 —')+((p&&q2)?('　（'+(q2.score-p.score>=0?'+':'')+(q2.score-p.score)+'）'):'');
+    $$('#qtabs button')[2].textContent='錯題練習 ('+S.quiz.wrong.length+')';
+  }
+
+  /* ---------- scenario sim ---------- */
+  var sname=Object.keys(SCEN)[0];
+  function renderSim(node){
+    var tabs=$('#stabs');tabs.innerHTML='';
+    Object.keys(SCEN).forEach(function(k){var b=document.createElement('button');b.type='button';b.textContent=k;b.className=k===sname?'on':'';b.addEventListener('click',function(){sname=k;renderSim()});tabs.appendChild(b)});
+    var sc=SCEN[sname],id=node||sc.start,n=sc.n[id],body=$('#sbody');
+    if(!node) body.innerHTML='';
+    var b=document.createElement('div');b.className='bubble';b.textContent=n.t;body.appendChild(b);
+    if(n.end){var f=document.createElement('div');f.className='fb '+n.end;f.innerHTML='<b>'+({good:'✅ 很好的處理',ok:'🟡 還可以更好',bad:'❌ 容易出問題'}[n.end])+'</b><br>'+esc(n.fb);body.appendChild(f)}
+    (n.c||[]).forEach(function(c){
+      var btn=document.createElement('button');btn.type='button';btn.className='choice';btn.textContent=c[0];
+      btn.addEventListener('click',function(){
+        $$('.choice',body).forEach(function(x){x.remove()});
+        if(c[0].indexOf('↩')===0){body.innerHTML='';renderSim(c[1]);return}
+        var me=document.createElement('div');me.className='bubble me';me.textContent=c[0];body.appendChild(me);renderSim(c[1]);
+      });
+      body.appendChild(btn);
+    });
+    if(n.end&&!(n.c&&n.c.length)){var r=document.createElement('button');r.type='button';r.className='btn';r.textContent='↻ 再玩一次';r.addEventListener('click',function(){body.innerHTML='';renderSim()});body.appendChild(r)}
+  }
+
+  /* ---------- generator & checker ---------- */
+  $('#g-go').addEventListener('click',function(){
+    var who=$('#g-who').value.trim(),act=$('#g-act').value.trim(),time=$('#g-time').value.trim(),place=$('#g-place').value.trim(),tone=+$('#g-tone').value;
+    if(!act||!time){toast('至少填「活動」和「時間」');return}
+    var at=place?('在'+place):'',hi=who?(who+'，'):'';
+    var t=[hi+'我'+time+'想去'+act+at+'，要不要一起？',hi+'上次聊到'+act+'真的很有趣！'+time+(at?('我會'+at):'')+'有空嗎？一起去吧～',hi+time+'一起'+act+at+'？'][tone];
+    $('#g-out').textContent=t;
+  });
+  $('#g-copy').addEventListener('click',function(){var t=$('#g-out').textContent;if(t==='按「產生邀約」'){toast('請先產生');return}copy(t)});
+  var VAGUE=[['下次再約','換成具體時間：「這週六早上 8 點，要不要一起？」'],['有空再約','「有空」沒有期限，改成一個你能提供的日期。'],['改天','「改天」＝沒有天，請給一個日期。'],['有機會再','機會要自己創造，直接提出時間與活動。'],['到時候再說','先敲定時間，細節再討論。'],['再說吧','「再說吧」會讓對方覺得被敷衍，請給明確回應。'],['找時間','請直接提出一個時間點。'],['看情況','可以說「我可以的時間是…」']];
+  var BLAME=[['你每次都','「每次」是指責，改成「這次我有點失落」。'],['你總是','「總是」會引發防衛，改描述單一事件。'],['你根本','「根本」帶有否定，改說你的感受。'],['不在乎我','把「你不在乎我」改成「我感覺有點被忽略」。'],['你為什麼不','質問式問句會讓人防衛，改成「我想了解你的狀況」。']];
+  $('#c-go').addEventListener('click',function(){
+    var v=$('#c-in').value,o=$('#c-out');o.innerHTML='';
+    if(!v.trim()){toast('先貼上你想傳的話');return}
+    var hit=0;
+    function add(cls,html){var d=document.createElement('div');d.className='chk '+cls;d.innerHTML=html;o.appendChild(d)}
+    VAGUE.forEach(function(x){if(v.indexOf(x[0])>-1){hit++;add('warn','<b>模糊用語：「'+esc(x[0])+'」</b><br>'+esc(x[1]))}});
+    BLAME.forEach(function(x){if(v.indexOf(x[0])>-1){hit++;add('warn','<b>指責式用詞：「'+esc(x[0])+'」</b><br>'+esc(x[1]))}});
+    if(!/[0-9０-９]|週|周|明天|後天|今天|今晚|禮拜|星期|早上|晚上|下午|中午|點|號/.test(v)){hit++;add('warn','<b>沒有看到具體時間</b><br>加上日期或時段，例如「這週六下午 3 點」。')}
+    if(!hit)add('pass','<b>看起來不錯</b><br>沒有偵測到模糊或指責的用詞，而且有具體時間。');
+  });
+
+  /* ---------- radar ---------- */
+  function renderRadar(){
+    var cx=180,cy=160,R=100,n=5,pts=[];
+    function pt(i,r){var a=-Math.PI/2+i*2*Math.PI/n;return [cx+r*Math.cos(a),cy+r*Math.sin(a)]}
+    var h='<svg viewBox="0 0 360 320" role="img" aria-label="自評雷達圖">';
+    for(var k=1;k<=5;k++){h+='<polygon points="'+[0,1,2,3,4].map(function(i){return pt(i,R*k/5).join(',')}).join(' ')+'" fill="none" stroke="var(--line)"/>'}
+    for(var i=0;i<n;i++){var p=pt(i,R);h+='<line x1="'+cx+'" y1="'+cy+'" x2="'+p[0]+'" y2="'+p[1]+'" stroke="var(--line)"/>';var l=pt(i,R+26);h+='<text x="'+l[0]+'" y="'+(l[1]+4)+'" text-anchor="middle" font-size="13" fill="var(--text)">'+NAMES[i]+'</text>'}
+    var poly=S.radar.map(function(v,i){return pt(i,R*v/5).join(',')}).join(' ');
+    h+='<polygon points="'+poly+'" fill="var(--accent)" fill-opacity=".25" stroke="var(--accent)" stroke-width="2.5"/>';
+    S.radar.forEach(function(v,i){var p=pt(i,R*v/5);h+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="4.5" fill="var(--accent)"/>'});
+    $('#radarsvg').innerHTML=h+'</svg>';
+  }
+  (function(){
+    var box=$('#sliders');
+    NAMES.forEach(function(n,i){
+      var l=document.createElement('label');l.className='slider';
+      l.innerHTML='<span><b>'+n+'</b><b class="v">'+S.radar[i]+'</b></span><input type="range" min="1" max="5" step="1" value="'+S.radar[i]+'">';
+      $('input',l).addEventListener('input',function(e){S.radar[i]=+e.target.value;$('.v',l).textContent=e.target.value;save();renderRadar()});
+      box.appendChild(l);
+    });
+  })();
+
+  /* ---------- 30 days ---------- */
+  function renderDays(){
+    var box=$('#dlist');box.innerHTML='';var d=0;
+    DAYS.forEach(function(g){
+      var h=document.createElement('h4');h.style.setProperty('--bc','var(--'+g[1]+')');h.textContent=g[0];box.appendChild(h);
+      g[2].forEach(function(t){
+        d++;var n=d,l=document.createElement('label');l.className='day'+(S.days[n]?' on':'');
+        l.innerHTML='<input type="checkbox"'+(S.days[n]?' checked':'')+'><b>D'+n+'</b><span>'+esc(t)+'</span>';
+        $('input',l).addEventListener('change',function(e){if(e.target.checked)S.days[n]=1;else delete S.days[n];save();l.classList.toggle('on',e.target.checked);dstat()});
+        box.appendChild(l);
+      });
+    });
+    dstat();
+  }
+  function dstat(){
+    var c=0,best=0,run=0;
+    for(var i=1;i<=30;i++){if(S.days[i]){c++;run++;if(run>best)best=run}else run=0}
+    $('#d-n').textContent=c;$('#d-s').textContent=best;$('#d-bar').style.width=(c/30*100)+'%';
+  }
+
+  /* ---------- search ---------- */
+  var blocks=$$('[data-idx]');
+  function openS(){$('#sov').classList.add('open');var q=$('#sq');q.value='';$('#sres').innerHTML='';setTimeout(function(){q.focus()},30)}
+  function closeS(){$('#sov').classList.remove('open')}
+  $('#sbtn').addEventListener('click',openS);
+  $('#sov').addEventListener('click',function(e){if(e.target.id==='sov')closeS()});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape')closeS();
+    if(e.key==='/'&&!/INPUT|TEXTAREA|SELECT/.test((document.activeElement||{}).tagName||'')){e.preventDefault();openS()}
+  });
+  $('#sq').addEventListener('input',function(){
+    var q=this.value.trim().toLowerCase(),ul=$('#sres');ul.innerHTML='';if(!q)return;
+    var n=0;
+    blocks.forEach(function(el){
+      if(n>=12)return;
+      var txt=(el.innerText||el.textContent||'').replace(/\s+/g,' '),i=txt.toLowerCase().indexOf(q);
+      var title=el.dataset.idx.split(' ')[0];
+      if(i<0&&el.dataset.idx.toLowerCase().indexOf(q)<0)return;
+      var s=i<0?txt.slice(0,60):txt.slice(Math.max(0,i-20),i+50);
+      var hl=esc(s).replace(new RegExp(esc(q).replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi'),function(m){return '<mark>'+m+'</mark>'});
+      var li=document.createElement('li'),b=document.createElement('button');b.type='button';
+      b.innerHTML='<div class="st">'+esc(title)+'</div><div class="ss">…'+hl+'…</div>';
+      b.addEventListener('click',function(){closeS();el.scrollIntoView({behavior:'smooth',block:'start'});el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash')});
+      li.appendChild(b);ul.appendChild(li);n++;
+    });
+    if(!n)ul.innerHTML='<li class="muted" style="padding:10px 12px">找不到「'+esc(this.value)+'」</li>';
+  });
+
+  /* ---------- reset ---------- */
+  $('#reset').addEventListener('click',function(){
+    if(!confirm('確定要清除這個瀏覽器裡的所有進度與筆記嗎？'))return;
+    mem=null;try{localStorage.removeItem(KEY)}catch(e){}location.reload();
+  });
+
+  /* ---------- scroll progress & nav spy ---------- */
+  var bar=$('#progress');
+  function onScroll(){var h=document.documentElement.scrollHeight-innerHeight;bar.style.width=(h>0?Math.min(100,scrollY/h*100):0)+'%'}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var links=$$('nav.top a'),map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
   if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){
-        links.forEach(function(a){a.classList.remove('on')});
-        var a=map[e.target.id]; if(a) a.classList.add('on');
-      }});
-    },{rootMargin:'-20% 0px -70% 0px'});
-    Object.keys(map).forEach(function(id){var el=document.getElementById(id); if(el) io.observe(el)});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on')});var a=map[e.target.id];if(a){a.classList.add('on');a.scrollIntoView({block:'nearest',inline:'center'})}}})},{rootMargin:'-20% 0px -70% 0px'});
+    Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
   }
+
+  /* ---------- init ---------- */
+  renderMap();renderQuiz();renderSim();renderRadar();renderDays();
 })();
 </script>
 </body>
