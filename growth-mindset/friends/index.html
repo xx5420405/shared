@@ -8,31 +8,35 @@
 <style>
 :root{
   --bg:#faf8f4; --surface:#ffffff; --surface2:#f3efe8; --text:#25221e; --muted:#6b645b;
-  --line:#e4ded3; --accent:#c2571a; --accent-soft:#fbe9dc; --on:#ffffff;
-  --tip:#1f7a5a; --tip-bg:#e4f3ec; --note:#2563a8; --note-bg:#e6eff9;
-  --imp:#b3261e; --imp-bg:#fbe8e6; --sum:#7a4fb0; --sum-bg:#efe8f8;
+  --line:#e4ded3; --line2:#cfc7b8; --accent:#c2571a; --on:#ffffff;
+  --tip:#1f7a5a; --note:#2563a8; --imp:#b3261e; --sum:#7a4fb0;
   --b1:#b4531a; --b2:#17704f; --b3:#1f5ea0; --b4:#6e44a6; --b5:#b3261e;
   --radius:14px; --shadow:0 1px 2px rgba(0,0,0,.05),0 4px 14px rgba(0,0,0,.05);
+  --accent-soft:color-mix(in srgb,var(--accent) 12%,var(--surface));
+  --tip-bg:color-mix(in srgb,var(--tip) 11%,var(--surface));
+  --note-bg:color-mix(in srgb,var(--note) 11%,var(--surface));
+  --imp-bg:color-mix(in srgb,var(--imp) 10%,var(--surface));
+  --sum-bg:color-mix(in srgb,var(--sum) 11%,var(--surface));
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#16140f; --surface:#1f1c16; --surface2:#27231b; --text:#efe9de; --muted:#a89f90;
-    --line:#383226; --accent:#f08a4b; --accent-soft:#3a2517; --on:#16140f;
-    --tip:#5fcf9f; --tip-bg:#143024; --note:#7db4ee; --note-bg:#162a42;
-    --imp:#ff8a80; --imp-bg:#3b1a18; --sum:#c3a3f0; --sum-bg:#2a1f3d;
-    --b1:#f08a4b; --b2:#5fcf9f; --b3:#7db4ee; --b4:#c3a3f0; --b5:#ff8a80; --shadow:none;
+    --bg:#0f1115; --surface:#171a21; --surface2:#1f232c; --text:#e8eaf0; --muted:#9aa3b2;
+    --line:#2b303b; --line2:#3d4454; --accent:#ff9f5a; --on:#10131a;
+    --tip:#5ee0a6; --note:#6cb2ff; --imp:#ff7b7b; --sum:#b99bff;
+    --b1:#ff9f5a; --b2:#4fd8a4; --b3:#6cb2ff; --b4:#b99bff; --b5:#ff7b7b;
+    --shadow:0 1px 0 rgba(255,255,255,.03) inset,0 8px 24px rgba(0,0,0,.35);
   }
 }
 :root[data-theme="dark"]{
-  --bg:#16140f; --surface:#1f1c16; --surface2:#27231b; --text:#efe9de; --muted:#a89f90;
-  --line:#383226; --accent:#f08a4b; --accent-soft:#3a2517; --on:#16140f;
-  --tip:#5fcf9f; --tip-bg:#143024; --note:#7db4ee; --note-bg:#162a42;
-  --imp:#ff8a80; --imp-bg:#3b1a18; --sum:#c3a3f0; --sum-bg:#2a1f3d;
-  --b1:#f08a4b; --b2:#5fcf9f; --b3:#7db4ee; --b4:#c3a3f0; --b5:#ff8a80; --shadow:none;
+  --bg:#0f1115; --surface:#171a21; --surface2:#1f232c; --text:#e8eaf0; --muted:#9aa3b2;
+  --line:#2b303b; --line2:#3d4454; --accent:#ff9f5a; --on:#10131a;
+  --tip:#5ee0a6; --note:#6cb2ff; --imp:#ff7b7b; --sum:#b99bff;
+  --b1:#ff9f5a; --b2:#4fd8a4; --b3:#6cb2ff; --b4:#b99bff; --b5:#ff7b7b;
+  --shadow:0 1px 0 rgba(255,255,255,.03) inset,0 8px 24px rgba(0,0,0,.35);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:64px}
-body{margin:0;background:var(--bg);color:var(--text);line-height:1.8;font-size:17px;
+body{margin:0;background:var(--bg) radial-gradient(900px 420px at 12% -6%,color-mix(in srgb,var(--accent) 13%,transparent),transparent) no-repeat;color:var(--text);line-height:1.8;font-size:17px;
   font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Microsoft JhengHei","Segoe UI",sans-serif}
 a{color:var(--accent)}
 button,input,textarea,select{font:inherit;color:inherit}
@@ -63,6 +67,10 @@ p{margin:0 0 14px}
 .callout{border-radius:var(--radius);padding:16px 18px;margin:18px 0;border-left:4px solid var(--c);background:var(--cbg)}
 .callout .ct{font-weight:700;color:var(--c);margin-bottom:6px}
 .callout ul{margin:0;padding-left:20px}
+.sumlist{margin:0;padding:0;list-style:none;counter-reset:sm}
+.sumlist li{counter-increment:sm;position:relative;padding-left:40px;margin-bottom:12px}
+.sumlist li:last-child{margin-bottom:0}
+.sumlist li::before{content:counter(sm);position:absolute;left:0;top:2px;width:28px;height:28px;border-radius:50%;background:var(--sum);color:var(--on);display:grid;place-items:center;font-weight:700;font-size:15px}
 .callout p:last-child{margin-bottom:0}
 .c-summary{--c:var(--sum);--cbg:var(--sum-bg)}
 .c-tip{--c:var(--tip);--cbg:var(--tip-bg)}
@@ -83,6 +91,23 @@ tr:last-child td{border-bottom:0}
 .diagram{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px;margin:16px 0;overflow-x:auto;box-shadow:var(--shadow)}
 .diagram svg{display:block;width:100%;min-width:640px;height:auto;margin:0 auto}
 .diagram .cap{font-size:13px;color:var(--muted);margin-top:6px;text-align:center}
+/* tree */
+.tree{text-align:center;padding:8px 0 4px}
+.t-root{display:inline-block;position:relative;padding:12px 28px;border-radius:14px;background:var(--accent);color:var(--on);font-weight:700;font-size:19px;line-height:1.4}
+.t-root::after{content:"";position:absolute;left:50%;top:100%;width:2px;height:24px;margin-left:-1px;background:var(--line2)}
+.t-branches{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:24px}
+.t-col{position:relative;padding-top:24px}
+.t-col::before{content:"";position:absolute;top:0;left:-6px;right:-6px;height:2px;background:var(--line2)}
+.t-col:first-child::before{left:50%}
+.t-col:last-child::before{right:50%}
+.t-col::after{content:"";position:absolute;top:0;left:50%;width:2px;height:24px;margin-left:-1px;background:var(--line2)}
+.t-b{display:block;position:relative;padding:9px 6px;border-radius:12px;background:var(--c);color:var(--on);font-weight:700;font-size:15px;line-height:1.35;text-decoration:none}
+.t-b small{display:block;font-weight:600;font-size:12px;opacity:.85}
+.t-b:hover{filter:brightness(1.08)}
+.t-leaves{list-style:none;margin:0;padding:14px 0 0;position:relative}
+.t-leaves::before{content:"";position:absolute;left:50%;top:0;bottom:16px;width:2px;margin-left:-1px;background:color-mix(in srgb,var(--c) 45%,var(--line))}
+.t-leaves li{position:relative;z-index:1;margin:0 0 10px;padding:8px 8px;border-radius:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--c) 55%,var(--line));font-size:13.5px;line-height:1.45}
+.t-leaves li:last-child{margin-bottom:0}
 /* learning map */
 .lmap{display:flex;gap:0;align-items:stretch;margin:10px 0}
 .lnode{flex:1;position:relative;text-align:center;padding:0 4px;background:none;border:0}
@@ -200,6 +225,13 @@ mark{background:var(--accent-soft);color:var(--accent);border-radius:3px;padding
 footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
 @media (max-width:760px){
   body{font-size:16px}
+  .t-branches{grid-template-columns:1fr;gap:16px}
+  .t-col{padding:0 0 0 18px;text-align:left;border-left:3px solid var(--c)}
+  .t-col::before,.t-col::after,.t-leaves::before,.t-root::after{display:none}
+  .t-branches{margin-top:16px}
+  .t-b{display:inline-block;padding:8px 16px}
+  .t-leaves{padding-top:10px}
+  .t-leaves li{margin-bottom:8px}
   .timeline{flex-direction:column}
   .timeline li:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-14px;transform:translateX(-50%)}
   .core{grid-template-columns:1fr}
@@ -222,7 +254,7 @@ footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:v
     <a href="#s04">論點展開</a><a href="#s05">洞察</a><a href="#panel">顧問團</a><a href="#s06">引述</a><a href="#s07">術語</a><a href="#s09">練習區</a><a href="#s10">聲明</a>
     <div class="tools">
       <button class="ibtn" id="sbtn" type="button" aria-label="搜尋">🔍</button>
-      <button class="ibtn" id="theme" type="button" aria-label="切換亮暗色">🌓</button>
+      <button class="ibtn" id="theme" type="button" aria-label="切換亮暗色"></button>
     </div>
   </div>
 </nav>
@@ -246,11 +278,11 @@ footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:v
 <section id="summary" style="margin-top:8px" data-idx="摘要">
   <div class="callout c-summary">
     <div class="ct">📌 摘要</div>
-    <ul>
+    <ol class="sumlist">
       <li><b>痛點：</b>出社會後生活圈多受限於單一職場環境，缺乏學生時期自然變熟的群體場域，導致成年人深陷「社交圈封閉且無效社交疲憊」的孤獨困境。</li>
       <li><b>解法：</b>從釐清自我欣賞的特質出發，藉由信任朋友的推薦聚會拓展人脈，並以「主動具體邀約」促成二次見面，再透過「耳目心深度傾聽」與「邊界感體諒」深化長遠友誼。</li>
       <li><b>核心觀點：</b>真正的成年人友誼不必迎合所有人，而是將有限精力投入在同頻者身上，在自在、同理且具備健康邊界的相處節奏中建立高信任連結。</li>
-    </ul>
+    </ol>
   </div>
 </section>
 
@@ -280,8 +312,17 @@ footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:v
 
 <section id="s02" data-idx="核心論點 心智圖">
   <h2><span class="num">02</span>核心論點 <small>Core Thesis</small></h2>
-  <h3>心智圖</h3>
-  <div class="diagram"><div id="mindmap"></div><div class="cap">手機可左右滑動 · 點分支跳到對應策略</div></div>
+  <h3>樹狀圖</h3>
+  <div class="diagram" data-idx="樹狀圖 心智圖 特質錨定 場域篩選 主動觸發 深度傾聽 邊界與節奏"><div class="tree">
+    <div class="t-root">出社會建立真朋友</div>
+    <div class="t-branches">
+      <div class="t-col" style="--c:var(--b1)"><a class="t-b" href="#st1"><small>策略1</small>特質錨定</a><ul class="t-leaves"><li>釐清自我欣賞特質</li><li>停止盲目迎合</li><li>精準投入精力</li></ul></div>
+      <div class="t-col" style="--c:var(--b2)"><a class="t-b" href="#st2"><small>策略2</small>場域篩選</a><ul class="t-leaves"><li>共同興趣場合</li><li>信任朋友的二度人脈</li><li>創造安心交流氛圍</li></ul></div>
+      <div class="t-col" style="--c:var(--b3)"><a class="t-b" href="#st3"><small>策略3</small>主動觸發</a><ul class="t-leaves"><li>拒絕客套下次再約</li><li>敲定具體人事物時間</li><li>聚焦第二次見面</li></ul></div>
+      <div class="t-col" style="--c:var(--b4)"><a class="t-b" href="#st4"><small>策略4</small>深度傾聽</a><ul class="t-leaves"><li>耳目心傾聽哲學</li><li>觀察肢體與未言之處</li><li>看見背後特質與勇氣</li></ul></div>
+      <div class="t-col" style="--c:var(--b5)"><a class="t-b" href="#st5"><small>策略5</small>邊界與節奏</a><ul class="t-leaves"><li>允許對方優先照顧自己</li><li>突發取消不歸咎不在乎</li><li>坦誠溝通相處節奏</li></ul></div>
+    </div>
+  </div><div class="cap">點分支可跳到對應策略</div></div>
   <h3>一段式總結</h3>
   <p>出社會後的交友本質，是一場從「向外盲目迎合」轉向「向內自我覺察」的精準社交進化；其底層邏輯在於以個人核心價值觀（特質）建立人脈篩選漏斗，藉由信任節點降低互動摩擦力，並透過主動且具體的時間錨定促成二次連結，最終以「看見對方真實模樣」的耳目心傾聽與「尊重個人邊界」的同理心，培育出低耗損、高滋養的長久深層連結。</p>
   <h3>核心圖解</h3>
@@ -573,19 +614,15 @@ footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:v
   var root=document.documentElement;
   try{var th=localStorage.getItem(THEME); if(th) root.setAttribute('data-theme',th)}catch(e){}
   function isDark(){var t=root.getAttribute('data-theme'); if(t) return t==='dark'; return window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches}
+  function icon(){$('#theme').textContent=isDark()?'☀️':'🌙'}
+  icon();
   $('#theme').addEventListener('click',function(){
-    var n=isDark()?'light':'dark'; root.setAttribute('data-theme',n); try{localStorage.setItem(THEME,n)}catch(e){}
+    var n=isDark()?'light':'dark'; root.setAttribute('data-theme',n); try{localStorage.setItem(THEME,n)}catch(e){} icon();
   });
+  if(window.matchMedia)matchMedia('(prefers-color-scheme: dark)').addEventListener('change',icon);
 
   /* ---------- data ---------- */
   var NAMES=['特質錨定','場域篩選','主動邀約','深度傾聽','邊界節奏'];
-  var TREE=[
-    ['特質錨定',['釐清自我欣賞特質','停止盲目迎合','精準投入精力']],
-    ['場域篩選',['共同興趣場合','信任朋友的二度人脈','創造安心交流氛圍']],
-    ['主動觸發',['拒絕客套下次再約','敲定具體人事物時間','聚焦第二次見面']],
-    ['深度傾聽',['耳目心傾聽哲學','觀察肢體與未言之處','看見背後特質與勇氣']],
-    ['邊界與節奏',['允許對方優先照顧自己','突發取消不歸咎不在乎','坦誠溝通相處節奏']]
-  ];
   var QS=[
     {s:1,q:'出社會後精力有限，影片建議優先做什麼？',o:['認識越多人越好','釐清自己欣賞、相處後有能量的特質','只跟同事往來','多參加大型社交活動'],a:1,e:'精力有限，不該浪費在討好所有人，先釐清什麼特質的人能帶給你能量，再把時間留給他們。'},
     {s:1,q:'「特質導向篩選」的篩選依據是什麼？',o:['外在標籤或職銜','相處時的心理感受與真實行為表現','對方人脈多寡','年齡相近'],a:1,e:'傳統模式看外在標籤；特質導向看的是相處時的心理感受與真實行為。'},
@@ -654,26 +691,6 @@ footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:v
     $$('.slot textarea').forEach(function(t){var i=+t.closest('.slot').dataset.strategy;S.notes[i]=t.value});save();
     try{var b=new Blob([allNotes()],{type:'text/markdown;charset=utf-8'});var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='我的筆記-出社會交友.md';document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(function(){URL.revokeObjectURL(a.href)},500);toast('已下載')}catch(e){toast('下載失敗，請改用複製')}
   });
-
-  /* ---------- mindmap (svg) ---------- */
-  (function(){
-    var W=760,H=620,rx=96,ry=310,bx=270,lx=470,ns='http://www.w3.org/2000/svg';
-    var h='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="心智圖：出社會建立真朋友">';
-    var step=116,y0=ry-step*2;
-    TREE.forEach(function(b,i){
-      var by=y0+i*step,col='var(--b'+(i+1)+')';
-      h+='<path d="M'+(rx+70)+' '+ry+' C '+(rx+140)+' '+ry+' '+(bx-130)+' '+by+' '+(bx-70)+' '+by+'" fill="none" stroke="'+col+'" stroke-width="3" stroke-linecap="round"/>';
-      b[1].forEach(function(l,j){
-        var ly=by+(j-1)*38;
-        h+='<path d="M'+(bx+70)+' '+by+' C '+(bx+110)+' '+by+' '+(lx-40)+' '+ly+' '+lx+' '+ly+'" fill="none" stroke="'+col+'" stroke-width="2" opacity=".6"/>';
-        h+='<g><rect x="'+lx+'" y="'+(ly-15)+'" width="270" height="30" rx="15" fill="var(--surface)" stroke="'+col+'" stroke-width="1.5"/><text x="'+(lx+135)+'" y="'+(ly+5)+'" text-anchor="middle" font-size="14" fill="var(--text)">'+esc(l)+'</text></g>';
-      });
-      h+='<g class="mm-b" data-t="'+(i+1)+'" style="cursor:pointer"><rect x="'+(bx-70)+'" y="'+(by-20)+'" width="140" height="40" rx="20" fill="'+col+'"/><text x="'+bx+'" y="'+(by+6)+'" text-anchor="middle" font-size="16" font-weight="700" fill="var(--on)">'+(i+1)+'. '+esc(b[0])+'</text></g>';
-    });
-    h+='<g><rect x="'+(rx-86)+'" y="'+(ry-34)+'" width="172" height="68" rx="34" fill="var(--accent)"/><text x="'+rx+'" y="'+(ry-4)+'" text-anchor="middle" font-size="16" font-weight="700" fill="var(--on)">出社會</text><text x="'+rx+'" y="'+(ry+18)+'" text-anchor="middle" font-size="16" font-weight="700" fill="var(--on)">建立真朋友</text></g></svg>';
-    var m=$('#mindmap'); m.innerHTML=h;
-    $$('.mm-b',m).forEach(function(g){g.addEventListener('click',function(){$('#st'+g.dataset.t).scrollIntoView({behavior:'smooth'})})});
-  })();
 
   /* ---------- quiz ---------- */
   var qmode='pre', qsubmitted=false;
