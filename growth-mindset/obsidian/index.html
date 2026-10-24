@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>零基礎20分鐘學會Obsidian 95%功能！</title>
+<meta name="description" content="工具教學與知識管理筆記：本地優先 Markdown、附件與插件設定、雙向鏈接、城市與道路心智模型，附學習地圖與策略筆記。">
+<style>
+:root{
+  --bg:#f6f7fb; --surface:#ffffff; --surface2:#eef0f6; --text:#1d2230; --muted:#5f6878;
+  --line:#dfe3ec; --line2:#c7cddb; --accent:#5b3fd0; --on:#ffffff;
+  --tip:#1f7a5a; --note:#2563a8; --imp:#b3261e; --sum:#0e7490;
+  --b1:#5b3fd0; --b2:#17704f; --b3:#1f5ea0; --b4:#b4531a;
+  --radius:14px; --shadow:0 1px 2px rgba(0,0,0,.05),0 4px 14px rgba(0,0,0,.05);
+  --accent-soft:color-mix(in srgb,var(--accent) 12%,var(--surface));
+  --tip-bg:color-mix(in srgb,var(--tip) 11%,var(--surface));
+  --note-bg:color-mix(in srgb,var(--note) 11%,var(--surface));
+  --imp-bg:color-mix(in srgb,var(--imp) 10%,var(--surface));
+  --sum-bg:color-mix(in srgb,var(--sum) 11%,var(--surface));
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e131b; --surface:#151b25; --surface2:#1c2330; --text:#e6eaf2; --muted:#97a1b3;
+    --line:#2a3342; --line2:#3b4659; --accent:#a78bfa; --on:#0e131b;
+    --tip:#5ee0a6; --note:#6cb2ff; --imp:#ff7b7b; --sum:#5fd0e8;
+    --b1:#a78bfa; --b2:#4fd8a4; --b3:#6cb2ff; --b4:#ff9f5a;
+    --shadow:0 1px 0 rgba(255,255,255,.03) inset,0 8px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e131b; --surface:#151b25; --surface2:#1c2330; --text:#e6eaf2; --muted:#97a1b3;
+  --line:#2a3342; --line2:#3b4659; --accent:#a78bfa; --on:#0e131b;
+  --tip:#5ee0a6; --note:#6cb2ff; --imp:#ff7b7b; --sum:#5fd0e8;
+  --b1:#a78bfa; --b2:#4fd8a4; --b3:#6cb2ff; --b4:#ff9f5a;
+  --shadow:0 1px 0 rgba(255,255,255,.03) inset,0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg) radial-gradient(900px 420px at 12% -6%,color-mix(in srgb,var(--accent) 13%,transparent),transparent) no-repeat;color:var(--text);line-height:1.8;font-size:17px;
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Microsoft JhengHei","Segoe UI",sans-serif}
+a{color:var(--accent)}
+button,input,textarea,select{font:inherit;color:inherit}
+button{cursor:pointer}
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--accent);z-index:40;transform-origin:0 50%;transform:scaleX(0);will-change:transform;pointer-events:none}
+nav.top{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--line);transform:translateZ(0)}
+nav.top .inner{position:relative;max-width:1240px;margin:0 auto;padding:0 12px;display:flex;gap:2px;align-items:center;overflow-x:auto;scrollbar-width:none}
+nav.top .inner::-webkit-scrollbar{display:none}
+nav.top a{flex:none;padding:12px 9px;font-size:14px;color:var(--muted);text-decoration:none;white-space:nowrap}
+nav.top a:hover,nav.top a.on{color:var(--accent)}
+.tools{flex:none;margin-left:auto;display:flex;gap:6px;padding-left:8px;position:sticky;right:0;background:var(--bg)}
+.ibtn{border:1px solid var(--line);background:var(--surface);border-radius:999px;min-width:44px;height:36px;padding:0 12px;font-size:14px}
+main{min-width:0;padding:0 0 96px}
+.page{max-width:920px;margin:0 auto;padding:0 16px}
+.toc{display:none}
+@media (min-width:1180px){
+  .page{max-width:1240px;display:grid;grid-template-columns:minmax(0,880px) 240px;gap:32px;justify-content:center}
+  .toc{display:block;position:sticky;top:64px;align-self:start;max-height:calc(100vh - 84px);overflow:auto;margin-top:44px;padding:14px 12px;background:var(--surface);border:1px solid var(--line);border-radius:16px;contain:content}
+}
+.toc .tl{font-size:12px;letter-spacing:.22em;color:var(--muted);font-weight:700;margin:0 6px 10px}
+.toc button{display:flex;gap:10px;width:100%;text-align:left;border:0;border-left:2px solid var(--line);background:none;padding:6px 8px;color:var(--text);font-size:14px;line-height:1.45;border-radius:0 8px 8px 0}
+.toc button:hover{background:var(--surface2)}
+.toc button .no{color:var(--muted);font-variant-numeric:tabular-nums;font-size:12px;padding-top:2px;flex:none;min-width:1.4em}
+.toc button.sub{padding-left:26px;font-size:13px;color:var(--muted)}
+.toc button.on{color:var(--accent);font-weight:700;border-left-color:var(--accent);background:var(--accent-soft)}
+.toc button.on .no{color:var(--accent)}
+/* illustrations */
+header.hero{position:relative}
+.hero-art{position:absolute;right:0;bottom:6px;width:260px;color:var(--accent);opacity:.9;pointer-events:none}
+.sart{position:absolute;right:0;top:-6px;width:128px;color:var(--accent);opacity:.85;pointer-events:none}
+section,article.strategy{position:relative}
+article.strategy .sart{right:14px;top:8px;width:104px}
+section.has-sart>h2{padding-right:140px}
+article.strategy.has-sart>h3{padding-right:112px}
+@media (max-width:760px){.hero-art,.sart{display:none}section.has-sart>h2,article.strategy.has-sart>h3{padding-right:0}}
+header.hero{padding:44px 0 20px}
+.eyebrow{color:var(--accent);font-size:14px;letter-spacing:.08em;font-weight:600}
+h1{font-size:clamp(28px,6vw,44px);line-height:1.25;margin:8px 0 14px;letter-spacing:-.01em}
+.byline{color:var(--muted);font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tag{background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:2px 12px;font-size:13px}
+section{margin-top:56px}
+h2{font-size:clamp(22px,4.5vw,28px);margin:0 0 18px;display:flex;gap:10px;align-items:baseline;line-height:1.35;flex-wrap:wrap}
+h2 .num{color:var(--accent);font-variant-numeric:tabular-nums;font-size:.8em}
+h2 small{color:var(--muted);font-weight:400;font-size:.55em}
+h3{font-size:20px;margin:28px 0 10px}
+h4{margin:0 0 6px;font-size:16px}
+p{margin:0 0 14px}
+.muted{color:var(--muted)}
+.callout{border-radius:var(--radius);padding:16px 18px;margin:18px 0;border-left:4px solid var(--c);background:var(--cbg)}
+.callout .ct{font-weight:700;color:var(--c);margin-bottom:6px}
+.callout ul{margin:0;padding-left:20px}
+.sumlist{margin:0;padding:0;list-style:none;counter-reset:sm}
+.sumlist li{counter-increment:sm;position:relative;padding-left:40px;margin-bottom:12px}
+.sumlist li:last-child{margin-bottom:0}
+.sumlist li::before{content:counter(sm);position:absolute;left:0;top:2px;width:28px;height:28px;border-radius:50%;background:var(--sum);color:var(--on);display:grid;place-items:center;font-weight:700;font-size:15px}
+.callout p:last-child{margin-bottom:0}
+.c-summary{--c:var(--sum);--cbg:var(--sum-bg)}
+.c-tip{--c:var(--tip);--cbg:var(--tip-bg)}
+.c-note{--c:var(--note);--cbg:var(--note-bg)}
+.c-important{--c:var(--imp);--cbg:var(--imp-bg)}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px;line-height:1.6}
+th,td{padding:10px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--surface2);font-weight:600;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.meta-table{min-width:0}.meta-table th{width:34%}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow)}
+.btn{text-decoration:none;display:inline-flex;align-items:center;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 14px;min-height:40px;font-size:15px}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on);font-weight:600}
+.btn.done{background:var(--tip-bg);border-color:var(--tip);color:var(--tip);font-weight:600}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.diagram{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px;margin:16px 0;overflow-x:auto;box-shadow:var(--shadow)}
+.diagram svg{display:block;width:100%;min-width:640px;height:auto;margin:0 auto}
+.diagram .cap{font-size:13px;color:var(--muted);margin-top:6px;text-align:center}
+/* tree */
+.tree{text-align:center;padding:8px 0 4px}
+.t-root{display:inline-block;position:relative;padding:12px 28px;border-radius:14px;background:var(--accent);color:var(--on);font-weight:700;font-size:19px;line-height:1.4}
+.t-root::after{content:"";position:absolute;left:50%;top:100%;width:2px;height:24px;margin-left:-1px;background:var(--line2)}
+.t-branches{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:24px}
+.t-col{position:relative;padding-top:24px}
+.t-col::before{content:"";position:absolute;top:0;left:-6px;right:-6px;height:2px;background:var(--line2)}
+.t-col:first-child::before{left:50%}
+.t-col:last-child::before{right:50%}
+.t-col::after{content:"";position:absolute;top:0;left:50%;width:2px;height:24px;margin-left:-1px;background:var(--line2)}
+.t-b{display:block;position:relative;padding:9px 6px;border-radius:12px;background:var(--c);color:var(--on);font-weight:700;font-size:15px;line-height:1.35;text-decoration:none}
+.t-b small{display:block;font-weight:600;font-size:12px;opacity:.85}
+.t-b:hover{filter:brightness(1.08)}
+.t-leaves{list-style:none;margin:0;padding:14px 0 0;position:relative}
+.t-leaves::before{content:"";position:absolute;left:50%;top:0;bottom:16px;width:2px;margin-left:-1px;background:color-mix(in srgb,var(--c) 45%,var(--line))}
+.t-leaves li{position:relative;z-index:1;margin:0 0 10px;padding:8px 8px;border-radius:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--c) 55%,var(--line));font-size:13.5px;line-height:1.45}
+.t-leaves li:last-child{margin-bottom:0}
+/* learning map */
+.lmap{display:flex;gap:0;align-items:stretch;margin:10px 0}
+.lnode{flex:1;position:relative;text-align:center;padding:0 4px;background:none;border:0}
+.lnode::before{content:"";position:absolute;top:22px;left:-50%;width:100%;height:3px;background:var(--line);z-index:0}
+.lnode:first-child::before{display:none}
+.lnode.done::before{background:var(--tip)}
+.lnode .dot{position:relative;z-index:1;width:44px;height:44px;border-radius:50%;margin:0 auto 6px;display:grid;place-items:center;background:var(--surface);border:3px solid var(--line);font-weight:700;color:var(--muted)}
+.lnode.done .dot{background:var(--tip);border-color:var(--tip);color:var(--on)}
+.lnode .lt{font-size:13px;line-height:1.4;color:var(--muted)}
+.meter{height:10px;border-radius:999px;background:var(--surface2);overflow:hidden;margin:8px 0}
+.meter>i{display:block;height:100%;width:0;background:var(--tip);transition:width .3s}
+/* timeline */
+.timeline{list-style:none;margin:16px 0;padding:0;display:flex;gap:10px;counter-reset:t}
+.timeline li{flex:1;min-width:0;background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c,var(--accent));border-radius:12px;padding:12px 12px 12px;position:relative;font-size:14px;line-height:1.55;box-shadow:var(--shadow)}
+.timeline li b{display:block;color:var(--c,var(--accent));margin-bottom:4px;font-size:15px}
+.timeline li:not(:last-child)::after{content:"›";position:absolute;right:-10px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:20px;z-index:2;background:var(--bg);line-height:1;border-radius:50%}
+/* chain */
+.chain{display:flex;gap:8px;align-items:stretch;margin:14px 0;flex-wrap:wrap}
+.chain>div{flex:1 1 140px;background:var(--surface2);border-radius:12px;padding:10px 12px;font-size:14px;line-height:1.5;position:relative;border:1px solid var(--line)}
+.chain>div:not(:last-child)::after{content:"→";position:absolute;right:-13px;top:50%;transform:translateY(-50%);color:var(--accent);font-weight:700;z-index:2}
+.fork{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.fork .start{grid-column:1/-1;text-align:center;background:var(--accent-soft);color:var(--accent);border-radius:12px;padding:10px;font-weight:600;font-size:15px}
+.fork .bad,.fork .good{border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.6}
+.fork .bad{background:var(--imp-bg);border:1px solid var(--imp)}
+.fork .good{background:var(--tip-bg);border:1px solid var(--tip)}
+.fork b{display:block;margin-bottom:4px}
+/* core */
+.core{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
+.core .n{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:12px;padding:12px;text-align:center;font-size:14px;line-height:1.5;position:relative;box-shadow:var(--shadow)}
+.core .n .big{font-size:26px;display:block}
+.core .n b{color:var(--c);display:block}
+.core .n:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:42%;color:var(--accent);font-weight:700;z-index:2}
+/* strategy */
+.strategy{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 20px 18px;margin:22px 0;box-shadow:var(--shadow)}
+.strategy>h3{margin-top:0;display:flex;gap:12px;align-items:flex-start}
+.badge{flex:none;width:34px;height:34px;border-radius:50%;background:var(--bc,var(--accent));color:var(--on);display:grid;place-items:center;font-size:15px;font-weight:700;margin-top:1px}
+.strategy .sub{display:block;font-size:14px;color:var(--muted);font-weight:400;margin-top:2px}
+.case-wrap{margin:18px 0}
+.case-eye{font-size:13px;font-weight:700;color:var(--bc,var(--accent));letter-spacing:.04em;margin-bottom:8px}
+.case{border:1px solid var(--line);border-left:4px solid var(--bc,var(--accent));background:var(--surface2);border-radius:var(--radius);padding:14px 18px;margin:10px 0}
+.case h4{font-size:16px;margin:0 0 8px}
+.case p{margin:0 0 8px;line-height:1.75;font-size:15.5px}
+.case ul{margin:0 0 8px;padding-left:22px}
+.case li{margin-bottom:4px;line-height:1.75;font-size:15.5px}
+.case>:last-child{margin-bottom:0}
+.lcard{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+.lcard>div{background:var(--surface2);border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.6}
+.lcard h4{font-size:14px}
+.lcard .ok h4{color:var(--tip)}.lcard .err h4{color:var(--imp)}.lcard .skill h4{color:var(--note)}
+textarea.note{width:100%;min-height:90px;border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:10px 12px;resize:vertical;line-height:1.6}
+ul.clean,ol.clean{padding-left:22px;margin:0 0 14px}
+ul.clean li,ol.clean li{margin-bottom:8px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.compare>div{border-radius:var(--radius);padding:14px 16px}
+.compare .bad{background:var(--imp-bg)}.compare .good{background:var(--tip-bg)}
+.compare b{display:block;margin-bottom:4px}
+.insights{counter-reset:ins;display:grid;gap:12px;padding:0;list-style:none}
+.insights li{counter-increment:ins;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px 16px 60px;position:relative}
+.insights li::before{content:counter(ins);position:absolute;left:16px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
+.panel{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.panel .role{font-weight:700;margin-bottom:6px}
+.panel .card p{font-size:15px;margin:0}
+blockquote.q{margin:14px 0;padding:14px 20px;border-left:4px solid var(--accent);background:var(--surface);border-radius:0 var(--radius) var(--radius) 0;font-size:18px}
+blockquote.q cite{display:block;margin-top:6px;font-size:14px;color:var(--muted);font-style:normal}
+.related{display:flex;flex-direction:column;gap:8px;padding:0;list-style:none}
+.related li{background:var(--surface);border:1px dashed var(--line);border-radius:10px;padding:10px 14px;color:var(--muted)}
+.hero-art{width:170px;bottom:-22px}
+a.ts{font-size:.85em;white-space:nowrap;text-decoration:none;border-bottom:1px dotted var(--accent)}
+code{background:var(--surface2);border:1px solid var(--line);border-radius:6px;padding:0 6px;font-size:.92em;white-space:nowrap}
+/* search */
+#sov{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.45);display:none;padding:10vh 12px 12px}
+#sov.open{display:block}
+#sbox{max-width:620px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;max-height:80vh;overflow:auto}
+#sq{width:100%;border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:12px 14px;font-size:16px}
+#sres{list-style:none;margin:10px 0 0;padding:0}
+#sres li button{display:block;width:100%;text-align:left;background:none;border:0;border-radius:10px;padding:10px 12px;min-height:44px}
+#sres li button:hover{background:var(--surface2)}
+#sres .st{font-weight:700}#sres .ss{font-size:14px;color:var(--muted);line-height:1.5}
+mark{background:var(--accent-soft);color:var(--accent);border-radius:3px;padding:0 2px}
+.flash{animation:fl 1.6s ease}
+@keyframes fl{0%,60%{box-shadow:0 0 0 3px var(--accent)}100%{box-shadow:none}}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--text);color:var(--bg);padding:8px 18px;border-radius:999px;font-size:14px;opacity:0;transition:.25s;z-index:70;pointer-events:none}
+#toast.show{opacity:1;transform:translateX(-50%)}
+footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+@media (max-width:760px){
+  body{font-size:16px}
+  .t-branches{grid-template-columns:1fr;gap:16px}
+  .t-col{padding:0 0 0 18px;text-align:left;border-left:3px solid var(--c)}
+  .t-col::before,.t-col::after,.t-leaves::before,.t-root::after{display:none}
+  .t-branches{margin-top:16px}
+  .t-b{display:inline-block;padding:8px 16px}
+  .t-leaves{padding-top:10px}
+  .t-leaves li{margin-bottom:8px}
+  .timeline{flex-direction:column}
+  .timeline li:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-14px;transform:translateX(-50%)}
+  .core{grid-template-columns:1fr}
+  .core .n:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-16px}
+  .lcard,.compare,.fork,.two,.radar-wrap,.fields{grid-template-columns:1fr}
+  .chain>div{flex:1 1 100%}
+  .chain>div:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-14px;transform:translateX(-50%)}
+  .strategy{padding:16px 14px}
+  header.hero{padding-top:28px}
+  .lnode .lt{font-size:11px}
+}
+@media print{nav.top,.progress,#sov,#toast{display:none}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<nav class="top">
+  <div class="inner">
+    <a href="#summary">摘要</a><a href="#map">學習地圖</a><a href="#s02">核心論點</a><a href="#s03">敘事脈絡</a>
+    <a href="#s04">論點展開</a><a href="#s05">洞察</a><a href="#panel">多元觀點</a><a href="#s06">引述</a><a href="#s07">術語</a>
+    <div class="tools">
+      <button class="ibtn" id="sbtn" type="button" aria-label="搜尋">🔍</button>
+      <button class="ibtn" id="theme" type="button" aria-label="切換亮暗色"></button>
+    </div>
+  </div>
+</nav>
+
+<div id="sov" role="dialog" aria-modal="true" aria-label="全站搜尋">
+  <div id="sbox">
+    <input id="sq" type="search" placeholder="搜尋關鍵字，例如：附件、雙括號、城市" autocomplete="off">
+    <ul id="sres"></ul>
+  </div>
+</div>
+<div id="toast" role="status"></div>
+
+<div class="page">
+<main>
+<header class="hero">
+  <div class="eyebrow">工具教學與知識管理筆記</div>
+  <h1>零基礎20分鐘學會Obsidian 95%功能！</h1>
+  <div class="byline">講者 李廠長 · 頻道 李厂长来了 · 發佈 2026-08-08 · 時長 18:04 · 繁體中文</div>
+  <div class="tags"><span class="tag">知識管理</span><span class="tag">第二大腦</span><span class="tag">筆記軟體</span><span class="tag">工具教學</span></div>
+</header>
+
+<section id="summary" style="margin-top:8px" data-idx="摘要">
+  <h2><span class="num">01</span>摘要</h2>
+  <div class="callout c-summary" style="margin-top:0">
+    <ol class="sumlist">
+      <li><b>痛點：</b>多數人誤將收藏吃灰當成知識管理，實際上只是知識囤積；內容存了卻難以重複利用，也容易被特定軟體綁住。</li>
+      <li><b>解法：</b>採用 Obsidian 的本地優先架構與純 Markdown 檔案，指定獨立附件路徑並精簡插件，再用雙括號雙向鏈接串起筆記，讓知識網絡自然長出來。</li>
+      <li><b>核心觀點：</b>以「資料夾為建築、鏈接為道路」的城市心智模型，打造不被軟體綁架的第二大腦。</li>
+    </ol>
+  </div>
+</section>
+
+<section id="map" data-idx="學習地圖">
+  <h2><span class="num">02</span>學習地圖 <small>點節點跳到該策略</small></h2>
+  <div class="card">
+    <div class="lmap" id="lmap"></div>
+    <div class="meter"><i id="mapbar"></i></div>
+    <div class="row" style="justify-content:space-between">
+      <span id="maptxt" class="muted"></span>
+    </div>
+  </div>
+</section>
+
+<section id="s01" data-idx="網頁資訊 Metadata">
+  <h2><span class="num">03</span>網頁資訊 <small>Metadata</small></h2>
+  <div class="table-wrap"><table class="meta-table">
+    <tr><th>來源連結</th><td><a href="https://www.youtube.com/watch?v=NIhT5pd4Znc" target="_blank" rel="noopener">https://www.youtube.com/watch?v=NIhT5pd4Znc</a></td></tr>
+    <tr><th>作者</th><td>李廠長（頻道：李厂长来了）</td></tr>
+    <tr><th>發佈日期</th><td>2026-08-08</td></tr>
+    <tr><th>擷取日期</th><td>2026-10-24</td></tr>
+    <tr><th>內容類型</th><td>工具教學與知識管理筆記</td></tr>
+    <tr><th>語言</th><td>繁體中文</td></tr>
+  </table></div>
+</section>
+
+<section id="s02" data-idx="核心論點 心智圖">
+  <h2><span class="num">04</span>核心論點 <small>Core Thesis</small></h2>
+  <h3>樹狀圖</h3>
+  <div class="diagram" data-idx="樹狀圖 心智圖 本地優先架構 關鍵核心設定 網狀知識連結 城市心智模型"><div class="tree">
+    <div class="t-root">Obsidian基礎與第二大腦</div>
+    <div class="t-branches">
+      <div class="t-col" style="--c:var(--b1)"><a class="t-b" href="#st1"><small>策略1</small>本地優先架構</a><ul class="t-leaves"><li>純Markdown格式保存</li><li>資料夾對應實體檔案</li></ul></div>
+      <div class="t-col" style="--c:var(--b2)"><a class="t-b" href="#st2"><small>策略2</small>關鍵核心設定</a><ul class="t-leaves"><li>指定獨立附件路徑</li><li>篩選關閉多餘插件</li></ul></div>
+      <div class="t-col" style="--c:var(--b3)"><a class="t-b" href="#st3"><small>策略3</small>網狀知識連結</a><ul class="t-leaves"><li>雙括號建立內部鏈接</li><li>自動雙向反向鏈接</li><li>驚嘆號動態嵌入筆記</li></ul></div>
+      <div class="t-col" style="--c:var(--b4)"><a class="t-b" href="#st4"><small>策略4</small>城市心智模型</a><ul class="t-leaves"><li>資料夾作為建築物</li><li>雙向鏈接作為道路</li></ul></div>
+    </div>
+  </div><div class="cap">點分支可跳到對應策略</div></div>
+  <h3>一段式總結</h3>
+  <p>Obsidian 以本地純文字檔案保障使用者的資料所有權，避免陷入傳統筆記工具的知識囤積困境。透過雙向鏈接與佔位筆記機制，使用者能在不中斷思考的前提下自發建立主題網絡，並藉由關係圖譜與城市心智模型，釐清實體分類與概念流動的邊界。</p>
+  <h3>核心圖解</h3>
+  <div class="core" data-idx="核心圖解 地基 收納櫃 道路 城市">
+    <div class="n" style="--c:var(--b1)"><span class="big">🏗️</span><b>本地 Markdown＝地基</b>檔案在自己電腦，不被鎖住</div>
+    <div class="n" style="--c:var(--b2)"><span class="big">🗄️</span><b>附件路徑＝收納櫃</b>圖片自動進附件，根目錄乾淨</div>
+    <div class="n" style="--c:var(--b3)"><span class="big">🛣️</span><b>雙向鏈接＝道路</b>想到就連，不中斷思路</div>
+    <div class="n" style="--c:var(--b4)"><span class="big">🏙️</span><b>城市模型＝地圖</b>建築放資源，道路管關聯</div>
+  </div>
+</section>
+
+<section id="s03" data-idx="敘事脈絡 結構解析">
+  <h2><span class="num">05</span>敘事脈絡 <small>Narrative Flow</small></h2>
+  <ol class="timeline">
+    <li style="--c:var(--muted)"><b>傳統筆記淪為知識囤積</b><a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=13" target="_blank" rel="noopener">[00:13]</a> 收藏大量內容卻吃灰</li>
+    <li style="--c:var(--b1)"><b>改採本地優先Markdown</b><a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=148" target="_blank" rel="noopener">[02:28]</a> 資料夾存純文字檔</li>
+    <li style="--c:var(--b2)"><b>規範附件避免庫面混亂</b><a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=493" target="_blank" rel="noopener">[08:13]</a> 指定附件資料夾、精簡插件</li>
+    <li style="--c:var(--b3)"><b>用雙括號串聯筆記概念</b><a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=746" target="_blank" rel="noopener">[12:26]</a> 即時連結或預建筆記</li>
+    <li style="--c:var(--b4)"><b>以關係圖譜湧現知識網絡</b><a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=933" target="_blank" rel="noopener">[15:33]</a> 筆記自然聚合成主題</li>
+    <li style="--c:var(--tip)"><b>確立城市與道路分類模型</b><a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=994" target="_blank" rel="noopener">[16:34]</a> 資料夾與鏈接各司其職</li>
+  </ol>
+  <h3>結構解析</h3>
+  <ul class="clean">
+    <li><b>傳統筆記淪為知識囤積</b> <a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=13" target="_blank" rel="noopener">[00:13]</a>：指出使用者收藏大量內容卻吃灰且難以重複利用的痛點。</li>
+    <li><b>改採本地優先Markdown</b> <a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=148" target="_blank" rel="noopener">[02:28]</a>：提出以電腦本地資料夾儲存純文字檔，保障數據掌控權與通用性。</li>
+    <li><b>規範附件避免庫面混亂</b> <a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=493" target="_blank" rel="noopener">[08:13]</a>：給出指定附件資料夾與精簡插件的操作建議，維持工作區秩序。</li>
+    <li><b>用雙括號串聯筆記概念</b> <a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=746" target="_blank" rel="noopener">[12:26]</a>：推翻傳統單向歸檔思維，透過雙括號即時連結或預建尚未存在的筆記。</li>
+    <li><b>以關係圖譜湧現知識網絡</b> <a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=933" target="_blank" rel="noopener">[15:33]</a>：展示筆記隨時間自然聚合成主題聚類，形成動態思維地圖。</li>
+    <li><b>確立城市與道路分類模型</b> <a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=994" target="_blank" rel="noopener">[16:34]</a>：下結論，以建築物與道路的比喻嚴格劃分資料夾與鏈接的使用時機。</li>
+  </ul>
+</section>
+
+<section id="s04">
+  <h2><span class="num">06</span>論點展開 <small>Detailed Arguments</small></h2>
+
+  <article class="strategy" id="st1" style="--bc:var(--b1)" data-idx="策略一 本地優先與通用格式保障數據自主權 倉庫 Vault">
+    <h3><span class="badge">1</span><span>策略一：本地優先與通用格式保障數據自主權 <a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=148" target="_blank" rel="noopener">[02:28]</a><span class="sub">筆記存在自己的電腦，不被軟體鎖住</span></span></h3>
+    <p><b>主張：</b>筆記應以純 Markdown 形式存放於本機端，確保不被特定軟體鎖定且兼顧人機可讀性。</p>
+    <ul class="clean">
+      <li>手動建立新倉庫（Vault），明確指定本機端硬碟的存放目錄。</li>
+      <li>將 Obsidian 視為對映本機資料夾的介面，本機與軟體內的檔案變更即時雙向同步。</li>
+    </ul>
+    <div class="chain">
+      <div><b>手動建立 Vault</b><br>自訂名稱與路徑</div>
+      <div><b>指定本機目錄</b><br>明確存放位置</div>
+      <div><b>軟體內新增</b><br>資料夾與筆記</div>
+      <div><b>硬碟同步對應</b><br>資料夾與 .md 檔</div>
+    </div>
+    <div class="callout c-tip"><div class="ct">💡 關鍵操作</div>
+      <p>建立倉庫時建議選擇手動建立而非快速開始，才能完全自訂知識庫的名稱與硬碟實體路徑。</p></div>
+    <div class="case-wrap" data-idx="影片真實案例 策略一案例 李廠長第二大腦 YouTube 數據"><div class="case-eye">策略一案例：本地優先與通用格式保障數據自主權</div>
+      <div class="case"><h4>📌 影片真實案例</h4>
+        <p><b>案例</b> [04:12–04:47]: [真實案例] 講者建立名為「李廠長第二大腦」的倉庫，並在軟體中新建「YouTube」資料夾與「YouTube 數據」筆記 → 電腦實體硬碟資料夾同步產生完全對應的資料夾與 .md 檔案。</p>
+        <p>原話錨點:「新建一個文件家叫 YouTube 你的文件家裡呢就會同步出現它」</p>
+      </div>
+    </div>
+    <div class="lcard">
+      <div class="ok"><h4>✅ 怎麼知道學會了</h4>能在電腦硬碟找到 Vault 資料夾與對應的 .md 檔，並說明為什麼換軟體也打得開。</div>
+      <div class="err"><h4>⚠️ 常見錯誤</h4>用快速開始而沒確認存放路徑；把筆記當成只存在軟體裡的資料。</div>
+      <div class="skill"><h4>🎯 該練的能力</h4>建立 Vault、理解資料夾與檔案的對應關係。</div>
+    </div>
+    <div class="slot" data-strategy="1"></div>
+  </article>
+
+  <article class="strategy" id="st2" style="--bc:var(--b2)" data-idx="策略二 附件集中分流與插件精簡維護 附件資料夾 核心插件 社群插件">
+    <h3><span class="badge">2</span><span>策略二：附件集中分流與插件精簡維護 <a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=493" target="_blank" rel="noopener">[08:13]</a><span class="sub">強制指定附件目錄，審慎管理插件</span></span></h3>
+    <p><b>主張：</b>透過強制指定附件目錄與審慎管理插件，防止知識庫根目錄因拖曳檔案而失序膨脹。</p>
+    <ul class="clean">
+      <li>至「檔案與鏈接」設定中，將附件預設存放路徑改為指定資料夾（如「附件」）。</li>
+      <li>檢視官方核心插件，主動關閉不需要的工具（如錄音功能）。</li>
+      <li>關閉第三方安全模式以瀏覽社群插件，優先依下載量排序篩選熱門穩定擴充套件。</li>
+    </ul>
+    <div class="chain">
+      <div><b>新建「附件」資料夾</b><br>集中放置檔案</div>
+      <div><b>設定預設路徑</b><br>檔案與鏈接 → 附件</div>
+      <div><b>拖曳圖片進編輯區</b><br>不必手動搬檔</div>
+      <div><b>自動存入附件</b><br>根目錄保持乾淨</div>
+    </div>
+    <div class="case-wrap" data-idx="影片真實案例 策略二案例 附件資料夾 拖曳圖片"><div class="case-eye">策略二案例：附件集中分流與插件精簡維護</div>
+      <div class="case"><h4>📌 影片真實案例</h4>
+        <p><b>案例</b> [08:42–09:10]: [真實案例] 講者在軟體中新建「附件」資料夾並指定為儲存路徑，隨後直接拖曳圖片至編輯區 → 圖片自動存入該附件目錄，維持根目錄乾淨且未生成多餘筆記。</p>
+        <p>原話錨點:「直接拖一張圖片到筆記裡 Obsidian呢就會自動把那個圖片存到附件文件」</p>
+      </div>
+    </div>
+    <div class="lcard">
+      <div class="ok"><h4>✅ 怎麼知道學會了</h4>拖曳圖片後，圖片出現在「附件」資料夾，而根目錄沒有多出檔案。</div>
+      <div class="err"><h4>⚠️ 常見錯誤</h4>附件散落在根目錄；一開始就裝一堆社群插件，花時間調校而不是寫筆記。</div>
+      <div class="skill"><h4>🎯 該練的能力</h4>修改設定、克制插件數量、依下載量判斷插件穩定度。</div>
+    </div>
+    <div class="slot" data-strategy="2"></div>
+  </article>
+
+  <article class="strategy" id="st3" style="--bc:var(--b3)" data-idx="策略三 雙向鏈接與佔位引用串聯思考心流 雙括號 反向鏈接 嵌入">
+    <h3><span class="badge">3</span><span>策略三：雙向鏈接與佔位引用串聯思考心流 <a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=746" target="_blank" rel="noopener">[12:26]</a><span class="sub">不切斷寫作思緒，也能建立概念網狀結構</span></span></h3>
+    <p><b>主張：</b>使用雙括號建立內部鏈接與反向鏈接，可在不切斷寫作思緒的情況下建立概念網狀結構。</p>
+    <ul class="clean">
+      <li>輸入 <code>[[</code> 叫出既有筆記選單進行快速關聯。</li>
+      <li>輸入尚未建立的筆記名稱先行標記，事後再點擊生成筆記內容。</li>
+      <li>利用反向鏈接面板檢視引用來源；輸入 <code>![[筆記名稱]]</code> 直接動態嵌入全文。</li>
+    </ul>
+    <div class="fork">
+      <div class="start">寫作時冒出新想法</div>
+      <div class="bad"><b>✗ 中斷思路去新建筆記</b>停下來想放哪個資料夾、取什麼名字，原本的思緒就斷了。</div>
+      <div class="good"><b>✓ 雙括號先寫下來</b>輸入 <code>[[</code> 加名稱先標記，之後再補內容，思路不中斷。</div>
+    </div>
+    <div class="case-wrap" data-idx="影片真實案例 策略三案例 obsidian深度用法 佔位筆記"><div class="case-eye">策略三案例：雙向鏈接與佔位引用串聯思考心流</div>
+      <div class="case"><h4>📌 影片真實案例</h4>
+        <p><b>案例</b> [13:09–13:30]: [真實案例] 講者在編輯時以雙括號輸入未建立的筆記「obsidian深度用法」 → 該鏈接呈現淡色標記，點擊後系統才正式生成筆記，實現不中斷思考的延伸記錄。</p>
+        <p>原話錨點:「輸入一個還不存在的筆記鏈接叫 obsidian 深度用法」</p>
+      </div>
+    </div>
+    <div class="lcard">
+      <div class="ok"><h4>✅ 怎麼知道學會了</h4>能在寫作中用 <code>[[</code> 連到一則還不存在的筆記，並在反向鏈接面板看到引用來源。</div>
+      <div class="err"><h4>⚠️ 常見錯誤</h4>佔位筆記連了不補，變成一堆空節點；連結從不回顧，關係圖譜變成亂糟糟的蜘蛛網。</div>
+      <div class="skill"><h4>🎯 該練的能力</h4>邊寫邊連、定期整理回顧、用 <code>![[ ]]</code> 嵌入重複使用的內容。</div>
+    </div>
+    <div class="slot" data-strategy="3"></div>
+  </article>
+
+  <article class="strategy" id="st4" style="--bc:var(--b4)" data-idx="策略四 城市與道路心智模型劃分組織邊界 建築物 道路 資料夾 鏈接">
+    <h3><span class="badge">4</span><span>策略四：「城市與道路」心智模型劃分組織邊界 <a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=991" target="_blank" rel="noopener">[16:31]</a><span class="sub">資料夾放資源，概念交流交給鏈接</span></span></h3>
+    <p><b>主張：</b>資料夾僅用於存放具備固定實體屬性的資源，筆記間的概念交流應全數交給鏈接與圖譜。</p>
+    <ul class="clean">
+      <li>資料夾作為「建築物」：嚴格限用於存放附件、模板、日曆、每日日記或歸檔項目。</li>
+      <li>雙向鏈接作為「道路」：只要兩個概念存在關聯即建立鏈接，讓主題在關係圖譜中自然聚集成圈。</li>
+    </ul>
+    <div class="table-wrap"><table>
+      <tr><th>組織維度</th><th>實體比喻</th><th>適用對象</th><th>核心機制</th></tr>
+      <tr><td><b>資料夾 (Folder)</b></td><td>建築物</td><td>附件、模板、歸檔專案、每日筆記</td><td>決定知識資源在本機檔案系統中的實體存放位置</td></tr>
+      <tr><td><b>雙向鏈接 (Link)</b></td><td>道路</td><td>跨領域概念、靈感關聯、主題筆記</td><td>展現不同節點的流動關係，於關係圖譜形成主題圈</td></tr>
+    </table></div>
+    <div class="case-wrap" data-idx="影片真實案例 策略四案例 城市 建築物 道路"><div class="case-eye">策略四案例：「城市與道路」心智模型劃分組織邊界</div>
+      <div class="case"><h4>📌 影片真實案例</h4>
+        <p><b>案例</b> [16:34–17:03]: [比喻] 講者把知識庫比喻為一座城市，將資料夾比喻為固定位置的建築物，而鏈接比喻為連接建築物的道路 → 說明資料夾不負責內容交流，概念間的碰撞完全依賴道路般的鏈接。</p>
+        <p>原話錨點:「把你的 Obsidian 知識庫想像成是一座城市」</p>
+      </div>
+    </div>
+    <div class="lcard">
+      <div class="ok"><h4>✅ 怎麼知道學會了</h4>能說出哪些東西放資料夾（附件、模板、日曆、每日日記、歸檔），哪些概念關聯交給鏈接。</div>
+      <div class="err"><h4>⚠️ 常見錯誤</h4>用層層資料夾去分類概念；兩個概念明明有關聯，卻沒有建立鏈接。</div>
+      <div class="skill"><h4>🎯 該練的能力</h4>區分實體資源與概念關聯，只要有關聯就建立鏈接。</div>
+    </div>
+    <div class="slot" data-strategy="4"></div>
+  </article>
+</section>
+
+<section id="s05" data-idx="關鍵洞察 反思 核心啟示">
+  <h2><span class="num">07</span>關鍵洞察 &amp; 反思 <small>Key Insights</small></h2>
+  <h3>筆記提煉：4 大高價值啟發</h3>
+  <ol class="insights">
+    <li><b>資料所有權比功能多寡更重要：</b>筆記是本地的純 Markdown 檔，不會被鎖在 Obsidian 這個應用裡，使用者始終對自己的數據擁有完全的控制權。</li>
+    <li><b>秩序來自一次性的設定，而不是每次的自律：</b>指定附件路徑、關閉用不到的插件，只要設一次，之後拖曳檔案就自動分流，不必再花力氣整理。</li>
+    <li><b>先寫下來，之後再補：</b>有了新想法可以用雙括號先標記，不需要中斷思路去新建一則筆記，讓延伸記錄不打斷思考。</li>
+    <li><b>資料夾管建築，鏈接管道路：</b>固定屬性的資源放資料夾，概念之間的關聯交給鏈接，並藉由關係圖譜讓主題自然聚集。</li>
+  </ol>
+  <div class="callout c-important"><div class="ct">⭐ 核心啟示</div>
+    <p>多數人誤將收藏吃灰當成知識管理；解法是透過 Obsidian 本地優先架構與 Markdown 雙向鏈接，以「資料夾為建築、鏈接為道路」的心智模型打造不被軟體綁架的第二大腦。</p></div>
+</section>
+
+<section id="panel" data-idx="多元觀點 顧問團 執行者 懷疑者 願景者 使用者代言人 財務腦">
+  <h2><span class="num">08</span>多元觀點 <small>Panel Review</small></h2>
+  <p class="muted">評議議題：是否應採納「以 Obsidian 為核心的本地優先與雙向鏈接」作為個人第二大腦管理體系？以下為模擬顧問團的多視角評估（虛構視角，非真人意見）。</p>
+  <div class="callout c-note"><div class="ct">🗳️ 顧問團結論</div>
+    <ul>
+      <li><b>投票：</b>3 支持、0 反對、2 有條件支持</li>
+      <li><b>共識：</b>顧問團一致肯定本地 Markdown 的資料所有權與防鎖定優勢，但強調必須克制插件膨脹與無意義鏈接，避免落入工具維護的次級陷阱。</li>
+      <li><b>關鍵前提：</b>使用者需具備持續寫作並建立關聯的習慣，否則雙向鏈接圖譜將淪為無意義的空節點。</li>
+      <li><b>分歧線：</b>願景者重視長期語意網絡湧現與 AI 整合潛力；懷疑者則聚焦於建構雙向鏈接所消耗的認知成本與初期混亂風險。</li>
+      <li><b>權重最高：</b>🔧 執行者。軟體再強大，關鍵仍在於能否無痛落地於日常工作流，而非陷入配置調校。</li>
+    </ul></div>
+  <div class="panel">
+    <div class="card"><div class="role">🔧 執行者（有條件支持）</div><p>[影片] 演示了手動配置附件資料夾 <a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=511" target="_blank" rel="noopener">[08:31]</a> 能有效避免目錄雜亂，這在執行層面是必做的防呆機制。[模擬觀點] 但若新手在初期花過多時間折騰社群插件或微調排版，會嚴重稀釋產出；建議前一個月維持核心插件運作，驗證鏈接習慣成立後再擴充。</p></div>
+    <div class="card"><div class="role">⚠️ 懷疑者（有條件支持）</div><p>[影片] 指出傳統筆記容易在收藏夾吃灰 <a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=18" target="_blank" rel="noopener">[00:18]</a>，然而雙向鏈接若未經消化，同樣會演變成「圖譜式吃灰」。[模擬觀點] 佔位筆記功能雖方便，但極易產生大量未完成的幽靈節點，若缺乏定期的整理回顧機制，關係圖譜終將變成混亂的蜘蛛網。</p></div>
+    <div class="card"><div class="role">🚀 願景者（支持）</div><p>[影片] 明確提到純 Markdown 檔案是人類與 AI 溝通的良好橋樑且未來不會過時 <a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=302" target="_blank" rel="noopener">[05:02]</a>。[模擬觀點] 這種本地語意網絡在累積數百篇筆記後，能與本地大型語言模型完美對接，解鎖跨學科脈絡的自動合成能力，長線複合效益極高。</p></div>
+    <div class="card"><div class="role">👤 使用者代言人（支持）</div><p>[影片] 提出的「城市與道路」比喻 <a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=994" target="_blank" rel="noopener">[16:34]</a> 成功化解了初學者在資料夾層級上的分類焦慮。[模擬觀點] 雙括號鏈接讓人在記錄當下不必中斷思路去決定分類目錄，大幅降低了寫作時的認知摩擦力。</p></div>
+    <div class="card"><div class="role">💰 財務腦（支持）</div><p>[影片] 強調本套方法全功能免費 <a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=66" target="_blank" rel="noopener">[01:06]</a>，相較於昂貴的雲端 SaaS 訂閱制筆記軟體，直接省下持續性開銷。[模擬觀點] 雖然前期需投入約 2 小時熟悉 Markdown 標記語法與路徑邏輯，但消除了日後供應商終止服務或漲價的沉沒成本，投資報酬率顯著。</p></div>
+  </div>
+</section>
+
+<section id="s06" data-idx="重要引述 Key Quotes">
+  <h2><span class="num">09</span>重要引述 <small>Key Quotes</small></h2>
+  <blockquote class="q">「很多時候呢，我們做的並不是知識管理，而是知識囤積。」<cite>—— 李廠長 <a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=13" target="_blank" rel="noopener">[00:13]</a></cite></blockquote>
+  <blockquote class="q">「你的筆記屬於你自己，他們呢不會被鎖在 Obsidian 這個應用裡，我們呢始終對自己的數據擁有完全的控制權。」<cite>—— 李廠長 <a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=315" target="_blank" rel="noopener">[05:15]</a></cite></blockquote>
+  <blockquote class="q">「文件夾呢就像是裡面的建築物...而鏈接或者反向鏈接呢就像是道路，道路呢是不會移動建築物本身的，而是展示了不同地點之間的連接關係。」<cite>—— 李廠長 <a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=998" target="_blank" rel="noopener">[16:38]</a></cite></blockquote>
+  <blockquote class="q">「在記筆記的時候有了新的想法呢就可以先寫下來，之後呢再進行補充，不需要中斷思路去新建一個筆記。」<cite>—— 李廠長 <a class="ts" href="https://www.youtube.com/watch?v=NIhT5pd4Znc&amp;t=811" target="_blank" rel="noopener">[13:31]</a></cite></blockquote>
+</section>
+
+<section id="s07" data-idx="術語表 Glossary">
+  <h2><span class="num">10</span>術語表 <small>Glossary</small></h2>
+  <div class="table-wrap"><table>
+    <tr><th>中文術語</th><th>英文術語</th><th>情境定義</th></tr>
+    <tr><td>倉庫 / 知識庫</td><td>Vault</td><td>Obsidian 在電腦本機端存放所有筆記、附件與設定設定檔的實體根目錄資料夾。</td></tr>
+    <tr><td>反向鏈接</td><td>Backlinks</td><td>系統自動雙向追蹤機制，能於側邊欄顯示目前筆記被哪些其他筆記引用的清單。</td></tr>
+    <tr><td>快速切換</td><td>Quick Switcher</td><td>透過鍵盤快捷鍵快速搜尋筆記名稱並在檔案間跳轉的導航工具。</td></tr>
+    <tr><td>關係圖譜</td><td>Graph View</td><td>將筆記節點與彼此之間的鏈接關係可視化呈現的網狀思維地圖。</td></tr>
+    <tr><td>白板</td><td>Canvas</td><td>可在無限畫布上自由拖曳卡片、文字、筆記與圖片，並連線理清思路的視覺工具。</td></tr>
+  </table></div>
+</section>
+
+<section id="s08" data-idx="相關筆記 Related Notes">
+  <h2><span class="num">11</span>相關筆記 <small>Related Notes</small></h2>
+  <ul class="related">
+    <li>卡片盒筆記法與雙向鏈接實踐</li>
+    <li>Markdown語法與本地優先資料管理</li>
+  </ul>
+</section>
+
+<footer>© 零基礎20分鐘學會Obsidian 95%功能！</footer>
+</main>
+<aside class="toc" id="toc" aria-label="本頁目錄"><div class="tl">CONTENTS</div><div id="toclist"></div></aside>
+</div>
+
+<script>
+(function(){
+  /* ---------- storage ---------- */
+  var KEY='obsidian-notes-v1', THEME='theme', mem=null;
+  function load(){
+    try{var s=localStorage.getItem(KEY); if(s){var o=JSON.parse(s); if(o&&typeof o==='object') return o;}}catch(e){}
+    return mem||{};
+  }
+  var S=load();
+  S.done=S.done||{}; S.notes=S.notes||{};
+  function save(){mem=S; try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+  function $(s,r){return (r||document).querySelector(s)}
+  function $$(s,r){return [].slice.call((r||document).querySelectorAll(s))}
+  function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  var toastT;
+  function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove('show')},1800)}
+  function copy(text){
+    function fb(){var a=document.createElement('textarea');a.value=text;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy');toast('已複製')}catch(e){toast('請手動複製')}document.body.removeChild(a)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(function(){toast('已複製')},fb)}else fb();
+  }
+
+  /* ---------- theme ---------- */
+  var root=document.documentElement;
+  try{var th=localStorage.getItem(THEME); if(th) root.setAttribute('data-theme',th)}catch(e){}
+  function isDark(){var t=root.getAttribute('data-theme'); if(t) return t==='dark'; return window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches}
+  function icon(){$('#theme').textContent=isDark()?'☀️':'🌙'}
+  icon();
+  $('#theme').addEventListener('click',function(){
+    var n=isDark()?'light':'dark'; root.setAttribute('data-theme',n); try{localStorage.setItem(THEME,n)}catch(e){} icon();
+  });
+  if(window.matchMedia)matchMedia('(prefers-color-scheme: dark)').addEventListener('change',icon);
+
+  /* ---------- progress / map ---------- */
+  var NAMES=['本地優先','附件與插件','雙向鏈接','城市與道路'], N=NAMES.length;
+  function doneCount(){var c=0;for(var i=1;i<=N;i++)if(S.done[i])c++;return c}
+  function renderMap(){
+    var el=$('#lmap'); el.innerHTML='';
+    NAMES.forEach(function(n,i){
+      var b=document.createElement('button'); b.type='button'; b.className='lnode'+(S.done[i+1]?' done':'');
+      b.innerHTML='<div class="dot">'+(S.done[i+1]?'✓':(i+1))+'</div><div class="lt">'+n+'</div>';
+      b.addEventListener('click',function(){$('#st'+(i+1)).scrollIntoView({behavior:'smooth'})});
+      el.appendChild(b);
+    });
+    var c=doneCount(); $('#mapbar').style.width=(c/N*100)+'%'; $('#maptxt').textContent='已完成 '+c+' / '+N+' 個策略';
+    $$('.slot').forEach(function(s){var b=$('.donebtn',s); if(b) styleDone(b,+s.dataset.strategy)});
+  }
+  function styleDone(b,i){b.className='btn donebtn '+(S.done[i]?'done':'primary'); b.textContent=S.done[i]?'✓ 已完成（點擊取消）':'✓ 我學會了'}
+
+  /* ---------- strategy slots (done button + note) ---------- */
+  $$('.slot').forEach(function(slot){
+    var i=+slot.dataset.strategy;
+    slot.innerHTML='<h4>🗒️ 我的筆記</h4><textarea class="note" placeholder="寫下你的想法，或這週要在自己的 Vault 做的一件小事…"></textarea><div class="row" style="margin-top:8px"><button type="button" class="btn donebtn"></button><button type="button" class="btn ncopy">複製筆記</button></div>';
+    var ta=$('textarea',slot); ta.value=S.notes[i]||'';
+    var t; ta.addEventListener('input',function(){clearTimeout(t);t=setTimeout(function(){S.notes[i]=ta.value;save()},300)});
+    $('.donebtn',slot).addEventListener('click',function(){S.done[i]=!S.done[i];save();renderMap();toast(S.done[i]?'已標記完成':'已取消')});
+    $('.ncopy',slot).addEventListener('click',function(){copy(ta.value||'（尚無筆記）')});
+  });
+
+  /* ---------- search ---------- */
+  var blocks=$$('[data-idx]');
+  function openS(){$('#sov').classList.add('open');var q=$('#sq');q.value='';$('#sres').innerHTML='';setTimeout(function(){q.focus()},30)}
+  function closeS(){$('#sov').classList.remove('open')}
+  $('#sbtn').addEventListener('click',openS);
+  $('#sov').addEventListener('click',function(e){if(e.target.id==='sov')closeS()});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape')closeS();
+    if(e.key==='/'&&!/INPUT|TEXTAREA|SELECT/.test((document.activeElement||{}).tagName||'')){e.preventDefault();openS()}
+  });
+  $('#sq').addEventListener('input',function(){
+    var q=this.value.trim().toLowerCase(),ul=$('#sres');ul.innerHTML='';if(!q)return;
+    var n=0;
+    blocks.forEach(function(el){
+      if(n>=12)return;
+      var txt=(el.innerText||el.textContent||'').replace(/\s+/g,' '),i=txt.toLowerCase().indexOf(q);
+      var title=el.dataset.idx.split(' ')[0];
+      if(i<0&&el.dataset.idx.toLowerCase().indexOf(q)<0)return;
+      var s=i<0?txt.slice(0,60):txt.slice(Math.max(0,i-20),i+50);
+      var hl=esc(s).replace(new RegExp(esc(q).replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi'),function(m){return '<mark>'+m+'</mark>'});
+      var li=document.createElement('li'),b=document.createElement('button');b.type='button';
+      b.innerHTML='<div class="st">'+esc(title)+'</div><div class="ss">…'+hl+'…</div>';
+      b.addEventListener('click',function(){closeS();el.scrollIntoView({behavior:'smooth',block:'start'});el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash')});
+      li.appendChild(b);ul.appendChild(li);n++;
+    });
+    if(!n)ul.innerHTML='<li class="muted" style="padding:10px 12px">找不到「'+esc(this.value)+'」</li>';
+  });
+
+  /* ---------- scroll progress & nav spy ---------- */
+  var bar=$('#progress');
+  var raf=0;function onScroll(){if(raf)return;raf=requestAnimationFrame(function(){raf=0;var h=document.documentElement.scrollHeight-innerHeight;bar.style.transform='scaleX('+(h>0?Math.min(1,scrollY/h):0)+')'})}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var links=$$('nav.top a'),map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on')});var a=map[e.target.id];if(a){a.classList.add('on');var nv=a.parentNode;nv.scrollLeft=a.offsetLeft-nv.clientWidth/2+a.clientWidth/2}}})},{rootMargin:'-20% 0px -70% 0px'});
+    Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+  }
+
+  /* ---------- right-hand contents ---------- */
+  (function(){
+    var items=[['summary','摘要',0],['map','學習地圖',0],['s01','網頁資訊',0],['s02','核心論點',0],['s03','敘事脈絡',0],['s04','論點展開',0],
+      ['st1','策略一：本地優先',1],['st2','策略二：附件與插件',1],['st3','策略三：雙向鏈接',1],['st4','策略四：城市與道路',1],
+      ['s05','關鍵洞察',0],['panel','多元觀點',0],['s06','重要引述',0],['s07','術語表',0],['s08','相關筆記',0]];
+    var h='',n=0;
+    items.forEach(function(it){if(!document.getElementById(it[0]))return;var sub=it[2];if(!sub)n++;h+='<button type="button" class="'+(sub?'sub':'')+'" data-t="'+it[0]+'"><span class="no">'+(sub?'·':(n<10?'0':'')+n)+'</span><span>'+it[1]+'</span></button>'});
+    var box=$('#toclist');box.innerHTML=h;
+    var btns=$$('button',box);
+    box.addEventListener('click',function(e){var b=e.target.closest('button[data-t]');if(!b)return;var el=document.getElementById(b.dataset.t);if(el)el.scrollIntoView({block:'start'})});
+    var els=btns.map(function(b){return document.getElementById(b.dataset.t)}),act=-1,tk=0;
+    function spy(){
+      tk=0;var cur=0;
+      for(var i=0;i<els.length;i++){if(els[i].getBoundingClientRect().top<=150)cur=i;else break}
+      if(cur!==act){act=cur;btns.forEach(function(b,i){b.classList.toggle('on',i===cur)});
+        var t=$('#toc');if(t&&t.scrollHeight>t.clientHeight){t.scrollTop=btns[cur].offsetTop-t.clientHeight/2}}
+    }
+    addEventListener('scroll',function(){if(!tk)tk=requestAnimationFrame(spy)},{passive:true});
+    spy();
+  })();
+
+  /* ---------- illustrations (inline svg, static) ---------- */
+  (function(){
+    var A0='<svg viewBox="0 0 300 150" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">';
+    var F='currentColor';
+    var ART={
+      hero:A0+'<path d="M150 14 L206 48 L192 128 L108 128 L94 48 Z"/><path d="M150 14 V128 M94 48 L192 128 M206 48 L108 128" stroke-width="1.8"/><circle cx="42" cy="104" r="12" fill="'+F+'"/><circle cx="62" cy="40" r="9" fill="'+F+'"/><circle cx="262" cy="96" r="12" fill="'+F+'"/><circle cx="246" cy="30" r="9" fill="'+F+'"/><path d="M52 98 L94 70 M70 46 L96 54 M250 92 L200 80 M240 38 L206 52" stroke-dasharray="3 7"/></svg>',
+      summary:A0+'<path d="M52 36 H168 V92 H100 L72 118 V92 H52 Z"/><path d="M72 56 H148 M72 72 H128"/><path d="M200 70 C176 52 190 28 210 44 C230 28 244 52 220 72 L210 84 Z" fill="'+F+'"/><path d="M236 108 q16 -14 32 0" stroke-dasharray="2 7"/></svg>',
+      map:A0+'<path d="M24 118 C62 92 70 58 110 66 S170 112 206 78 S250 40 276 30" stroke-dasharray="3 9"/><circle cx="24" cy="120" r="10" fill="'+F+'"/><circle cx="110" cy="66" r="10" fill="'+F+'"/><circle cx="206" cy="78" r="10" fill="'+F+'"/><path d="M270 44 V14 L292 22 L270 30" fill="'+F+'"/><path d="M248 126 L262 110 L276 126 Z" fill="'+F+'" stroke="none"/></svg>',
+      s01:A0+'<rect x="66" y="26" width="168" height="108" rx="12"/><path d="M66 56 H234"/><circle cx="86" cy="41" r="3.5" fill="'+F+'"/><circle cx="102" cy="41" r="3.5" fill="'+F+'"/><path d="M90 78 H150 M90 98 H132 M168 78 H210 M168 98 H198"/><circle cx="200" cy="112" r="14"/><path d="M193 112 l5 5 9 -10" stroke-width="3"/></svg>',
+      s08:A0+'<rect x="40" y="38" width="76" height="58" rx="8"/><rect x="184" y="38" width="76" height="58" rx="8"/><rect x="112" y="92" width="76" height="46" rx="8"/><path d="M116 66 H184 M150 96 V92 M78 96 L112 112 M222 96 L188 112" stroke-dasharray="3 6"/><circle cx="78" cy="67" r="6" fill="'+F+'"/><circle cx="222" cy="67" r="6" fill="'+F+'"/><circle cx="150" cy="115" r="6" fill="'+F+'"/></svg>',
+      s02:A0+'<circle cx="150" cy="28" r="15" fill="'+F+'"/><path d="M150 43 L70 98 M150 43 L150 98 M150 43 L230 98"/><circle cx="70" cy="104" r="11" fill="'+F+'"/><circle cx="150" cy="104" r="11" fill="'+F+'"/><circle cx="230" cy="104" r="11" fill="'+F+'"/><path d="M70 115 L44 134 M70 115 L96 134 M150 115 L124 134 M150 115 L176 134 M230 115 L204 134 M230 115 L256 134" stroke-width="1.8"/></svg>',
+      s03:A0+'<path d="M16 110 C50 60 80 150 120 90 S190 40 230 80 S270 100 286 56" stroke-dasharray="3 8"/><circle cx="16" cy="110" r="9" fill="'+F+'"/><circle cx="85" cy="108" r="9" fill="'+F+'"/><circle cx="150" cy="70" r="9" fill="'+F+'"/><circle cx="232" cy="80" r="9" fill="'+F+'"/><path d="M276 66 L288 54 L291 72" fill="'+F+'"/></svg>',
+      st1:A0+'<path d="M34 50 H78 L90 64 H138 V122 H34 Z"/><rect x="170" y="40" width="82" height="92" rx="8"/><path d="M186 66 H236 M186 84 H236 M186 102 H216"/><path d="M144 82 H164 M158 76 L164 82 L158 88 M164 104 H144 M150 98 L144 104 L150 110"/></svg>',
+      st2:A0+'<rect x="40" y="12" width="82" height="58" rx="8"/><circle cx="64" cy="32" r="7" fill="'+F+'"/><path d="M44 66 L72 44 L92 58 L106 48 L120 60"/><path d="M81 78 V94 M73 88 L81 96 L89 88"/><path d="M40 104 H74 L84 114 H122 V140 H40 Z"/><rect x="186" y="40" width="68" height="26" rx="13"/><circle cx="200" cy="53" r="8" fill="'+F+'"/><rect x="186" y="84" width="68" height="26" rx="13"/><circle cx="240" cy="97" r="8" fill="'+F+'"/></svg>',
+      st3:A0+'<circle cx="62" cy="108" r="14" fill="'+F+'"/><circle cx="150" cy="40" r="14" fill="'+F+'"/><circle cx="238" cy="108" r="14" fill="'+F+'"/><path d="M73 98 L139 50 M161 50 L227 98 M78 112 H134 M166 112 H222"/><circle cx="150" cy="112" r="9" stroke-dasharray="3 4"/></svg>',
+      st4:A0+'<rect x="38" y="62" width="48" height="62"/><rect x="100" y="34" width="54" height="90"/><rect x="168" y="72" width="44" height="52"/><rect x="226" y="52" width="40" height="72"/><path d="M52 80 H72 M52 98 H72 M114 52 H140 M114 72 H140 M114 92 H140 M180 90 H200 M240 70 H252 M240 90 H252"/><path d="M16 126 H284"/><path d="M52 142 H248" stroke-dasharray="6 8"/></svg>',
+      s05:A0+'<path d="M120 100 C96 82 98 40 150 34 C202 40 204 82 180 100 V114 H120 Z"/><path d="M126 128 H174 M136 140 H164"/><path d="M150 12 V4 M92 34 l-8 -6 M208 34 l8 -6 M70 76 H60 M240 76 H230"/></svg>',
+      panel:A0+'<circle cx="80" cy="56" r="14" fill="'+F+'"/><path d="M52 112 q28 -46 56 0 z" fill="'+F+'"/><circle cx="150" cy="46" r="16" fill="'+F+'"/><path d="M118 112 q32 -54 64 0 z" fill="'+F+'"/><circle cx="220" cy="56" r="14" fill="'+F+'"/><path d="M192 112 q28 -46 56 0 z" fill="'+F+'"/></svg>',
+      s06:A0+'<path d="M52 40 H132 V86 H92 L70 108 V86 H52 Z"/><path d="M168 54 H248 V100 H230 V122 L208 100 H168 Z"/><path d="M68 58 H116 M68 70 H100 M184 70 H232 M184 82 H216"/></svg>',
+      s07:A0+'<rect x="82" y="22" width="110" height="112" rx="10"/><path d="M110 56 H168 M110 80 H168 M110 104 H146"/><path d="M96 22 V134" stroke-width="1.5"/><circle cx="222" cy="104" r="22"/><path d="M238 120 L262 144" stroke-width="6"/></svg>'
+    };
+    var hero=document.querySelector('header.hero');
+    if(hero){var d=document.createElement('div');d.className='hero-art';d.innerHTML=ART.hero;hero.appendChild(d)}
+    Object.keys(ART).forEach(function(k){
+      if(k==='hero')return;var el=document.getElementById(k);if(!el)return;
+      var d=document.createElement('div');d.className='sart';d.innerHTML=ART[k];el.insertBefore(d,el.firstChild);el.classList.add('has-sart');
+    });
+  })();
+
+  renderMap();
+})();
+</script>
+</body>
+</html>
