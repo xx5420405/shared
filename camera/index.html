@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026年1~6月相機銷售排行榜</title>
+<meta name="description" content="攝影器材與選購筆記：2026 上半年實體通路相機銷售前十名，解析水桶機、口袋機、復古全幅與三萬內輕巧機的取捨。">
+<style>
+:root{
+  --bg:#f7f9fb; --surface:#ffffff; --surface2:#eef2f6; --text:#1b2430; --muted:#5d6b7c;
+  --line:#dde4ec; --line2:#c3cdd9; --accent:#0e7490; --on:#ffffff;
+  --tip:#1f7a5a; --note:#2563a8; --imp:#b3261e; --sum:#6d4fb0;
+  --b1:#0e7490; --b2:#b4531a; --b3:#6d4fb0; --b4:#17704f;
+  --radius:14px; --shadow:0 1px 2px rgba(0,0,0,.05),0 4px 14px rgba(0,0,0,.05);
+  --accent-soft:color-mix(in srgb,var(--accent) 12%,var(--surface));
+  --tip-bg:color-mix(in srgb,var(--tip) 11%,var(--surface));
+  --note-bg:color-mix(in srgb,var(--note) 11%,var(--surface));
+  --imp-bg:color-mix(in srgb,var(--imp) 10%,var(--surface));
+  --sum-bg:color-mix(in srgb,var(--sum) 11%,var(--surface));
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e141c; --surface:#151d28; --surface2:#1c2735; --text:#e6ebf2; --muted:#98a6b8;
+    --line:#2a3a4d; --line2:#3b4e66; --accent:#5cc8e6; --on:#0b1118;
+    --tip:#5ee0a6; --note:#6cb2ff; --imp:#ff7b7b; --sum:#b99bff;
+    --b1:#5cc8e6; --b2:#ffa066; --b3:#b99bff; --b4:#4fd8a4;
+    --shadow:0 1px 0 rgba(255,255,255,.03) inset,0 8px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e141c; --surface:#151d28; --surface2:#1c2735; --text:#e6ebf2; --muted:#98a6b8;
+  --line:#2a3a4d; --line2:#3b4e66; --accent:#5cc8e6; --on:#0b1118;
+  --tip:#5ee0a6; --note:#6cb2ff; --imp:#ff7b7b; --sum:#b99bff;
+  --b1:#5cc8e6; --b2:#ffa066; --b3:#b99bff; --b4:#4fd8a4;
+  --shadow:0 1px 0 rgba(255,255,255,.03) inset,0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--text);line-height:1.8;font-size:17px;overflow-x:hidden;
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Microsoft JhengHei","Segoe UI",sans-serif}
+a{color:var(--accent)}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--accent);z-index:40;transform-origin:0 50%;transform:scaleX(0);will-change:transform;pointer-events:none}
+nav.top{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--line);transform:translateZ(0)}
+nav.top .inner{position:relative;max-width:1240px;margin:0 auto;padding:0 12px;display:flex;gap:2px;align-items:center;overflow-x:auto;scrollbar-width:none}
+nav.top .inner::-webkit-scrollbar{display:none}
+nav.top a{flex:none;padding:12px 9px;font-size:14px;color:var(--muted);text-decoration:none;white-space:nowrap}
+nav.top a:hover,nav.top a.on{color:var(--accent)}
+.tools{flex:none;margin-left:auto;display:flex;gap:6px;padding-left:8px;position:sticky;right:0;background:var(--bg)}
+.ibtn{border:1px solid var(--line);background:var(--surface);border-radius:999px;min-width:44px;height:36px;padding:0 12px;font-size:14px}
+main{min-width:0;padding:0 0 96px}
+.page{max-width:920px;margin:0 auto;padding:0 16px}
+.toc{display:none}
+@media (min-width:1180px){
+  .page{max-width:1240px;display:grid;grid-template-columns:minmax(0,880px) 240px;gap:32px;justify-content:center}
+  .toc{display:block;position:sticky;top:64px;align-self:start;max-height:calc(100vh - 84px);overflow:auto;margin-top:44px;padding:14px 12px;background:var(--surface);border:1px solid var(--line);border-radius:16px;contain:content}
+}
+.toc .tl{font-size:12px;letter-spacing:.22em;color:var(--muted);font-weight:700;margin:0 6px 10px}
+.toc button{display:flex;gap:10px;width:100%;text-align:left;border:0;border-left:2px solid var(--line);background:none;padding:6px 8px;color:var(--text);font-size:14px;line-height:1.45;border-radius:0 8px 8px 0}
+.toc button:hover{background:var(--surface2)}
+.toc button .no{color:var(--muted);font-variant-numeric:tabular-nums;font-size:12px;padding-top:2px;flex:none;min-width:1.4em}
+.toc button.sub{padding-left:26px;font-size:13px;color:var(--muted)}
+.toc button.on{color:var(--accent);font-weight:700;border-left-color:var(--accent);background:var(--accent-soft)}
+.toc button.on .no{color:var(--accent)}
+/* illustrations */
+header.hero{position:relative}
+.hero-art{position:absolute;right:0;bottom:6px;width:260px;color:var(--accent);opacity:.9;pointer-events:none}
+.sart{position:absolute;right:0;top:-6px;width:128px;color:var(--accent);opacity:.85;pointer-events:none}
+section,article.strategy{position:relative}
+article.strategy .sart{right:14px;top:8px;width:104px}
+section.has-sart>h2{padding-right:140px}
+article.strategy.has-sart>h3{padding-right:112px}
+@media (max-width:760px){.hero-art,.sart{display:none}section.has-sart>h2,article.strategy.has-sart>h3{padding-right:0}}
+header.hero{padding:44px 0 20px}
+.eyebrow{color:var(--accent);font-size:14px;letter-spacing:.08em;font-weight:600}
+h1{font-size:clamp(28px,6vw,44px);line-height:1.25;margin:8px 0 6px;letter-spacing:-.01em;overflow-wrap:anywhere}
+.subtitle{font-size:clamp(16px,3vw,20px);color:var(--muted);margin:0 0 12px}
+.byline{color:var(--muted);font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tag{background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:2px 12px;font-size:13px}
+section{margin-top:56px}
+h2{font-size:clamp(22px,4.5vw,28px);margin:0 0 18px;display:flex;gap:10px;align-items:baseline;line-height:1.35;flex-wrap:wrap}
+h2 .num{color:var(--accent);font-variant-numeric:tabular-nums;font-size:.8em}
+h2 small{color:var(--muted);font-weight:400;font-size:.55em}
+h3{font-size:20px;margin:28px 0 10px}
+h4{margin:0 0 6px;font-size:16px}
+p{margin:0 0 14px}
+.muted{color:var(--muted)}
+.ts{display:inline-block;font-size:12.5px;line-height:1.5;padding:0 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);text-decoration:none;white-space:nowrap;vertical-align:baseline;font-variant-numeric:tabular-nums}
+a.ts:hover{background:var(--accent);color:var(--on)}
+.callout{border-radius:var(--radius);padding:16px 18px;margin:18px 0;border-left:4px solid var(--c);background:var(--cbg)}
+.callout .ct{font-weight:700;color:var(--c);margin-bottom:6px}
+.callout ul{margin:0;padding-left:20px}
+.callout p:last-child{margin-bottom:0}
+.sumlist{margin:0;padding:0;list-style:none;counter-reset:sm}
+.sumlist li{counter-increment:sm;position:relative;padding-left:40px;margin-bottom:12px}
+.sumlist li:last-child{margin-bottom:0}
+.sumlist li::before{content:counter(sm);position:absolute;left:0;top:2px;width:28px;height:28px;border-radius:50%;background:var(--sum);color:var(--on);display:grid;place-items:center;font-weight:700;font-size:15px}
+.c-summary{--c:var(--sum);--cbg:var(--sum-bg)}
+.c-tip{--c:var(--tip);--cbg:var(--tip-bg)}
+.c-note{--c:var(--note);--cbg:var(--note-bg)}
+.c-important{--c:var(--imp);--cbg:var(--imp-bg)}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px;line-height:1.6}
+th,td{padding:10px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--surface2);font-weight:600;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.meta-table{min-width:0}.meta-table th{width:34%}
+table.wide{min-width:880px}
+table.rank{min-width:820px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow)}
+.btn{text-decoration:none;display:inline-flex;align-items:center;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 14px;min-height:40px;font-size:15px}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on);font-weight:600}
+.btn.done{background:var(--tip-bg);border-color:var(--tip);color:var(--tip);font-weight:600}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.diagram{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px;margin:16px 0;overflow-x:auto;box-shadow:var(--shadow)}
+.diagram .cap{font-size:13px;color:var(--muted);margin-top:6px;text-align:center}
+/* tree */
+.tree{text-align:center;padding:8px 0 4px}
+.t-root{display:inline-block;position:relative;padding:12px 28px;border-radius:14px;background:var(--accent);color:var(--on);font-weight:700;font-size:19px;line-height:1.4}
+.t-root::after{content:"";position:absolute;left:50%;top:100%;width:2px;height:24px;margin-left:-1px;background:var(--line2)}
+.t-branches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:24px}
+.t-col{position:relative;padding-top:24px}
+.t-col::before{content:"";position:absolute;top:0;left:-6px;right:-6px;height:2px;background:var(--line2)}
+.t-col:first-child::before{left:50%}
+.t-col:last-child::before{right:50%}
+.t-col::after{content:"";position:absolute;top:0;left:50%;width:2px;height:24px;margin-left:-1px;background:var(--line2)}
+.t-b{display:block;position:relative;padding:9px 6px;border-radius:12px;background:var(--c);color:var(--on);font-weight:700;font-size:15px;line-height:1.35;text-decoration:none}
+.t-b small{display:block;font-weight:600;font-size:12px;opacity:.85}
+.t-b:hover{filter:brightness(1.08)}
+.t-leaves{list-style:none;margin:0;padding:14px 0 0;position:relative}
+.t-leaves::before{content:"";position:absolute;left:50%;top:0;bottom:16px;width:2px;margin-left:-1px;background:color-mix(in srgb,var(--c) 45%,var(--line))}
+.t-leaves li{position:relative;z-index:1;margin:0 0 10px;padding:8px 8px;border-radius:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--c) 55%,var(--line));font-size:13.5px;line-height:1.45}
+.t-leaves li:last-child{margin-bottom:0}
+/* learning map */
+.lmap{display:flex;gap:0;align-items:stretch;margin:10px 0}
+.lnode{flex:1;position:relative;text-align:center;padding:0 4px;background:none;border:0}
+.lnode::before{content:"";position:absolute;top:22px;left:-50%;width:100%;height:3px;background:var(--line);z-index:0}
+.lnode:first-child::before{display:none}
+.lnode.done::before{background:var(--tip)}
+.lnode .dot{position:relative;z-index:1;width:44px;height:44px;border-radius:50%;margin:0 auto 6px;display:grid;place-items:center;background:var(--surface);border:3px solid var(--line);font-weight:700;color:var(--muted)}
+.lnode.done .dot{background:var(--tip);border-color:var(--tip);color:var(--on)}
+.lnode .lt{font-size:13px;line-height:1.4;color:var(--muted)}
+.meter{height:10px;border-radius:999px;background:var(--surface2);overflow:hidden;margin:8px 0}
+.meter>i{display:block;height:100%;width:100%;background:var(--tip);transform-origin:0 50%;transform:scaleX(0);transition:transform .3s}
+/* timeline */
+.timeline{list-style:none;margin:16px 0;padding:0;display:flex;gap:10px}
+.timeline li{flex:1;min-width:0;background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c,var(--accent));border-radius:12px;padding:12px;position:relative;font-size:14px;line-height:1.55;box-shadow:var(--shadow)}
+.timeline li b{display:block;color:var(--c,var(--accent));margin-bottom:4px;font-size:15px}
+.timeline li .ts{margin-bottom:4px}
+.timeline li:not(:last-child)::after{content:"›";position:absolute;right:-10px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:20px;z-index:2;background:var(--bg);line-height:1;border-radius:50%}
+/* chain */
+.chain{display:flex;gap:8px;align-items:stretch;margin:14px 0;flex-wrap:wrap}
+.chain>div{flex:1 1 140px;background:var(--surface2);border-radius:12px;padding:10px 12px;font-size:14px;line-height:1.5;position:relative;border:1px solid var(--line)}
+.chain>div:not(:last-child)::after{content:"→";position:absolute;right:-13px;top:50%;transform:translateY(-50%);color:var(--accent);font-weight:700;z-index:2}
+.chain .lab{display:block;font-size:12px;color:var(--accent);font-weight:700;margin-bottom:2px}
+.fork{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.fork .start{grid-column:1/-1;text-align:center;background:var(--accent-soft);color:var(--accent);border-radius:12px;padding:10px;font-weight:600;font-size:15px}
+.fork .bad,.fork .good{border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.6}
+.fork .bad{background:var(--imp-bg);border:1px solid var(--imp)}
+.fork .good{background:var(--tip-bg);border:1px solid var(--tip)}
+.fork b{display:block;margin-bottom:4px}
+/* core */
+.core{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
+.core .n{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:12px;padding:12px;text-align:center;font-size:14px;line-height:1.5;position:relative;box-shadow:var(--shadow)}
+.core .n .big{font-size:26px;display:block}
+.core .n b{color:var(--c);display:block}
+.core .n:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:42%;color:var(--accent);font-weight:700;z-index:2}
+/* strategy */
+.strategy{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 20px 18px;margin:22px 0;box-shadow:var(--shadow)}
+.strategy>h3{margin-top:0;display:flex;gap:12px;align-items:flex-start;line-height:1.45}
+.badge{flex:none;width:34px;height:34px;border-radius:50%;background:var(--bc,var(--accent));color:var(--on);display:grid;place-items:center;font-size:15px;font-weight:700;margin-top:1px}
+.case-wrap{margin:18px 0}
+.case-eye{font-size:13px;font-weight:700;color:var(--bc,var(--accent));letter-spacing:.04em;margin-bottom:8px}
+.case{border:1px solid var(--line);border-left:4px solid var(--bc,var(--accent));background:var(--surface2);border-radius:var(--radius);padding:14px 18px;margin:10px 0}
+.case h4{font-size:16px;margin:0 0 8px}
+.case p{margin:0 0 8px;line-height:1.75;font-size:15.5px}
+.case .anchor{color:var(--muted);font-size:14.5px}
+.case>:last-child{margin-bottom:0}
+textarea.note{width:100%;min-height:90px;border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:10px 12px;resize:vertical;line-height:1.6}
+ul.clean,ol.clean{padding-left:22px;margin:0 0 14px}
+ul.clean li,ol.clean li{margin-bottom:8px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.compare>div{border-radius:var(--radius);padding:14px 16px}
+.compare .bad{background:var(--imp-bg)}.compare .good{background:var(--tip-bg)}
+.compare b{display:block;margin-bottom:4px}
+.insights{counter-reset:ins;display:grid;gap:12px;padding:0;list-style:none}
+.insights li{counter-increment:ins;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px 16px 60px;position:relative}
+.insights li::before{content:counter(ins);position:absolute;left:16px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
+.panel{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.panel .role{font-weight:700;margin-bottom:6px}
+.panel .vote{display:inline-block;font-size:12.5px;font-weight:600;padding:0 8px;border-radius:999px;margin-left:6px;vertical-align:middle}
+.vote.s{background:var(--tip-bg);color:var(--tip)}.vote.o{background:var(--imp-bg);color:var(--imp)}.vote.c{background:var(--note-bg);color:var(--note)}
+.panel .card p{font-size:15px;margin:0}
+.tagv{display:inline-block;font-size:12.5px;font-weight:700;color:var(--note);background:var(--note-bg);border-radius:6px;padding:0 6px}
+.tagf{display:inline-block;font-size:12.5px;font-weight:700;color:var(--sum);background:var(--sum-bg);border-radius:6px;padding:0 6px}
+blockquote.q{margin:14px 0;padding:14px 20px;border-left:4px solid var(--accent);background:var(--surface);border-radius:0 var(--radius) var(--radius) 0;font-size:18px}
+blockquote.q cite{display:block;margin-top:6px;font-size:14px;color:var(--muted);font-style:normal}
+.related{display:flex;flex-direction:column;gap:8px;padding:0;list-style:none}
+.related li{background:var(--surface);border:1px dashed var(--line);border-radius:10px;padding:10px 14px;color:var(--muted)}
+/* search */
+#sov{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.45);display:none;padding:10vh 12px 12px}
+#sov.open{display:block}
+#sbox{max-width:620px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;max-height:80vh;overflow:auto}
+#sq{width:100%;border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:12px 14px;font-size:16px}
+#sres{list-style:none;margin:10px 0 0;padding:0}
+#sres li button{display:block;width:100%;text-align:left;background:none;border:0;border-radius:10px;padding:10px 12px;min-height:44px}
+#sres li button:hover{background:var(--surface2)}
+#sres .st{font-weight:700}#sres .ss{font-size:14px;color:var(--muted);line-height:1.5}
+mark{background:var(--accent-soft);color:var(--accent);border-radius:3px;padding:0 2px}
+.flash{animation:fl 1.6s ease}
+@keyframes fl{0%,60%{box-shadow:0 0 0 3px var(--accent)}100%{box-shadow:none}}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--text);color:var(--bg);padding:8px 18px;border-radius:999px;font-size:14px;opacity:0;transition:.25s;z-index:70;pointer-events:none}
+#toast.show{opacity:1;transform:translateX(-50%)}
+footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+@media (max-width:760px){
+  body{font-size:16px}
+  .t-branches{grid-template-columns:1fr;gap:16px;margin-top:16px}
+  .t-col{padding:0 0 0 18px;text-align:left;border-left:3px solid var(--c)}
+  .t-col::before,.t-col::after,.t-leaves::before,.t-root::after{display:none}
+  .t-b{display:inline-block;padding:8px 16px}
+  .t-leaves{padding-top:10px}
+  .t-leaves li{margin-bottom:8px}
+  .timeline{flex-direction:column}
+  .timeline li:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-14px;transform:translateX(-50%)}
+  .core{grid-template-columns:1fr}
+  .core .n:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-16px}
+  .compare,.fork{grid-template-columns:1fr}
+  .chain>div{flex:1 1 100%}
+  .chain>div:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-14px;transform:translateX(-50%)}
+  .strategy{padding:16px 14px}
+  header.hero{padding-top:28px}
+  .lnode .lt{font-size:11px}
+}
+@media print{nav.top,.progress,#sov,#toast{display:none}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<nav class="top">
+  <div class="inner">
+    <a href="#summary">摘要</a><a href="#map">學習地圖</a><a href="#s02">核心論點</a><a href="#s03">敘事脈絡</a>
+    <a href="#s04">論點展開</a><a href="#s05">洞察</a><a href="#panel">多元觀點</a><a href="#s06">引述</a><a href="#s07">術語</a><a href="#s09">附錄</a>
+    <div class="tools">
+      <button class="ibtn" id="sbtn" type="button" aria-label="搜尋">🔍</button>
+      <button class="ibtn" id="theme" type="button" aria-label="切換亮暗色"></button>
+    </div>
+  </div>
+</nav>
+
+<div id="sov" role="dialog" aria-modal="true" aria-label="全站搜尋">
+  <div id="sbox">
+    <input id="sq" type="search" placeholder="搜尋關鍵字，例如：X-M5、水桶機、握把" autocomplete="off">
+    <ul id="sres"></ul>
+  </div>
+</div>
+<div id="toast" role="status"></div>
+
+<div class="page">
+<main>
+<header class="hero">
+  <div class="eyebrow">攝影器材與選購筆記</div>
+  <h1>2026年1~6月相機銷售排行榜</h1>
+  <p class="subtitle">你的相機上榜了嗎？【相機王】</p>
+  <div class="byline">作者 Jon（相機王TV） · 發佈 2026-09-18 · 繁體中文</div>
+  <div class="tags"><span class="tag">攝影器材</span><span class="tag">相機選購</span><span class="tag">銷售排行榜</span><span class="tag">無反相機</span></div>
+</header>
+
+<section id="summary" style="margin-top:8px" data-idx="摘要">
+  <h2><span class="num">01</span>摘要</h2>
+  <div class="callout c-summary" style="margin-top:0">
+    <ol class="sumlist">
+      <li><b>痛點：</b>消費者常在畫質性能、外觀體積與預算間拉扯。</li>
+      <li><b>解法：</b>實體銷售榜顯示，兼具三萬有找高性價比與隨身輕巧的機種最受大眾青睞。</li>
+      <li><b>核心觀點：</b>專業旗艦與復古隨身機則呈現極端兩極化需求；2026 上半年相機市場由「高便攜性」與「親民價格」主導主流銷量。</li>
+    </ol>
+  </div>
+</section>
+
+<section id="map" data-idx="學習地圖">
+  <h2><span class="num">02</span>學習地圖 <small>點節點跳到該論點</small></h2>
+  <div class="card">
+    <div class="lmap" id="lmap"></div>
+    <div class="meter"><i id="mapbar"></i></div>
+    <div class="row"><span id="maptxt" class="muted"></span></div>
+  </div>
+</section>
+
+<section id="s01" data-idx="網頁資訊 Metadata 來源 作者 發佈日期">
+  <h2><span class="num">03</span>網頁資訊 <small>Metadata</small></h2>
+  <div class="table-wrap"><table class="meta-table">
+    <tr><th>標題</th><td>2026年1~6月相機銷售排行榜 │你的相機上榜了嗎？【相機王】</td></tr>
+    <tr><th>來源連結</th><td><a href="https://youtu.be/6MbxuyDe0ac" target="_blank" rel="noopener">https://youtu.be/6MbxuyDe0ac</a></td></tr>
+    <tr><th>頻道</th><td>相機王TV</td></tr>
+    <tr><th>作者</th><td>Jon</td></tr>
+    <tr><th>發佈日期</th><td>2026-09-18</td></tr>
+    <tr><th>擷取日期</th><td>2026-10-25</td></tr>
+    <tr><th>影片長度</th><td>08:29</td></tr>
+    <tr><th>內容類型</th><td>攝影器材與選購筆記</td></tr>
+    <tr><th>語言</th><td>繁體中文</td></tr>
+  </table></div>
+</section>
+
+<section id="s02" data-idx="核心論點 樹狀圖 心智圖 一段式總結 核心圖解">
+  <h2><span class="num">04</span>核心論點 <small>Core Thesis</small></h2>
+  <h3>樹狀圖</h3>
+  <div class="diagram" data-idx="樹狀圖 相機市場消費偏好 極致輕巧親民 復古外觀美學 全能水桶規格"><div class="tree">
+    <div class="t-root">相機市場消費偏好</div>
+    <div class="t-branches">
+      <div class="t-col" style="--c:var(--b4)"><a class="t-b" href="#st4"><small>論點四</small>極致輕巧親民</a><ul class="t-leaves"><li>壓低入門門檻</li><li>日常旅遊隨身</li></ul></div>
+      <div class="t-col" style="--c:var(--b3)"><a class="t-b" href="#st3"><small>論點三</small>復古外觀美學</a><ul class="t-leaves"><li>經典機械轉盤</li><li>生活儀式感</li></ul></div>
+      <div class="t-col" style="--c:var(--b1)"><a class="t-b" href="#st1"><small>論點一</small>全能水桶規格</a><ul class="t-leaves"><li>拍照錄影兼顧</li><li>旗艦技術下放</li></ul></div>
+    </div>
+  </div><div class="cap">點分支可跳到對應論點</div></div>
+  <h3>一段式總結</h3>
+  <p><b>邏輯總結</b>：實體通路銷售榜印證，2026 上半年相機市場由「高便攜性」與「親民價格」主導主流銷量，三萬元內的輕巧機種最易轉化為大眾訂單。追求進階畫質的買家則偏好旗艦技術下放、拍照與錄影兼顧的均衡型全幅機，或甘願為復古經典外觀與隨身純拍照體驗長期排隊。</p>
+  <h3>核心圖解</h3>
+  <div class="core" data-idx="核心圖解 水桶機 口袋機 外型與握持 三萬內輕量">
+    <div class="n" style="--c:var(--b1)"><span class="big">🪣</span><b>水桶機＝長期保障</b>拍照錄影兼顧，但單價高</div>
+    <div class="n" style="--c:var(--b2)"><span class="big">👖</span><b>口袋機＝不可替代</b>人人想要，卻缺貨</div>
+    <div class="n" style="--c:var(--b3)"><span class="big">🎛️</span><b>外型與握持＝分流</b>復古顏值或專業手感</div>
+    <div class="n" style="--c:var(--b4)"><span class="big">🏆</span><b>三萬內輕量＝登頂</b>日常無負擔攜帶</div>
+  </div>
+</section>
+
+<section id="s03" data-idx="敘事脈絡 推導邏輯 結構解析">
+  <h2><span class="num">05</span>敘事脈絡 <small>Narrative Flow</small></h2>
+  <div class="chain" data-idx="推導邏輯 發現 但是 因此 最終">
+    <div><span class="lab">統計</span>統計實體半年銷量</div>
+    <div><span class="lab">發現</span>高階水桶機穩居榜尾</div>
+    <div><span class="lab">但是</span>缺貨機受配額限制名次</div>
+    <div><span class="lab">因此</span>復古全幅與進階機走穩</div>
+    <div><span class="lab">最終</span>輕便與親民價格奪冠</div>
+  </div>
+  <ol class="timeline">
+    <li style="--c:var(--muted)"><span class="ts">00:00:15–00:00:33</span><b>統計實體半年銷量</b>改以全機種實體店面銷售總量進行前十名盤點</li>
+    <li style="--c:var(--b1)"><span class="ts">00:00:33–00:01:56</span><b>高階水桶機穩居榜尾</b>Z6 III、X-T5 維持在九至十名</li>
+    <li style="--c:var(--b2)"><span class="ts">00:01:56–00:02:47</span><b>缺貨機受配額限制名次</b>GR 系列實際熱度無法完全反映在名次上</li>
+    <li style="--c:var(--b3)"><span class="ts">00:02:47–00:07:41</span><b>復古全幅與進階機走穩</b>Zf、Z5 II、A7C II 承接中高階換機需求</li>
+    <li style="--c:var(--b4)"><span class="ts">00:07:41–00:08:12</span><b>輕便與親民價格奪冠</b>三萬有找的定價優勢與極致輕便性</li>
+  </ol>
+  <h3>結構解析</h3>
+  <ol class="clean">
+    <li><b>統計實體半年銷量</b> <span class="ts">00:00:15–00:00:33</span>：打破以往僅統計無反相機的限制，改以全機種實體店面銷售總量進行前十名盤點。</li>
+    <li><b>高階水桶機穩居榜尾</b> <span class="ts">00:00:33–00:01:56</span>：指出高階定位、全能兼顧但單價較高的新機（如 Z6 III、X-T5）維持在九至十名。</li>
+    <li><b>缺貨機受配額限制名次</b> <span class="ts">00:01:56–00:02:47</span>：揭示極致隨身機（GR 系列）因全球缺貨與配額不足，實際熱度無法完全反映在銷量名次上。</li>
+    <li><b>復古全幅與進階機走穩</b> <span class="ts">00:02:47–00:07:41</span>：分析外型、握持手感與下放錄影規格（如 Zf、Z5 II、A7C II）如何承接中高階換機需求。</li>
+    <li><b>輕便與親民價格奪冠</b> <span class="ts">00:07:41–00:08:12</span>：以三萬有找的定價優勢與極致輕便性下結論，說明大眾消費的最核心痛點仍是日常無負擔攜帶。</li>
+  </ol>
+</section>
+
+<section id="s04">
+  <h2><span class="num">06</span>論點展開 <small>Detailed Arguments</small></h2>
+
+  <article class="strategy" id="st1" style="--bc:var(--b1)" data-idx="論點一 全能水桶機 高階旗艦 長期保障 單價門檻">
+    <h3><span class="badge">1</span><span>論點一：全能「水桶機」與高階旗艦提供長期保障，但受單價門檻限制 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=33" target="_blank" rel="noopener">00:33</a></span></h3>
+    <p><b>主張：</b>雙修拍照與高階錄影的均衡型相機能避免頻繁換機，但較高單價使其銷售基數維持在中段班。</p>
+    <div class="table-wrap"><table>
+      <tr><th>需求</th><th>選擇</th><th>榜上代表</th></tr>
+      <tr><td>拍照加錄影一台搞定</td><td>同級感光元件下放與 4K 120p 規格機種</td><td>Nikon Z6 III（第 10 名）</td></tr>
+      <tr><td>機身耐用度與防滴防塵</td><td>鋁鎂合金機身</td><td>Fujifilm X-T5（第 9 名）</td></tr>
+    </table></div>
+    <h4>操作要點</h4>
+    <ul class="clean">
+      <li>拍照加錄影需求一台搞定，首選同級感光元件下放與 4K 120p 規格機種 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=63" target="_blank" rel="noopener">01:03</a></li>
+      <li>若追求機身耐用度與防滴防塵，優先挑選鋁鎂合金機身 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=112" target="_blank" rel="noopener">01:52</a></li>
+    </ul>
+    <div class="case-wrap" data-idx="影片真實案例 論點一案例 Z6 III X-T5"><div class="case-eye">論點一案例</div>
+      <div class="case"><h4>📌 案例一 <span class="ts">00:00:33–00:01:21</span></h4>
+        <p>[真實案例] 預算有限但不想買了很快就想換機的買家 → 選擇兼具拍照與 4K 120p 錄影的 Nikon Z6 III → 成為全片幅中 CP 值極高且規格一步到位的水桶機。</p>
+        <p class="anchor">原話錨點：「不想買相機很快就要再換機」</p>
+      </div>
+      <div class="case"><h4>📌 案例二 <span class="ts">00:01:21–00:01:56</span></h4>
+        <p>[真實案例] 富士長勝軍 X-T5 雖上市已久且單價較高 → 憑藉鋁鎂合金機身與拍照錄影平衡表現 → 依然能長年穩定留在前十名。</p>
+        <p class="anchor">原話錨點：「幾乎每年都會上」</p>
+      </div>
+    </div>
+    <div class="slot" data-strategy="1"></div>
+  </article>
+
+  <article class="strategy" id="st2" style="--bc:var(--b2)" data-idx="論點二 極致輕便 隨身性 產能 配額 Ricoh GR">
+    <h3><span class="badge">2</span><span>論點二：極致輕便與隨身性具備不可替代性，但飽受產能與配額壓制 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=116" target="_blank" rel="noopener">01:56</a></span></h3>
+    <p><b>主張：</b>純拍照導向的極致口袋相機具備絕對市場渴望，但供應鏈產能不足嚴重扭曲了真實名次。</p>
+    <div class="fork">
+      <div class="start">Ricoh GR III 系列：APS-C 定焦口袋隨身機</div>
+      <div class="good"><b>✓ 市場渴望</b>客人排隊預定、等待超過一年以上，仍一機難求。</div>
+      <div class="bad"><b>✗ 供給壓制</b>店家每期配額極少，只能消化一半訂單，名次僅第八。</div>
+    </div>
+    <h4>操作要點</h4>
+    <ul class="clean">
+      <li>追求極致高畫質與口袋便攜性，聚焦 APS-C 定焦口袋隨身機 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=158" target="_blank" rel="noopener">02:38</a></li>
+      <li>不做動態錄影規劃，僅專注於純靜態生活街拍與隨身紀錄 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=150" target="_blank" rel="noopener">02:30</a></li>
+    </ul>
+    <div class="case-wrap" data-idx="影片真實案例 論點二案例 GR 配額"><div class="case-eye">論點二案例</div>
+      <div class="case"><h4>📌 案例 <span class="ts">00:01:56–00:02:47</span></h4>
+        <p>[真實案例] 店家客人排隊預定甚至等待超過一年以上 → 店家每期配額極少只能消化一半訂單 → 導致本有實力進前三名的 GR 世代僅卡在第八名。</p>
+        <p class="anchor">原話錨點：「等甚至超過一年以上都買不到」</p>
+      </div>
+    </div>
+    <div class="slot" data-strategy="2"></div>
+  </article>
+
+  <article class="strategy" id="st3" style="--bc:var(--b3)" data-idx="論點三 經典外型 握持操縱感 全片幅分流 Zf 底座握把">
+    <h3><span class="badge">3</span><span>論點三：經典外型與握持操縱感的取捨，主導全片幅消費分流 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=167" target="_blank" rel="noopener">02:47</a></span></h3>
+    <p><b>主張：</b>全片幅買家分化為「經典復古外型」與「專業握持效率」兩大派系，鏡頭搭配左右了最終攜帶意願。</p>
+    <div class="table-wrap"><table>
+      <tr><th>派系</th><th>榜上代表</th><th>特色</th><th>取捨</th></tr>
+      <tr><td>經典復古外型</td><td>Nikon Zf（第 7 名）</td><td>FM2 復古軍艦部與轉盤、承襲 Z8 自動對焦</td><td>無握把機身，需預留外接金屬底座握把的預算與重量；建議搭配輕便餅乾鏡或小定焦（如 40mm F2）</td></tr>
+      <tr><td>專業握持效率</td><td>Nikon Z5 II（第 5 名）</td><td>現代單眼人體工學深握把、下放 6K RAW 錄影</td><td>注重快調操控手感，回歸現代單眼手把配置</td></tr>
+    </table></div>
+    <h4>操作要點</h4>
+    <ul class="clean">
+      <li>選購復古無握把機身時，需預留加裝外接金屬底座握把的預算與重量 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=230" target="_blank" rel="noopener">03:50</a></li>
+      <li>復古全幅機身建議搭配輕便餅乾鏡或小定焦（如 40mm F2）以維持配重平衡 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=207" target="_blank" rel="noopener">03:27</a></li>
+      <li>重視高效率連續操控與扎實手感，應回歸現代單眼手把配置 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=321" target="_blank" rel="noopener">05:21</a></li>
+    </ul>
+    <div class="case-wrap" data-idx="影片真實案例 論點三案例 Zf FM2"><div class="case-eye">論點三案例</div>
+      <div class="case"><h4>📌 案例 <span class="ts">00:03:42–00:03:59</span></h4>
+        <p>[真實案例] 許多消費者單純為了早期 FM2 的經典機械外型而衝動入手 Nikon Zf → 發現手感單薄難以抓握 → 買了之後紛紛回頭加碼添購副廠或原廠底座握把。</p>
+        <p class="anchor">原話錨點：「相當於早期FM2經典外形就衝了」</p>
+      </div>
+    </div>
+    <div class="slot" data-strategy="3"></div>
+  </article>
+
+  <article class="strategy" id="st4" style="--bc:var(--b4)" data-idx="論點四 三萬以內 性價比 輕量化 銷量登頂 X-M5 排行榜">
+    <h3><span class="badge">4</span><span>論點四：三萬以內的極致性價比與輕量化是銷量登頂的終極公式 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=461" target="_blank" rel="noopener">07:41</a></span></h3>
+    <p><b>主張：</b>壓在台幣三萬以內的機身定價與無反最輕量體積，是撬動大眾日常紀錄與旅遊市場的最佳甜蜜點。</p>
+    <div class="chain">
+      <div><b>機身定價</b><br>低於 3 萬台幣</div>
+      <div><b>Kit 鏡組</b><br>僅 3 萬出頭</div>
+      <div><b>最輕便</b><br>榜上除 GR 以外的無反相機</div>
+      <div><b>供貨回穩</b><br>訂單源源不絕</div>
+      <div><b>銷售第一名</b><br>Fujifilm X-M5</div>
+    </div>
+    <h4>操作要點</h4>
+    <ul class="clean">
+      <li>日常出國旅遊選購，以全機無凸起軍艦部或極度緊湊機身為優先 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=390" target="_blank" rel="noopener">06:30</a></li>
+      <li>機身預算控制在 3 萬元以內，搭配輕便 Kit 鏡頭達成出遊無負擔配置 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=473" target="_blank" rel="noopener">07:53</a></li>
+      <li>取景習慣依個人偏好挑選：重視陽光下拍照選配 EVF 機型，重視 Vlog 影音選側翻螢幕 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=275" target="_blank" rel="noopener">04:35</a></li>
+    </ul>
+    <div class="case-wrap" data-idx="影片真實案例 論點四案例 X-M5 銷售第一"><div class="case-eye">論點四案例</div>
+      <div class="case"><h4>📌 案例 <span class="ts">00:07:41–00:08:12</span></h4>
+        <p>[真實案例] 富士 X-M5 機身定價低於 3 萬台幣、Kit 鏡組僅 3 萬出頭 → 成為榜上除 GR 以外最輕便的無反相機 → 供貨回穩後訂單源源不絕強勢奪下銷售第一名。</p>
+        <p class="anchor">原話錨點：「Kit也才3萬出頭」</p>
+      </div>
+    </div>
+    <h4 id="rank" data-idx="銷售排行榜 前十名 機型 片幅">2026 上半年銷售前十名</h4>
+    <div class="table-wrap"><table class="rank">
+      <tr><th>排名</th><th>機型</th><th>片幅</th><th>核心定位與外觀特色</th><th>關鍵取捨與適合族群</th></tr>
+      <tr><td><b>1</b></td><td><b>Fujifilm X-M5</b></td><td>APS-C</td><td>極致輕量隨身、側翻螢幕、無 EVF <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=461" target="_blank" rel="noopener">07:41</a></td><td>預算有限、Vlog 短影音、出國生活紀錄首選</td></tr>
+      <tr><td><b>2</b></td><td><b>Sony α7C II</b></td><td>全片幅</td><td>緊湊全幅機身、A74 等級拍照錄影規格 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=434" target="_blank" rel="noopener">07:14</a></td><td>兼顧畫質、全幅感光度與高便攜性之全能用戶</td></tr>
+      <tr><td><b>3</b></td><td><b>Fujifilm X-T50</b></td><td>APS-C</td><td>凸起軍艦部、內建 IBIS 防手震、具 EVF <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=408" target="_blank" rel="noopener">06:48</a></td><td>追求經典復古機身線條並需要五軸防手震者</td></tr>
+      <tr><td><b>4</b></td><td><b>Fujifilm X-E5</b></td><td>APS-C</td><td>平頂隨身復古、內建 EVF、上掀翻轉螢幕 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=361" target="_blank" rel="noopener">06:01</a></td><td>想買 X100VI 溢價缺貨下的最佳可換鏡替換方案</td></tr>
+      <tr><td><b>5</b></td><td><b>Nikon Z5 II</b></td><td>全片幅</td><td>現代單眼人體工學深握把、下放 6K RAW 錄影 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=284" target="_blank" rel="noopener">04:44</a></td><td>注重快調操控手感、高性價比入門全片幅創作者</td></tr>
+      <tr><td><b>6</b></td><td><b>Fujifilm X-T30 II</b></td><td>APS-C</td><td>緊湊復古機身、具 EVF、無機身防震 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=247" target="_blank" rel="noopener">04:07</a></td><td>預算型富士買家、需要觀景窗取景之入門攝影愛好者</td></tr>
+      <tr><td><b>7</b></td><td><b>Nikon Zf</b></td><td>全片幅</td><td>FM2 復古軍艦部與轉盤、承襲 Z8 自動對焦 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=167" target="_blank" rel="noopener">02:47</a></td><td>喜愛機械復古顏值、願意接受配重或加手把的全幅用戶</td></tr>
+      <tr><td><b>8</b></td><td><b>Ricoh GR III 系列</b></td><td>APS-C</td><td>真正口袋尺寸、定焦純拍照導向、極致便攜 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=116" target="_blank" rel="noopener">01:56</a></td><td>街拍攝影師、只拍照不錄影、追求極致口袋體積者</td></tr>
+      <tr><td><b>9</b></td><td><b>Fujifilm X-T5</b></td><td>APS-C</td><td>專業級鋁鎂合金機身、三向翻折螢幕、耐候高防護 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=81" target="_blank" rel="noopener">01:21</a></td><td>重度靜態攝影、需要耐操機身與高解析度工作機用戶</td></tr>
+      <tr><td><b>10</b></td><td><b>Nikon Z6 III</b></td><td>全片幅</td><td>六邊形全能水桶機、4K 120p、部分堆疊 CMOS <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=33" target="_blank" rel="noopener">00:33</a></td><td>拍照錄影雙修、需要高速對焦與專業錄影規格之進階用戶</td></tr>
+    </table></div>
+    <div class="slot" data-strategy="4"></div>
+  </article>
+</section>
+
+<section id="s05" data-idx="關鍵洞察 核心啟示">
+  <h2><span class="num">07</span>關鍵洞察 &amp; 核心啟示 <small>Key Insights</small></h2>
+  <h3>筆記提煉：4 大高價值啟發</h3>
+  <ol class="insights">
+    <li><b>帶得出去的相機，才有出勤率：</b>日常使用「帶得出去拍得到」遠勝於躺在防潮箱的強悍規格，這也是輕巧機種能奪下銷量第一的原因。</li>
+    <li><b>排行榜不等於真實熱度：</b>GR 世代因全球缺貨與配額不足，本有實力進前三名卻僅列第八；看名次前，先看供貨。</li>
+    <li><b>外型好看，不代表好握：</b>Zf 的復古顏值吸引人，但手感單薄、常需加購底座握把；選購前要把握把的預算與重量算進去。</li>
+    <li><b>先看用途，再看規格：</b>三萬內的輕巧機種最適合日常紀錄、旅遊與自媒體創作；若是高規格商業交付，結論就不同。</li>
+  </ol>
+  <div class="callout c-important"><div class="ct">⭐ 核心啟示</div>
+    <p>相機要先回答「會不會天天帶出門」，再比畫質與規格：三萬元內的輕巧機種負擔最低、出勤率最高，旗艦水桶機與復古全幅則各自服務願意多花預算、重視長期保障或外型手感的買家。</p></div>
+</section>
+
+<section id="panel" data-idx="多元觀點 顧問團 執行面顧問 最壞風險懷疑 最大機會願景 競爭對手 使用者代言人 財務規劃人員">
+  <h2><span class="num">08</span>多元觀點 <small>Panel Review</small></h2>
+  <div class="callout c-note" style="margin-top:0"><div class="ct">評議議題</div>
+    <p>2026 年新手或升級相機，是否應優先選擇「3 萬元內極致輕巧入門機」而非「直上全片幅水桶機」？</p></div>
+  <p class="muted">以下顧問皆為虛構視角，非真人意見。<span class="tagv">影片</span> 標記為影片內容依據，<span class="tagf">模擬觀點</span> 為虛構推論。</p>
+  <h3>顧問團結論</h3>
+  <ul class="clean">
+    <li><b>投票：</b>4 支持、1 反對、1 有條件支持</li>
+    <li><b>共識：</b>日常使用「帶得出去拍得到」遠勝於躺在防潮箱的強悍規格，低門檻入門機在頻率與效益上大勝。</li>
+    <li><b>關鍵前提：</b>拍攝者的主力用途為日常紀錄、旅遊與自媒體創作，而非高規格商業交付案。</li>
+    <li><b>分歧線：</b>財務與執行顧問看重低成本高出勤率；競爭與風險顧問擔憂感光元件片幅落差引發二度換機花費。</li>
+    <li><b>權重最高：</b>使用者代言人，相機的真實出勤次數直接決定設備的核心價值。</li>
+  </ul>
+  <h3>各顧問表態</h3>
+  <div class="panel">
+    <div class="card"><div class="role">🔧 執行面顧問 <span class="vote s">支持</span></div><p>重型全幅相機加上大光圈鏡頭出門負擔極大，[影片 00:08:08] 提到的出國旅遊與日常生活，輕巧機身才願意天天帶出門。[模擬觀點] 體積越小、開機拍攝頻率越高，作品產出量自然提升。</p></div>
+    <div class="card"><div class="role">⚠️ 最壞風險懷疑 <span class="vote o">反對</span></div><p>APS-C 入門機通常缺少五軸防手震或暗部對焦性能稍弱，[影片 00:04:20] 提及部分平價機型夜拍或裁切受限。[模擬觀點] 買家若半年後追求虛化與純淨度，容易落入折價拋售、二次花錢升級全幅的折舊陷阱。</p></div>
+    <div class="card"><div class="role">🚀 最大機會願景 <span class="vote s">支持</span></div><p>現今入門機普遍具備旗艦處理器與優異顏色科學，[影片 00:07:53] 三萬出頭即可滿足絕大多數自媒體與生活需求。[模擬觀點] 把省下的五到六萬預算投入鏡頭與旅行體驗，整體成長幅度遠高於純買高階機身。</p></div>
+    <div class="card"><div class="role">⚔️ 競爭對手 <span class="vote c">有條件支持</span></div><p>手機演算法攝影日益強大，純入門機種若缺乏像富士底片模擬或理光街拍色調的獨特性，極易被旗艦手機取代。[模擬觀點] 只有具備強烈風格特色與手動操控樂趣的輕便相機，才具備對抗手機的護城河。</p></div>
+    <div class="card"><div class="role">👤 使用者代言人 <span class="vote s">支持</span></div><p>多數用戶不是專業商業攝影師，[影片 00:01:56] 缺貨一年依然一機難求的現象證明，消費者最渴望的就是隨身、無負擔且隨手能拍出好質感的工具。</p></div>
+    <div class="card"><div class="role">💰 財務規劃人員 <span class="vote s">支持</span></div><p>單機身不到三萬、Kit 鏡三萬初的配置，資產占用少且流通性高；相較動輒八萬的進階機身，折舊損失可控，試錯成本極低。</p></div>
+  </div>
+</section>
+
+<section id="s06" data-idx="重要引述 Key Quotes">
+  <h2><span class="num">09</span>重要引述 <small>Key Quotes</small></h2>
+  <blockquote class="q">「拍照加錄影，一台上機搞定，它是目前尼康裡面 CP 值最高的選擇。」<cite>—— Jon <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=45" target="_blank" rel="noopener">00:45</a></cite></blockquote>
+  <blockquote class="q">「很多人一定會覺得奇怪，已經這麼難買了，居然只賣到第八名，真的貨太少了！」<cite>—— Jon <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=120" target="_blank" rel="noopener">02:00</a></cite></blockquote>
+  <blockquote class="q">「相當於早期 FM2 經典外形就衝了，但它的手感還是一個比較大的問題。」<cite>—— Jon <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=225" target="_blank" rel="noopener">03:45</a></cite></blockquote>
+  <blockquote class="q">「如果只換機身，基本上不用三萬塊台幣，這個榜裡面除了 GR 以外，它是最輕便的無反相機。」<cite>—— Jon <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=477" target="_blank" rel="noopener">07:57</a></cite></blockquote>
+</section>
+
+<section id="s07" data-idx="術語表 Glossary 水桶機 EVF IBIS Kit">
+  <h2><span class="num">10</span>術語表 <small>Glossary</small></h2>
+  <div class="table-wrap"><table>
+    <tr><th>中文術語</th><th>英文術語</th><th>情境定義</th></tr>
+    <tr><td>水桶機</td><td>All-rounder Camera</td><td>拍照、動態錄影、對焦與連拍無明顯短板的均衡全能相機 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=45" target="_blank" rel="noopener">00:45</a></td></tr>
+    <tr><td>電子觀景窗</td><td>EVF (Electronic Viewfinder)</td><td>透過液晶或 OLED 螢幕顯示實時取景畫面的觀景模組 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=280" target="_blank" rel="noopener">04:40</a></td></tr>
+    <tr><td>機身防手震</td><td>IBIS (In-Body Image Stabilization)</td><td>透過感光元件微幅位移補償震動的機身五軸防手震技術 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=260" target="_blank" rel="noopener">04:20</a></td></tr>
+    <tr><td>鏡頭套裝</td><td>Kit Set</td><td>機身搭配一顆標準變焦或輕便入門鏡頭合售的銷售組合 <a class="ts" href="https://www.youtube.com/watch?v=6MbxuyDe0ac&amp;t=473" target="_blank" rel="noopener">07:53</a></td></tr>
+  </table></div>
+</section>
+
+<section id="s08" data-idx="相關筆記 Related Notes">
+  <h2><span class="num">11</span>相關筆記 <small>Related Notes</small></h2>
+  <ul class="related">
+    <li>相機選購決策指南</li>
+    <li>街拍口袋機與隨身器材評測</li>
+    <li>富士底片模擬與色彩科學探討</li>
+    <li>全片幅無反錄影與動態規格解析</li>
+  </ul>
+</section>
+
+<section id="s09" data-idx="附錄 台灣單價 市售日期 官方建議售價 平輸">
+  <h2><span class="num">12</span>附錄 <small>上榜相機台灣單價與在台市售日期</small></h2>
+  <div class="table-wrap"><table class="wide">
+    <tr><th>銷售排名</th><th>相機品牌與型號</th><th>片幅規格</th><th>台灣官方建議售價（公司貨）</th><th>台灣通路市售參考價（平輸/實售）</th><th>台灣出廠市售日期</th></tr>
+    <tr><td><b>No. 1</b></td><td><b>Fujifilm X-M5</b></td><td>APS-C</td><td>單機身：NT$ 26,300<br>XC 15-45mm Kit：NT$ 29,600</td><td>公司貨現貨約 NT$ 26,300–29,600</td><td>2024年 12月 04日</td></tr>
+    <tr><td><b>No. 2</b></td><td><b>Sony α7C II (ILCE-7CM2)</b></td><td>全片幅</td><td>單機身：NT$ 59,980<br>FE 28-60mm Kit：NT$ 68,980</td><td>公司貨特惠約 NT$ 55,000–58,000<br>平輸約 NT$ 49,000–52,000</td><td>2023年 09月 26日</td></tr>
+    <tr><td><b>No. 3</b></td><td><b>Fujifilm X-T50</b></td><td>APS-C</td><td>單機身：NT$ 45,000<br>XF 16-50mm Kit：NT$ 58,000</td><td>單機身約 NT$ 43,000–45,000</td><td>2024年 06月 26日</td></tr>
+    <tr><td><b>No. 4</b></td><td><b>Fujifilm X-E5</b></td><td>APS-C</td><td>單機身：約 NT$ 48,100</td><td>相機王平輸單機約 NT$ 38,000</td><td>2025年 上半年</td></tr>
+    <tr><td><b>No. 5</b></td><td><b>Nikon Z5 II</b></td><td>全片幅</td><td>單機身：約 NT$ 50,519</td><td>相機王平輸單機約 NT$ 39,000–40,200<br>Kit組約 NT$ 52,900</td><td>2025年 上半年</td></tr>
+    <tr><td><b>No. 6</b></td><td><b>Fujifilm X-T30 II</b></td><td>APS-C</td><td>單機身：NT$ 25,600<br>XC 15-45mm Kit：NT$ 29,600</td><td>通路平輸單機約 NT$ 27,000–28,000</td><td>2021年 11月</td></tr>
+    <tr><td><b>No. 7</b></td><td><b>Nikon Zf</b></td><td>全片幅</td><td>單機身：NT$ 62,880<br>40mm F2 Kit：NT$ 69,800</td><td>公司貨特惠約 NT$ 52,000–56,000<br>平輸單機約 NT$ 42,300–43,300</td><td>2023年 10月 12日</td></tr>
+    <tr><td><b>No. 8</b></td><td><b>Ricoh GR III / GR IIIx</b></td><td>APS-C</td><td><b>GR III</b>：NT$ 28,900 (HDF版 NT$ 32,900)<br><b>GR IIIx</b>：NT$ 30,900 (HDF版 NT$ 33,900)</td><td>缺貨溢價約 NT$ 32,000–37,000</td><td><b>GR III</b>：2019年 03月<br><b>GR IIIx</b>：2021年 10月<br><b>HDF版</b>：2024年 04月</td></tr>
+    <tr><td><b>No. 9</b></td><td><b>Fujifilm X-T5</b></td><td>APS-C</td><td>單機身：NT$ 52,990<br>XF 16-50mm Kit：NT$ 68,200</td><td>公司貨約 NT$ 51,000–52,990<br>平輸單機約 NT$ 47,000–49,000</td><td>2022年 12月 06日</td></tr>
+    <tr><td><b>No. 10</b></td><td><b>Nikon Z6 III</b></td><td>全片幅</td><td>單機身：NT$ 85,880<br>24-120mm Kit：NT$ 111,880</td><td>公司貨特惠約 NT$ 78,000–82,000<br>相機王平輸單機約 NT$ 50,800</td><td>2024年 07月 01日</td></tr>
+  </table></div>
+</section>
+
+<footer>© 2026年1~6月相機銷售排行榜</footer>
+</main>
+<aside class="toc" id="toc" aria-label="本頁目錄"><div class="tl">CONTENTS</div><div id="toclist"></div></aside>
+</div>
+
+<script>
+(function(){
+  /* ---------- storage ---------- */
+  var KEY='camera-notes-v1', THEME='theme', mem=null;
+  function load(){
+    try{var s=localStorage.getItem(KEY); if(s){var o=JSON.parse(s); if(o&&typeof o==='object') return o;}}catch(e){}
+    return mem||{};
+  }
+  var S=load();
+  S.done=S.done||{}; S.notes=S.notes||{};
+  function save(){mem=S; try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+  function $(s,r){return (r||document).querySelector(s)}
+  function $$(s,r){return [].slice.call((r||document).querySelectorAll(s))}
+  function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  var toastT;
+  function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove('show')},1800)}
+  function copy(text){
+    function fb(){var a=document.createElement('textarea');a.value=text;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy');toast('已複製')}catch(e){toast('請手動複製')}document.body.removeChild(a)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(function(){toast('已複製')},fb)}else fb();
+  }
+  function goto(el){
+    var y=el.getBoundingClientRect().top+(window.pageYOffset||0)-64;
+    window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
+  }
+
+  /* ---------- theme ---------- */
+  var root=document.documentElement;
+  try{var th=localStorage.getItem(THEME); if(th) root.setAttribute('data-theme',th)}catch(e){}
+  function isDark(){var t=root.getAttribute('data-theme'); if(t) return t==='dark'; return window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches}
+  function icon(){$('#theme').textContent=isDark()?'☀️':'🌙'}
+  icon();
+  $('#theme').addEventListener('click',function(){
+    var n=isDark()?'light':'dark'; root.setAttribute('data-theme',n); try{localStorage.setItem(THEME,n)}catch(e){} icon();
+  });
+  if(window.matchMedia)matchMedia('(prefers-color-scheme: dark)').addEventListener('change',icon);
+
+  /* ---------- progress / map ---------- */
+  var NAMES=['水桶機與旗艦','口袋機與配額','外型與握持','三萬內與輕量'], N=NAMES.length;
+  function doneCount(){return [1,2,3,4].filter(function(i){return S.done[i]}).length}
+  function renderMap(){
+    var el=$('#lmap'); el.innerHTML='';
+    NAMES.forEach(function(n,i){
+      var b=document.createElement('button'); b.type='button'; b.className='lnode'+(S.done[i+1]?' done':'');
+      b.innerHTML='<div class="dot">'+(S.done[i+1]?'✓':(i+1))+'</div><div class="lt">'+n+'</div>';
+      b.addEventListener('click',function(){goto($('#st'+(i+1)))});
+      el.appendChild(b);
+    });
+    var c=doneCount(); $('#mapbar').style.transform='scaleX('+(c/N)+')'; $('#maptxt').textContent='已完成 '+c+' / '+N+' 個論點';
+    $$('.slot').forEach(function(s){var b=$('.donebtn',s); if(b) styleDone(b,+s.dataset.strategy)});
+  }
+  function styleDone(b,i){b.className='btn donebtn '+(S.done[i]?'done':'primary'); b.textContent=S.done[i]?'✓ 已完成（點擊取消）':'✓ 我學會了'}
+
+  /* ---------- strategy slots (done button + note) ---------- */
+  $$('.slot').forEach(function(slot){
+    var i=+slot.dataset.strategy;
+    slot.innerHTML='<h4>🗒️ 我的筆記</h4><textarea class="note" placeholder="寫下你的想法，例如：我的預算與主要用途…"></textarea><div class="row" style="margin-top:8px"><button type="button" class="btn donebtn"></button><button type="button" class="btn ncopy">複製筆記</button></div>';
+    var ta=$('textarea',slot); ta.value=S.notes[i]||'';
+    var t; ta.addEventListener('input',function(){clearTimeout(t);t=setTimeout(function(){S.notes[i]=ta.value;save()},300)});
+    $('.donebtn',slot).addEventListener('click',function(){S.done[i]=!S.done[i];save();renderMap();toast(S.done[i]?'已標記完成':'已取消')});
+    $('.ncopy',slot).addEventListener('click',function(){copy(ta.value||'（尚無筆記）')});
+  });
+
+  /* ---------- search ---------- */
+  var blocks=$$('[data-idx]');
+  function openS(){$('#sov').classList.add('open');var q=$('#sq');q.value='';$('#sres').innerHTML='';setTimeout(function(){q.focus()},30)}
+  function closeS(){$('#sov').classList.remove('open')}
+  $('#sbtn').addEventListener('click',openS);
+  $('#sov').addEventListener('click',function(e){if(e.target.id==='sov')closeS()});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape')closeS();
+    if(e.key==='/'&&!/INPUT|TEXTAREA|SELECT/.test((document.activeElement||{}).tagName||'')){e.preventDefault();openS()}
+  });
+  $('#sq').addEventListener('input',function(){
+    var q=this.value.trim().toLowerCase(),ul=$('#sres');ul.innerHTML='';if(!q)return;
+    var n=0;
+    blocks.forEach(function(el){
+      if(n>=12)return;
+      var txt=(el.innerText||el.textContent||'').replace(/\s+/g,' '),i=txt.toLowerCase().indexOf(q);
+      var title=el.dataset.idx.split(' ')[0];
+      if(i<0&&el.dataset.idx.toLowerCase().indexOf(q)<0)return;
+      var s=i<0?txt.slice(0,60):txt.slice(Math.max(0,i-20),i+50);
+      var hl=esc(s).replace(new RegExp(esc(q).replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi'),function(m){return '<mark>'+m+'</mark>'});
+      var li=document.createElement('li'),b=document.createElement('button');b.type='button';
+      b.innerHTML='<div class="st">'+esc(title)+'</div><div class="ss">…'+hl+'…</div>';
+      b.addEventListener('click',function(){closeS();goto(el);el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash')});
+      li.appendChild(b);ul.appendChild(li);n++;
+    });
+    if(!n)ul.innerHTML='<li class="muted" style="padding:10px 12px">找不到「'+esc(this.value)+'」</li>';
+  });
+
+  /* ---------- scroll progress & nav spy ---------- */
+  var bar=$('#progress');
+  var raf=0;function onScroll(){if(raf)return;raf=requestAnimationFrame(function(){raf=0;var h=document.documentElement.scrollHeight-innerHeight;bar.style.transform='scaleX('+(h>0?Math.min(1,scrollY/h):0)+')'})}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var links=$$('nav.top a'),map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on')});var a=map[e.target.id];if(a){a.classList.add('on');var nv=a.parentNode;nv.scrollLeft=a.offsetLeft-nv.clientWidth/2+a.clientWidth/2}}})},{rootMargin:'-20% 0px -70% 0px'});
+    Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+  }
+
+  /* ---------- right-hand contents ---------- */
+  (function(){
+    var items=[['summary','摘要',0],['map','學習地圖',0],['s01','網頁資訊',0],['s02','核心論點',0],['s03','敘事脈絡',0],['s04','論點展開',0],
+      ['st1','論點一：水桶機與旗艦',1],['st2','論點二：口袋機與配額',1],['st3','論點三：外型與握持',1],['st4','論點四：三萬內與輕量',1],
+      ['s05','關鍵洞察',0],['panel','多元觀點',0],['s06','重要引述',0],['s07','術語表',0],['s08','相關筆記',0],['s09','附錄',0]];
+    var h='',n=0;
+    items.forEach(function(it){if(!document.getElementById(it[0]))return;var sub=it[2];if(!sub)n++;h+='<button type="button" class="'+(sub?'sub':'')+'" data-t="'+it[0]+'"><span class="no">'+(sub?'·':(n<10?'0':'')+n)+'</span><span>'+it[1]+'</span></button>'});
+    var box=$('#toclist');box.innerHTML=h;
+    var btns=$$('button',box);
+    box.addEventListener('click',function(e){var b=e.target.closest('button[data-t]');if(!b)return;var el=document.getElementById(b.dataset.t);if(el)goto(el)});
+    var els=btns.map(function(b){return document.getElementById(b.dataset.t)}),act=-1,tk=0;
+    function spy(){
+      tk=0;var cur=0;
+      for(var i=0;i<els.length;i++){if(els[i].getBoundingClientRect().top<=150)cur=i;else break}
+      if(cur!==act){act=cur;btns.forEach(function(b,i){b.classList.toggle('on',i===cur)});
+        var t=$('#toc');if(t&&t.scrollHeight>t.clientHeight){t.scrollTop=btns[cur].offsetTop-t.clientHeight/2}}
+    }
+    addEventListener('scroll',function(){if(!tk)tk=requestAnimationFrame(spy)},{passive:true});
+    spy();
+  })();
+
+  /* ---------- illustrations (inline svg, static) ---------- */
+  (function(){
+    var A0='<svg viewBox="0 0 300 150" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">';
+    var F='currentColor';
+    var ART={
+      hero:A0+'<rect x="40" y="46" width="170" height="86" rx="14"/><path d="M92 46 L102 28 H148 L158 46"/><circle cx="125" cy="90" r="30"/><circle cx="125" cy="90" r="17" fill="'+F+'" opacity=".25"/><circle cx="125" cy="90" r="6" fill="'+F+'"/><circle cx="188" cy="64" r="5" fill="'+F+'"/><path d="M60 62 H78"/><path d="M232 120 V84 M222 120 V68 M242 120 V100 M252 120 V56" stroke-width="7"/></svg>',
+      summary:A0+'<path d="M52 36 H168 V92 H100 L72 118 V92 H52 Z"/><path d="M72 56 H148 M72 72 H128"/><path d="M200 70 C176 52 190 28 210 44 C230 28 244 52 220 72 L210 84 Z" fill="'+F+'"/></svg>',
+      map:A0+'<path d="M24 118 C62 92 70 58 110 66 S170 112 206 78 S250 40 276 30" stroke-dasharray="3 9"/><circle cx="24" cy="120" r="10" fill="'+F+'"/><circle cx="110" cy="66" r="10" fill="'+F+'"/><circle cx="206" cy="78" r="10" fill="'+F+'"/><path d="M270 44 V14 L292 22 L270 30" fill="'+F+'"/></svg>',
+      s01:A0+'<rect x="66" y="26" width="168" height="108" rx="12"/><path d="M66 56 H234"/><circle cx="86" cy="41" r="3.5" fill="'+F+'"/><circle cx="102" cy="41" r="3.5" fill="'+F+'"/><path d="M90 78 H150 M90 98 H132 M168 78 H210 M168 98 H198"/><circle cx="200" cy="112" r="14"/><path d="M193 112 l5 5 9 -10" stroke-width="3"/></svg>',
+      s02:A0+'<circle cx="150" cy="28" r="15" fill="'+F+'"/><path d="M150 43 L70 98 M150 43 L150 98 M150 43 L230 98"/><circle cx="70" cy="104" r="11" fill="'+F+'"/><circle cx="150" cy="104" r="11" fill="'+F+'"/><circle cx="230" cy="104" r="11" fill="'+F+'"/><path d="M70 115 L44 134 M70 115 L96 134 M150 115 L124 134 M150 115 L176 134 M230 115 L204 134 M230 115 L256 134" stroke-width="1.8"/></svg>',
+      s03:A0+'<path d="M16 110 C50 60 80 150 120 90 S190 40 230 80 S270 100 286 56" stroke-dasharray="3 8"/><circle cx="16" cy="110" r="9" fill="'+F+'"/><circle cx="85" cy="108" r="9" fill="'+F+'"/><circle cx="150" cy="70" r="9" fill="'+F+'"/><circle cx="232" cy="80" r="9" fill="'+F+'"/><path d="M276 66 L288 54 L291 72" fill="'+F+'"/></svg>',
+      st1:A0+'<path d="M92 40 H208 L196 124 H104 Z"/><path d="M92 40 C92 24 208 24 208 40"/><path d="M108 74 H192" stroke-dasharray="2 7"/><circle cx="150" cy="96" r="12" fill="'+F+'"/></svg>',
+      st2:A0+'<path d="M96 44 H204 V130 H96 Z"/><path d="M96 44 L112 28 H188 L204 44"/><circle cx="150" cy="86" r="22"/><circle cx="150" cy="86" r="8" fill="'+F+'"/><path d="M226 100 q16 -18 32 0" stroke-dasharray="2 7"/></svg>',
+      st3:A0+'<rect x="40" y="52" width="220" height="76" rx="10"/><path d="M96 52 L106 32 H194 L204 52"/><circle cx="150" cy="92" r="26"/><circle cx="150" cy="92" r="10" fill="'+F+'"/><circle cx="76" cy="38" r="12"/><path d="M76 30 V38 L82 42" stroke-width="2"/><circle cx="224" cy="38" r="12"/></svg>',
+      st4:A0+'<path d="M70 28 H170 L236 94 L176 134 L70 134 Z" transform="rotate(0)"/><circle cx="98" cy="54" r="8" fill="'+F+'"/><path d="M110 98 H170 M110 116 H150"/><path d="M196 56 q22 -8 36 14" stroke-dasharray="2 7"/></svg>',
+      s05:A0+'<path d="M120 100 C96 82 98 40 150 34 C202 40 204 82 180 100 V114 H120 Z"/><path d="M126 128 H174 M136 140 H164"/><path d="M150 12 V4 M92 34 l-8 -6 M208 34 l8 -6 M70 76 H60 M240 76 H230"/></svg>',
+      panel:A0+'<circle cx="80" cy="56" r="14" fill="'+F+'"/><path d="M52 112 q28 -46 56 0 z" fill="'+F+'"/><circle cx="150" cy="46" r="16" fill="'+F+'"/><path d="M118 112 q32 -54 64 0 z" fill="'+F+'"/><circle cx="220" cy="56" r="14" fill="'+F+'"/><path d="M192 112 q28 -46 56 0 z" fill="'+F+'"/></svg>',
+      s06:A0+'<path d="M52 40 H132 V86 H92 L70 108 V86 H52 Z"/><path d="M168 54 H248 V100 H230 V122 L208 100 H168 Z"/><path d="M68 58 H116 M68 70 H100 M184 70 H232 M184 82 H216"/></svg>',
+      s07:A0+'<rect x="82" y="22" width="110" height="112" rx="10"/><path d="M110 56 H168 M110 80 H168 M110 104 H146"/><path d="M96 22 V134" stroke-width="1.5"/><circle cx="222" cy="104" r="22"/><path d="M238 120 L262 144" stroke-width="6"/></svg>',
+      s08:A0+'<rect x="40" y="38" width="76" height="58" rx="8"/><rect x="184" y="38" width="76" height="58" rx="8"/><rect x="112" y="92" width="76" height="46" rx="8"/><path d="M116 66 H184 M150 96 V92 M78 96 L112 112 M222 96 L188 112" stroke-dasharray="3 6"/><circle cx="78" cy="67" r="6" fill="'+F+'"/><circle cx="222" cy="67" r="6" fill="'+F+'"/><circle cx="150" cy="115" r="6" fill="'+F+'"/></svg>',
+      s09:A0+'<rect x="50" y="26" width="200" height="104" rx="10"/><path d="M50 56 H250 M50 86 H250 M110 26 V130 M180 26 V130"/><circle cx="80" cy="41" r="4" fill="'+F+'"/><circle cx="80" cy="71" r="4" fill="'+F+'"/><circle cx="80" cy="101" r="4" fill="'+F+'"/></svg>'
+    };
+    var hero=document.querySelector('header.hero');
+    if(hero){var d=document.createElement('div');d.className='hero-art';d.innerHTML=ART.hero;hero.appendChild(d)}
+    Object.keys(ART).forEach(function(k){
+      if(k==='hero')return;var el=document.getElementById(k);if(!el)return;
+      var d=document.createElement('div');d.className='sart';d.innerHTML=ART[k];el.insertBefore(d,el.firstChild);el.classList.add('has-sart');
+    });
+  })();
+
+  renderMap();
+})();
+</script>
+</body>
+</html>
